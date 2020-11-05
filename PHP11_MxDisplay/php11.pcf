@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 05 19:01:25 2020
+// Written by: Map P.20131013 on Thu Nov 05 19:06:05 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -17,13 +17,19 @@ COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
 COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
 COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
 COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "clk1kHz" BEL "countB_0" BEL "countB_1" BEL
-        "countB_2" BEL "countB_3" BEL "countB_4" BEL "countB_5" BEL "countB_6"
-        BEL "countB_7" BEL "countB_8" BEL "countB_9" BEL "countB_10" BEL
-        "countB_11" BEL "countB_12" BEL "countB_13" BEL "countB_14" BEL
-        "countB_15" BEL "countB_16" BEL "countB_17" BEL "countB_18" BEL
-        "countB_19" BEL "countB_20" BEL "countB_21" BEL "countB_22" BEL
-        "countB_23" BEL "countB_24" BEL "clk_BUFGP/BUFG";
+TIMEGRP sys_clk_pin = BEL "clk4Hz" BEL "clk1kHz" BEL "countA_0" BEL "countA_1"
+        BEL "countA_2" BEL "countA_3" BEL "countA_4" BEL "countA_5" BEL
+        "countA_6" BEL "countA_7" BEL "countA_8" BEL "countA_9" BEL
+        "countA_10" BEL "countA_11" BEL "countA_12" BEL "countA_13" BEL
+        "countA_14" BEL "countA_15" BEL "countA_16" BEL "countA_17" BEL
+        "countA_18" BEL "countA_19" BEL "countA_20" BEL "countA_21" BEL
+        "countA_22" BEL "countA_23" BEL "countA_24" BEL "countB_0" BEL
+        "countB_1" BEL "countB_2" BEL "countB_3" BEL "countB_4" BEL "countB_5"
+        BEL "countB_6" BEL "countB_7" BEL "countB_8" BEL "countB_9" BEL
+        "countB_10" BEL "countB_11" BEL "countB_12" BEL "countB_13" BEL
+        "countB_14" BEL "countB_15" BEL "countB_16" BEL "countB_17" BEL
+        "countB_18" BEL "countB_19" BEL "countB_20" BEL "countB_21" BEL
+        "countB_22" BEL "countB_23" BEL "countB_24" BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 
