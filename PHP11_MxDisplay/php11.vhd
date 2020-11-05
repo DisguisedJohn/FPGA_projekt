@@ -52,9 +52,10 @@ architecture Behavioral of php11 is
  constant CNT1MAX	 : STD_LOGIC_VECTOR(9 downto 0) := "0111111111";	-- 511
  
  -- Timer signals
- signal clk4Hz, clk1kHz : STD_LOGIC;		--timer output
+ signal clk05Hz ,clk4Hz, clk1kHz : STD_LOGIC;		--timer output
  signal countA	: STD_LOGIC_VECTOR (24 downto 0);	-- timer modulo
  signal countB	: STD_LOGIC_VECTOR (24 downto 0);
+ signal countC : STD_LOGIC_VECTOR (3 downto 0);
  
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
 
@@ -120,9 +121,20 @@ begin
 	 end if;
    end process timer;
 	
-		
+   timerC: process (clk4Hz)
+	 begin
+	  if Rising_Edge (clk4Hz) then 	  
+	   if countC = 7 then
+		 countC <= (others => '0');
+		 clk05Hz <= not clk05Hz;
+		 else
+		  countC <= countC + 1;
+      end if;
+	  end if;
+	 
+	end process timerC;
 
-text_movement: process (clk4Hz)
+text_movement: process (clk05Hz)
 	begin
 	  CHAR3 <= introtxt(CHAR3_p);
 	  CHAR2 <= introtxt(CHAR2_p);

@@ -122,18 +122,18 @@ Parsing architecture <Behavioral> of entity <php11>.
 Elaborating entity <php11> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <mux_7seg_char> (architecture <arch_mux_7seg_char>) from library <work>.
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 127: char3_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 128: char2_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 129: char1_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 130: char0_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 132: char3_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 135: char3_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 138: char2_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 141: char2_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 144: char1_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 147: char1_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 150: char0_p should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 153: char0_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 139: char3_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 140: char2_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 141: char1_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 142: char0_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 144: char3_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 147: char3_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 150: char2_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 153: char2_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 156: char1_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 159: char1_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 162: char0_p should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 165: char0_p should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -143,11 +143,11 @@ Synthesizing Unit <php11>.
     Related source file is "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd".
     Found 25-bit register for signal <countB>.
     Found 1-bit register for signal <clk1kHz>.
-    Found 25-bit adder for signal <countB[24]_GND_5_o_add_4_OUT> created at line 118.
-    Found 32-bit adder for signal <CHAR3_p[31]_GND_5_o_add_13_OUT> created at line 135.
-    Found 32-bit adder for signal <CHAR2_p[31]_GND_5_o_add_16_OUT> created at line 141.
-    Found 32-bit adder for signal <CHAR1_p[31]_GND_5_o_add_19_OUT> created at line 147.
-    Found 32-bit adder for signal <CHAR0_p[31]_GND_5_o_add_22_OUT> created at line 153.
+    Found 25-bit adder for signal <countB[24]_GND_5_o_add_4_OUT> created at line 119.
+    Found 32-bit adder for signal <CHAR3_p[31]_GND_5_o_add_17_OUT> created at line 147.
+    Found 32-bit adder for signal <CHAR2_p[31]_GND_5_o_add_20_OUT> created at line 153.
+    Found 32-bit adder for signal <CHAR1_p[31]_GND_5_o_add_23_OUT> created at line 159.
+    Found 32-bit adder for signal <CHAR0_p[31]_GND_5_o_add_26_OUT> created at line 165.
     Found 16x7-bit Read Only RAM for signal <CHAR3<6:0>>
     Found 16x7-bit Read Only RAM for signal <CHAR2<6:0>>
     Found 16x7-bit Read Only RAM for signal <CHAR1<6:0>>
@@ -289,18 +289,18 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <akt_znak_7> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR3_p<1>, CHAR3<6>, CHAR3_p<31>, GND_5_o_CHAR3_p[31]_equal_13_o.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR3_p[31]_GND_5_o_add_13_OUT<3>, CHAR3_p[31]_GND_5_o_add_13_OUT<0>, Madd_CHAR3_p[31]_GND_5_o_add_13_OUT_lut<0>, Madd_CHAR3_p[31]_GND_5_o_add_13_OUT_cy<2>, CHAR3_p<3>, Madd_CHAR3_p[31]_GND_5_o_add_13_OUT_cy<0>, CHAR3<4>, CHAR3_p<0>, Madd_CHAR3_p[31]_GND_5_o_add_13_OUT_cy<1>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR3_p<2>, CHAR3<3>, CHAR3_p[31]_GND_5_o_add_13_OUT<2>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: GND_5_o_CHAR2_p[31]_equal_16_o, CHAR2_p<1>, CHAR2_p<31>, CHAR2<6>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR2_p<0>, Madd_CHAR2_p[31]_GND_5_o_add_16_OUT_cy<2>, CHAR2_p[31]_GND_5_o_add_16_OUT<0>, CHAR2<4>, Madd_CHAR2_p[31]_GND_5_o_add_16_OUT_lut<0>, Madd_CHAR2_p[31]_GND_5_o_add_16_OUT_cy<1>, Madd_CHAR2_p[31]_GND_5_o_add_16_OUT_cy<0>, CHAR2_p[31]_GND_5_o_add_16_OUT<3>, CHAR2_p<3>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR2<3>, CHAR2_p[31]_GND_5_o_add_16_OUT<2>, CHAR2_p<2>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR1_p<1>, CHAR1<6>, CHAR1_p<31>, GND_5_o_CHAR1_p[31]_equal_19_o.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: Madd_CHAR1_p[31]_GND_5_o_add_19_OUT_cy<0>, CHAR1_p[31]_GND_5_o_add_19_OUT<3>, CHAR1<4>, CHAR1_p<3>, CHAR1_p<0>, Madd_CHAR1_p[31]_GND_5_o_add_19_OUT_cy<1>, CHAR1_p[31]_GND_5_o_add_19_OUT<0>, Madd_CHAR1_p[31]_GND_5_o_add_19_OUT_cy<2>, Madd_CHAR1_p[31]_GND_5_o_add_19_OUT_lut<0>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR1_p[31]_GND_5_o_add_19_OUT<2>, CHAR1<3>, CHAR1_p<2>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: GND_5_o_CHAR0_p[31]_equal_22_o, CHAR0_p<31>, CHAR0<6>, CHAR0_p<1>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR0_p[31]_GND_5_o_add_22_OUT<0>, Madd_CHAR0_p[31]_GND_5_o_add_22_OUT_lut<0>, CHAR0_p<3>, Madd_CHAR0_p[31]_GND_5_o_add_22_OUT_cy<1>, CHAR0_p<0>, Madd_CHAR0_p[31]_GND_5_o_add_22_OUT_cy<0>, CHAR0<4>, Madd_CHAR0_p[31]_GND_5_o_add_22_OUT_cy<2>, CHAR0_p[31]_GND_5_o_add_22_OUT<3>.
-WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR0_p<2>, CHAR0<3>, CHAR0_p[31]_GND_5_o_add_22_OUT<2>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: GND_5_o_CHAR3_p[31]_equal_17_o, CHAR3_p<1>, CHAR3<6>, CHAR3_p<31>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR3<4>, CHAR3_p<3>, CHAR3_p<0>, Madd_CHAR3_p[31]_GND_5_o_add_17_OUT_cy<1>, CHAR3_p[31]_GND_5_o_add_17_OUT<3>, Madd_CHAR3_p[31]_GND_5_o_add_17_OUT_lut<0>, CHAR3_p[31]_GND_5_o_add_17_OUT<0>, Madd_CHAR3_p[31]_GND_5_o_add_17_OUT_cy<2>, Madd_CHAR3_p[31]_GND_5_o_add_17_OUT_cy<0>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR3_p[31]_GND_5_o_add_17_OUT<2>, CHAR3<3>, CHAR3_p<2>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR2_p<31>, CHAR2<6>, GND_5_o_CHAR2_p[31]_equal_20_o, CHAR2_p<1>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR2_p<3>, Madd_CHAR2_p[31]_GND_5_o_add_20_OUT_cy<2>, CHAR2_p<0>, CHAR2_p[31]_GND_5_o_add_20_OUT<0>, CHAR2<4>, Madd_CHAR2_p[31]_GND_5_o_add_20_OUT_lut<0>, CHAR2_p[31]_GND_5_o_add_20_OUT<3>, Madd_CHAR2_p[31]_GND_5_o_add_20_OUT_cy<1>, Madd_CHAR2_p[31]_GND_5_o_add_20_OUT_cy<0>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR2<3>, CHAR2_p[31]_GND_5_o_add_20_OUT<2>, CHAR2_p<2>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR1<6>, CHAR1_p<31>, GND_5_o_CHAR1_p[31]_equal_23_o, CHAR1_p<1>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: Madd_CHAR1_p[31]_GND_5_o_add_23_OUT_cy<2>, Madd_CHAR1_p[31]_GND_5_o_add_23_OUT_lut<0>, CHAR1_p[31]_GND_5_o_add_23_OUT<3>, Madd_CHAR1_p[31]_GND_5_o_add_23_OUT_cy<0>, CHAR1<4>, CHAR1_p<3>, CHAR1_p<0>, CHAR1_p[31]_GND_5_o_add_23_OUT<0>, Madd_CHAR1_p[31]_GND_5_o_add_23_OUT_cy<1>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR1<3>, CHAR1_p<2>, CHAR1_p[31]_GND_5_o_add_23_OUT<2>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR0_p<1>, GND_5_o_CHAR0_p[31]_equal_26_o, CHAR0_p<31>, CHAR0<6>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: Madd_CHAR0_p[31]_GND_5_o_add_26_OUT_cy<2>, CHAR0_p[31]_GND_5_o_add_26_OUT<3>, CHAR0_p[31]_GND_5_o_add_26_OUT<0>, Madd_CHAR0_p[31]_GND_5_o_add_26_OUT_lut<0>, CHAR0_p<3>, CHAR0_p<0>, Madd_CHAR0_p[31]_GND_5_o_add_26_OUT_cy<1>, CHAR0<4>, Madd_CHAR0_p[31]_GND_5_o_add_26_OUT_cy<0>.
+WARNING:Xst:2170 - Unit php11 : the following signal(s) form a combinatorial loop: CHAR0_p<2>, CHAR0<3>, CHAR0_p[31]_GND_5_o_add_26_OUT<2>.
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -600,8 +600,8 @@ clk1kHz        |         |         |    2.242|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 10.72 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.75 secs
  
 --> 
 
