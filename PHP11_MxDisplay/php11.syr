@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Reading design: php11.prj
@@ -295,6 +295,10 @@ WARNING:Xst:1710 - FF/Latch <CHAR3_7> (without init value) has a constant value 
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR2_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR1_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR0_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <CHAR3_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR3_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR2_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR2_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR1_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR1_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR0_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR0_6> 
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -338,8 +342,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 224
- Flip-Flops                                            : 224
+# Registers                                            : 220
+ Flip-Flops                                            : 220
 
 =========================================================================
 
@@ -362,7 +366,7 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 814
+# BELS                             : 815
 #      GND                         : 1
 #      INV                         : 8
 #      LUT1                        : 175
@@ -370,17 +374,17 @@ Primitive and Black Box Usage:
 #      LUT3                        : 12
 #      LUT4                        : 122
 #      LUT5                        : 3
-#      LUT6                        : 96
+#      LUT6                        : 97
 #      MUXCY                       : 175
 #      MUXF7                       : 7
 #      VCC                         : 1
 #      XORCY                       : 181
-# FlipFlops/Latches                : 225
+# FlipFlops/Latches                : 221
 #      FD                          : 153
 #      FD_1                        : 1
 #      FDC                         : 2
 #      FDC_1                       : 6
-#      FDE                         : 32
+#      FDE                         : 28
 #      FDP_1                       : 5
 #      FDR                         : 25
 #      LD                          : 1
@@ -398,15 +402,15 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             225  out of  18224     1%  
- Number of Slice LUTs:                  449  out of   9112     4%  
-    Number used as Logic:               449  out of   9112     4%  
+ Number of Slice Registers:             221  out of  18224     1%  
+ Number of Slice LUTs:                  450  out of   9112     4%  
+    Number used as Logic:               450  out of   9112     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    450
-   Number with an unused Flip Flop:     225  out of    450    50%  
-   Number with an unused LUT:             1  out of    450     0%  
-   Number of fully used LUT-FF pairs:   224  out of    450    49%  
+ Number of LUT Flip Flop pairs used:    452
+   Number with an unused Flip Flop:     231  out of    452    51%  
+   Number with an unused LUT:             2  out of    452     0%  
+   Number of fully used LUT-FF pairs:   219  out of    452    48%  
    Number of unique control sets:         7
 
 IO Utilization: 
@@ -437,7 +441,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 210   |
+clk                                | BUFGP                  | 206   |
 clk1kHz                            | NONE(m7seg/cd_1)       | 14    |
 btnd                               | IBUF+BUFG              | 1     |
 -----------------------------------+------------------------+-------+
@@ -451,7 +455,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.154ns (Maximum Frequency: 194.028MHz)
+   Minimum period: 5.258ns (Maximum Frequency: 190.201MHz)
    Minimum input arrival time before clock: 2.584ns
    Maximum output required time after clock: 6.785ns
    Maximum combinational path delay: No path found
@@ -462,10 +466,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.154ns (frequency: 194.028MHz)
-  Total number of paths / destination ports: 16426 / 267
+  Clock period: 5.258ns (frequency: 190.201MHz)
+  Total number of paths / destination ports: 16294 / 259
 -------------------------------------------------------------------------
-Delay:               5.154ns (Levels of Logic = 4)
+Delay:               5.258ns (Levels of Logic = 4)
   Source:            countC_24 (FF)
   Destination:       CHAR3_p_1 (FF)
   Source Clock:      clk rising
@@ -476,21 +480,21 @@ Delay:               5.154ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               2   0.447   0.981  countC_24 (countC_24)
-     LUT6:I0->O            3   0.203   0.898  GND_5_o_GND_5_o_equal_9_o<27>7_SW0 (N34)
+     LUT6:I0->O           10   0.203   1.104  GND_5_o_GND_5_o_equal_9_o<27>7_SW0 (N34)
      LUT6:I2->O            8   0.203   0.803  GND_5_o_GND_5_o_equal_9_o<27>7_1 (GND_5_o_GND_5_o_equal_9_o<27>7)
-     LUT6:I5->O           16   0.205   1.109  _n01037 (_n0103)
-     LUT4:I2->O            1   0.203   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
+     LUT6:I5->O           16   0.205   1.005  _n01037 (_n0103)
+     LUT4:I3->O            1   0.205   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
      FD:D                      0.102          CHAR3_p_1
     ----------------------------------------
-    Total                      5.154ns (1.363ns logic, 3.791ns route)
-                                       (26.4% logic, 73.6% route)
+    Total                      5.258ns (1.365ns logic, 3.893ns route)
+                                       (26.0% logic, 74.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk1kHz'
-  Clock period: 2.266ns (frequency: 441.248MHz)
+  Clock period: 2.242ns (frequency: 446.100MHz)
   Total number of paths / destination ports: 27 / 14
 -------------------------------------------------------------------------
-Delay:               2.266ns (Levels of Logic = 1)
+Delay:               2.242ns (Levels of Logic = 1)
   Source:            m7seg/cd_0 (FF)
   Destination:       m7seg/cd_0 (FF)
   Source Clock:      clk1kHz falling
@@ -500,12 +504,12 @@ Delay:               2.266ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             13   0.447   0.932  m7seg/cd_0 (m7seg/cd_0)
+     FDC:C->Q             12   0.447   0.908  m7seg/cd_0 (m7seg/cd_0)
      INV:I->O              1   0.206   0.579  m7seg/Mcount_cd_xor<0>11_INV_0 (m7seg/Result<0>)
      FDC:D                     0.102          m7seg/cd_0
     ----------------------------------------
-    Total                      2.266ns (0.755ns logic, 1.511ns route)
-                                       (33.3% logic, 66.7% route)
+    Total                      2.242ns (0.755ns logic, 1.487ns route)
+                                       (33.7% logic, 66.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk1kHz'
@@ -582,7 +586,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.154|         |         |         |
+clk            |    5.258|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk1kHz
@@ -591,21 +595,21 @@ Clock to Setup on destination clock clk1kHz
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 clk            |         |         |    1.616|         |
-clk1kHz        |         |         |    2.266|         |
+clk1kHz        |         |         |    2.242|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.39 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.24 secs
  
 --> 
 
 
-Total memory usage is 392328 kilobytes
+Total memory usage is 392336 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    7 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
 
