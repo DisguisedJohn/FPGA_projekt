@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-JohnsPC::  Thu Nov 05 17:50:58 2020
+JohnsPC::  Thu Nov 05 22:26:09 2020
 
 par -w -intstyle ise -ol high -mt off php11_map.ncd php11.ncd php11.pcf 
 
@@ -95,7 +95,7 @@ Starting Router
 
 Phase  1  : 812 unrouted;      REAL time: 5 secs 
 
-Phase  2  : 697 unrouted;      REAL time: 6 secs 
+Phase  2  : 697 unrouted;      REAL time: 5 secs 
 
 Phase  3  : 244 unrouted;      REAL time: 6 secs 
 

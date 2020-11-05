@@ -52,10 +52,11 @@ architecture Behavioral of php11 is
  constant introtxt : string := "dinosaurus";
  
  -- Timer signals
- signal clk05Hz ,clk4Hz, clk1kHz : STD_LOGIC;		--timer output
+ signal clk05Hz ,clk4Hz, clk1kHz: STD_LOGIC;		--timer output
  signal countA	: STD_LOGIC_VECTOR (27 downto 0);	-- timer modulo
  signal countB	: integer;
  signal countC : STD_LOGIC_VECTOR (27 downto 0);
+ signal countD : STD_LOGIC_VECTOR (27 downto 0);
  signal clkA : std_logic := '1';
  
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
@@ -120,13 +121,13 @@ begin
 	    countA <= countA + 1;			-- inkrementuj count
 	  end if;
 	  
---	  if countB = 99999 then
---		countB <= (others => '0');
---		clk1kHz <= not clk1kHz;
---		else
---		 countB <= countB + 1;
---     end if;
---	  
+	  if countD = 99999 then
+		countD <= (others => '0');
+		clk1kHz <= not clk1kHz;
+		else
+		 countD <= countD + 1;
+     end if;
+	  
 
 	  
 	 end if;
