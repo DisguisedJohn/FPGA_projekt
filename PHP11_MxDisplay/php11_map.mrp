@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu Nov  5 17:17:51 2020
+Mapped Date    : Thu Nov  5 17:34:13 2020
 
 Design Summary
 --------------
@@ -55,7 +55,7 @@ Specific Feature Utilization:
 Average Fanout of Non-Clock Nets:                0.00
 
 Peak Memory Usage:  662 MB
-Total REAL time to MAP completion:  9 secs 
+Total REAL time to MAP completion:  7 secs 
 Total CPU time to MAP completion:   7 secs 
 
 Table of Contents
@@ -101,13 +101,14 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   1 block(s) optimized away
+   2 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
 
 Optimized Block(s):
 TYPE 		BLOCK
+GND 		XST_GND
 VCC 		XST_VCC
 
 Section 6 - IOB Properties

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Reading design: php11.prj
@@ -108,10 +108,10 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/home/john/Desktop/PHP11_MxDisplay/mux_7seg_char.vhd" into library work
+Parsing VHDL file "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/mux_7seg_char.vhd" into library work
 Parsing entity <mux_7seg_char>.
 Parsing architecture <arch_mux_7seg_char> of entity <mux_7seg_char>.
-Parsing VHDL file "/home/john/Desktop/PHP11_MxDisplay/php11.vhd" into library work
+Parsing VHDL file "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" into library work
 Parsing entity <php11>.
 Parsing architecture <Behavioral> of entity <php11>.
 
@@ -122,14 +122,15 @@ Parsing architecture <Behavioral> of entity <php11>.
 Elaborating entity <php11> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <mux_7seg_char> (architecture <arch_mux_7seg_char>) from library <work>.
-WARNING:HDLCompiler:634 - "/home/john/Desktop/PHP11_MxDisplay/php11.vhd" Line 66: Net <CNT[16]> does not have a driver.
+WARNING:HDLCompiler:1127 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/mux_7seg_char.vhd" Line 63: Assignment to seg ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 66: Net <CNT[16]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <php11>.
-    Related source file is "/home/john/Desktop/PHP11_MxDisplay/php11.vhd".
+    Related source file is "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd".
 WARNING:Xst:653 - Signal <CNT<16>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 1-bit register for signal <clk4Hz>.
     Found 32-bit register for signal <CNTTXT>.
@@ -151,18 +152,15 @@ WARNING:Xst:653 - Signal <CNT<16>> is used but never assigned. This sourceless s
 Unit <php11> synthesized.
 
 Synthesizing Unit <mux_7seg_char>.
-    Related source file is "/home/john/Desktop/PHP11_MxDisplay/mux_7seg_char.vhd".
+    Related source file is "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/mux_7seg_char.vhd".
     Found 4-bit register for signal <digit>.
     Found 2-bit register for signal <cd>.
-    Found 8-bit register for signal <akt_znak>.
     Found 2-bit adder for signal <cd[1]_GND_6_o_add_0_OUT> created at line 44.
     Found 4x4-bit Read Only RAM for signal <cd[1]_GND_6_o_wide_mux_2_OUT>
-    Found 8-bit 4-to-1 multiplexer for signal <cd[1]_DIN3[7]_wide_mux_1_OUT> created at line 45.
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred  14 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
+	inferred   6 D-type flip-flop(s).
 Unit <mux_7seg_char> synthesized.
 
 =========================================================================
@@ -176,17 +174,14 @@ Macro Statistics
  2-bit adder                                           : 1
  25-bit adder                                          : 1
  32-bit adder                                          : 3
-# Registers                                            : 6
+# Registers                                            : 5
  1-bit register                                        : 1
  2-bit register                                        : 1
  25-bit register                                       : 1
  32-bit register                                       : 1
  4-bit register                                        : 1
- 8-bit register                                        : 1
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1
- 8-bit 4-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -200,14 +195,6 @@ WARNING:Xst:1710 - FF/Latch <digit_0> (without init value) has a constant value 
 WARNING:Xst:1710 - FF/Latch <digit_1> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <digit_2> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <digit_3> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_0> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_1> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_2> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_3> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_4> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_6> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <akt_znak_7> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <akt_znak_5> is unconnected in block <m7seg>.
 
 Synthesizing (advanced) Unit <mux_7seg_char>.
 The following registers are absorbed into counter <cd>: 1 register on signal <cd>.
@@ -287,30 +274,20 @@ Macro Statistics
  2-bit up counter                                      : 1
  25-bit up counter                                     : 1
  32-bit up counter                                     : 1
-# Registers                                            : 13
- Flip-Flops                                            : 13
+# Registers                                            : 5
+ Flip-Flops                                            : 5
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1
- 8-bit 4-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <akt_znak_0> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_1> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_2> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_3> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_4> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_6> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_7> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_0> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <digit_0> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_1> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_2> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_3> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <akt_znak_5> is unconnected in block <mux_7seg_char>.
 WARNING:Xst:2677 - Node <clk4Hz> of sequential type is unconnected in block <php11>.
 
 Optimizing unit <php11> ...
@@ -346,7 +323,8 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1
+# BELS                             : 2
+#      GND                         : 1
 #      VCC                         : 1
 # IO Buffers                       : 12
 #      OBUF                        : 12
@@ -417,15 +395,15 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 9.92 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.67 secs
  
 --> 
 
 
-Total memory usage is 391872 kilobytes
+Total memory usage is 391512 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   29 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 

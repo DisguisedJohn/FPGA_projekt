@@ -5,7 +5,7 @@ Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
 ise -dd _ngo -nt timestamp -uc Nexys3_Master.ucf -p xc6slx16-csg324-3 php11.ngc
 php11.ngd
 
-Reading NGO file "/home/john/Desktop/PHP11_MxDisplay/php11.ngc" ...
+Reading NGO file "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -50,10 +50,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   4
 
-Total memory usage is 402820 kilobytes
+Total memory usage is 402804 kilobytes
 
 Writing NGD file "php11.ngd" ...
-Total REAL time to NGDBUILD completion:  6 sec
+Total REAL time to NGDBUILD completion:  5 sec
 Total CPU time to NGDBUILD completion:   5 sec
 
 Writing NGDBUILD log file "php11.bld"...
