@@ -128,8 +128,13 @@ begin
 text_movement: process (clk)
 	begin
 	if Rising_Edge (clk) then
-	  if countC = 199999999 then
+	  if countC = 99999999 then
 		 countC <= (others => '0');
+		 
+	CHAR3 <= introtxt(CHAR3_p);
+	  CHAR2 <= introtxt(CHAR2_p);
+	  CHAR1 <= introtxt(CHAR1_p);
+	  CHAR0 <= introtxt(CHAR0_p);
 
 		if CHAR3_p = introtxt'length then
 		  CHAR3_p <= 0;
@@ -157,15 +162,12 @@ text_movement: process (clk)
 		
 	  else
 		  countC <= countC + 1;
+	  
      end if;
 	 end if;
 	
 	end process text_movement;
 
-	  CHAR3 <= introtxt(CHAR3_p);
-	  CHAR2 <= introtxt(CHAR2_p);
-	  CHAR1 <= introtxt(CHAR1_p);
-	  CHAR0 <= introtxt(CHAR0_p);
 
 
 ------------------------------------------					 
