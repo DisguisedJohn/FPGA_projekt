@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/john/Desktop/PHP11_MxDisplay/php11.ncd
+OUTFILE=/home/john/Desktop/PHP11_MxDisplay/php11.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=/home/john/Desktop/PHP11_MxDisplay
+LICENSE=WebPack
+USER_INFO=212078383_0_0_515
