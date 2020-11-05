@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 05 17:58:06 2020
+// Written by: Map P.20131013 on Thu Nov 05 18:15:41 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -17,20 +17,19 @@ COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
 COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
 COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
 COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "CNTTXT_29" BEL "CNTTXT_30" BEL "CNTTXT_31" BEL
-        "clk4Hz" BEL "CNTTXT_1" BEL "CNTTXT_2" BEL "CNTTXT_3" BEL "CNTTXT_6"
-        BEL "CNTTXT_4" BEL "CNTTXT_5" BEL "CNTTXT_7" BEL "CNTTXT_8" BEL
-        "CNTTXT_9" BEL "CNTTXT_10" BEL "CNTTXT_0" BEL "CNTTXT_11" BEL
-        "CNTTXT_12" BEL "CNTTXT_13" BEL "CNTTXT_14" BEL "CNTTXT_15" BEL
-        "CNTTXT_16" BEL "CNTTXT_17" BEL "CNTTXT_18" BEL "CNTTXT_19" BEL
-        "CNTTXT_20" BEL "CNTTXT_21" BEL "CNTTXT_22" BEL "count_0" BEL
-        "count_1" BEL "count_2" BEL "count_3" BEL "count_4" BEL "count_5" BEL
-        "count_6" BEL "count_7" BEL "count_8" BEL "count_9" BEL "count_10" BEL
-        "count_11" BEL "count_12" BEL "count_13" BEL "count_14" BEL "count_15"
-        BEL "count_16" BEL "count_17" BEL "count_18" BEL "count_19" BEL
-        "count_20" BEL "count_21" BEL "count_22" BEL "count_23" BEL "count_24"
-        BEL "CNTTXT_23" BEL "CNTTXT_24" BEL "CNTTXT_25" BEL "CNTTXT_26" BEL
-        "CNTTXT_27" BEL "CNTTXT_28" BEL "clk_BUFGP/BUFG";
+TIMEGRP sys_clk_pin = BEL "clk4Hz" BEL "clk1kHz" BEL "countA_0" BEL "countA_1"
+        BEL "countA_2" BEL "countA_3" BEL "countA_4" BEL "countA_5" BEL
+        "countA_6" BEL "countA_7" BEL "countA_8" BEL "countA_9" BEL
+        "countA_10" BEL "countA_11" BEL "countA_12" BEL "countA_13" BEL
+        "countA_14" BEL "countA_15" BEL "countA_16" BEL "countA_17" BEL
+        "countA_18" BEL "countA_19" BEL "countA_20" BEL "countA_21" BEL
+        "countA_22" BEL "countA_23" BEL "countA_24" BEL "countB_0" BEL
+        "countB_1" BEL "countB_2" BEL "countB_3" BEL "countB_4" BEL "countB_5"
+        BEL "countB_6" BEL "countB_7" BEL "countB_8" BEL "countB_9" BEL
+        "countB_10" BEL "countB_11" BEL "countB_12" BEL "countB_13" BEL
+        "countB_14" BEL "countB_15" BEL "countB_16" BEL "countB_17" BEL
+        "countB_18" BEL "countB_19" BEL "countB_20" BEL "countB_21" BEL
+        "countB_22" BEL "countB_23" BEL "countB_24" BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 

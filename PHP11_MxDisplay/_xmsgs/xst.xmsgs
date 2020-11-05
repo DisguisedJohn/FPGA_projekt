@@ -20,10 +20,10 @@
 <msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR0&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">akt_znak_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mux_7seg_char</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">akt_znak_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mux_7seg_char</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="3002" delta="new" >This design contains one or more registers/latches that are directly
+<msg type="warning" file="Xst" num="3002" delta="old" >This design contains one or more registers/latches that are directly
 incompatible with the <arg fmt="%s" index="1">Spartan6</arg> architecture. The two primary causes of this is
 either a register or latch described with both an asynchronous set and
 asynchronous reset, or a register or latch described with an asynchronous
@@ -44,15 +44,15 @@ Xilinx highly recommends one of the following:
           (timing simulation highly recommended when using this option)
 </msg>
 
-<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5_LD</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5_LD</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5_C_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5_C_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 

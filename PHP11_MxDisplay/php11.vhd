@@ -52,8 +52,9 @@ architecture Behavioral of php11 is
  constant CNT1MAX	 : STD_LOGIC_VECTOR(9 downto 0) := "0111111111";	-- 511
  
  -- Timer signals
- signal clk4Hz : STD_LOGIC;		--timer output
- signal count	: STD_LOGIC_VECTOR (24 downto 0);	-- timer modulo
+ signal clk4Hz, clk1kHz : STD_LOGIC;		--timer output
+ signal countA	: STD_LOGIC_VECTOR (24 downto 0);	-- timer modulo
+ signal countB	: STD_LOGIC_VECTOR (24 downto 0);
  
 
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
@@ -69,7 +70,7 @@ begin
 	
 	m7seg: mux_7seg_char port map
 	 (	rst	=>	rst,
-		clk	=> clk4Hz, 
+		clk	=> clk1kHz, 
 		DIN3	=>	CHAR3,
 		DIN2	=>	CHAR2,
 		DIN1	=>	CHAR1,
@@ -96,27 +97,33 @@ begin
   timer : process (clk)
 	begin
 	 if Rising_Edge (clk) then	-- reakce na nabeznou hranu
-     if count = 24999999 then	-- modulo timeru 25mil > 100k / 25k
-	   count <= (others => '0');	-- vynuluj count
+     if countA = 24999999 then	-- modulo timeru 25mil > 100k / 25k
+	   countA <= (others => '0');	-- vynuluj count
 	   clk4Hz <= not clk4Hz;		-- a invertuj hodnotu clk4Hz
 	   else								-- jinak
-	    count <= count + 1;			-- inkrementuj count
+	    countA <= countA + 1;			-- inkrementuj count
 	  end if;
-    end if;  
+	  
+	  if countB = 99999 then
+		countB <= (others => '0');
+		clk1kHz <= not clk1kHz;
+		else
+		 countB <= countB + 1;
+     end if;
+	 end if;
    end process timer;
-
 	
-	
+		
 
 
 
 ------------------------------------------					 
-  text_refresh: process (clk)
+  text_refresh: process (clk4Hz)
    begin
-	 if Rising_Edge (clk) then
+	 if Rising_Edge (clk4Hz) then
 	  if  rst = '1' then
 	   CNTTXT <= 0;
-	  elsif clk4Hz = '1' then
+	  else
 	   if CNTTXT >= (introtxt'length - 4) then
 		  CNTTXT <= 0;
 		else  
