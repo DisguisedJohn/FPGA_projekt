@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu Nov  5 19:16:10 2020
+Mapped Date    : Thu Nov  5 19:19:15 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -49,21 +49,21 @@ Phase 8.5  Local Placement Optimization
 Phase 8.5  Local Placement Optimization (Checksum:aa86681c) REAL time: 8 secs 
 
 Phase 9.8  Global Placement
-...........
-............
-Phase 9.8  Global Placement (Checksum:53e4b288) REAL time: 8 secs 
+..........
+...
+Phase 9.8  Global Placement (Checksum:ca080da7) REAL time: 8 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:53e4b288) REAL time: 8 secs 
+Phase 10.5  Local Placement Optimization (Checksum:ca080da7) REAL time: 8 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:ec41928) REAL time: 8 secs 
+Phase 11.18  Placement Optimization (Checksum:303035cf) REAL time: 8 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:ec41928) REAL time: 8 secs 
+Phase 12.5  Local Placement Optimization (Checksum:303035cf) REAL time: 8 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:ec41928) REAL time: 8 secs 
+Phase 13.34  Placement Validation (Checksum:303035cf) REAL time: 8 secs 
 
 Total REAL time to Placer completion: 8 secs 
 Total CPU  time to Placer completion: 8 secs 
@@ -95,7 +95,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   104 out of   2,278    4%
+  Number of occupied Slices:                   107 out of   2,278    4%
   Number of MUXCYs used:                       156 out of   4,556    3%
   Number of LUT Flip Flop pairs used:          314
     Number with an unused Flip Flop:           272 out of     314   86%

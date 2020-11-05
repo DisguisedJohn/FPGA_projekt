@@ -144,11 +144,7 @@ begin
 
 text_movement: process (clk05Hz)
 	begin
-	  CHAR3 <= introtxt(CHAR3_p);
-	  CHAR2 <= introtxt(CHAR2_p);
-	  CHAR1 <= introtxt(CHAR1_p);
-	  CHAR0 <= introtxt(CHAR0_p);
-	
+
 	if CHAR3_p = introtxt'length then
 	  CHAR3_p <= 0;
 	 else 
@@ -174,7 +170,10 @@ text_movement: process (clk05Hz)
 	end if;
  end process text_movement;
 
-
+	  CHAR3 <= introtxt(CHAR3_p);
+	  CHAR2 <= introtxt(CHAR2_p);
+	  CHAR1 <= introtxt(CHAR1_p);
+	  CHAR0 <= introtxt(CHAR0_p);
 
 
 ------------------------------------------					 

@@ -32,17 +32,17 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
 
  976 paths analyzed, 156 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   3.051ns.
+ Minimum period is   3.112ns.
 --------------------------------------------------------------------------------
 
-Paths for end point countB_17 (SLICE_X16Y27.C3), 18 paths
+Paths for end point countB_5 (SLICE_X23Y26.B1), 6 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     6.949ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.888ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_1 (FF)
-  Destination:          countB_17 (FF)
+  Destination:          countB_5 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.000ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.016ns (0.241 - 0.257)
+  Data Path Delay:      3.071ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.006ns (0.147 - 0.153)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -53,43 +53,34 @@ Slack (setup path):     6.949ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_1 to countB_17
+  Maximum Data Path at Slow Process Corner: countB_1 to countB_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.BQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.BQ      Tcko                  0.391   countB<3>
                                                        countB_1
-    SLICE_X12Y24.B1      net (fanout=3)        0.622   countB<1>
-    SLICE_X12Y24.COUT    Topcyb                0.375   Mcount_countB_cy<3>
+    SLICE_X22Y25.B1      net (fanout=3)        0.635   countB<1>
+    SLICE_X22Y25.COUT    Topcyb                0.380   Mcount_countB_cy<3>
                                                        countB<1>_rt
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.BMUX    Tcinb                 0.292   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
-                                                       Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
-                                                       Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.BMUX    Tcinb                 0.260   Mcount_countB_cy<19>
-                                                       Mcount_countB_cy<19>
-    SLICE_X16Y27.C3      net (fanout=1)        0.771   Result<17>
-    SLICE_X16Y27.CLK     Tas                   0.341   countB<18>
-                                                       countB_17_rstpot
-                                                       countB_17
+    SLICE_X23Y26.B1      net (fanout=1)        1.048   Result<5>
+    SLICE_X23Y26.CLK     Tas                   0.322   countB<7>
+                                                       countB_5_rstpot
+                                                       countB_5
     -------------------------------------------------  ---------------------------
-    Total                                      3.000ns (1.595ns logic, 1.405ns route)
-                                                       (53.2% logic, 46.8% route)
+    Total                                      3.071ns (1.385ns logic, 1.686ns route)
+                                                       (45.1% logic, 54.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.974ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.918ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_0 (FF)
-  Destination:          countB_17 (FF)
+  Destination:          countB_5 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.975ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.016ns (0.241 - 0.257)
+  Data Path Delay:      3.041ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.006ns (0.147 - 0.153)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -100,43 +91,34 @@ Slack (setup path):     6.974ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_0 to countB_17
+  Maximum Data Path at Slow Process Corner: countB_0 to countB_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.AQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.AQ      Tcko                  0.391   countB<3>
                                                        countB_0
-    SLICE_X12Y24.A2      net (fanout=3)        0.577   countB<0>
-    SLICE_X12Y24.COUT    Topcya                0.395   Mcount_countB_cy<3>
+    SLICE_X22Y25.A2      net (fanout=3)        0.606   countB<0>
+    SLICE_X22Y25.COUT    Topcya                0.379   Mcount_countB_cy<3>
                                                        Mcount_countB_lut<0>_INV_0
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.BMUX    Tcinb                 0.292   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
-                                                       Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
-                                                       Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.BMUX    Tcinb                 0.260   Mcount_countB_cy<19>
-                                                       Mcount_countB_cy<19>
-    SLICE_X16Y27.C3      net (fanout=1)        0.771   Result<17>
-    SLICE_X16Y27.CLK     Tas                   0.341   countB<18>
-                                                       countB_17_rstpot
-                                                       countB_17
+    SLICE_X23Y26.B1      net (fanout=1)        1.048   Result<5>
+    SLICE_X23Y26.CLK     Tas                   0.322   countB<7>
+                                                       countB_5_rstpot
+                                                       countB_5
     -------------------------------------------------  ---------------------------
-    Total                                      2.975ns (1.615ns logic, 1.360ns route)
-                                                       (54.3% logic, 45.7% route)
+    Total                                      3.041ns (1.384ns logic, 1.657ns route)
+                                                       (45.5% logic, 54.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     6.986ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.000ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_2 (FF)
-  Destination:          countB_17 (FF)
+  Destination:          countB_5 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.963ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.016ns (0.241 - 0.257)
+  Data Path Delay:      2.959ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.006ns (0.147 - 0.153)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -147,46 +129,37 @@ Slack (setup path):     6.986ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_2 to countB_17
+  Maximum Data Path at Slow Process Corner: countB_2 to countB_5
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.CQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.CQ      Tcko                  0.391   countB<3>
                                                        countB_2
-    SLICE_X12Y24.C1      net (fanout=3)        0.665   countB<2>
-    SLICE_X12Y24.COUT    Topcyc                0.295   Mcount_countB_cy<3>
+    SLICE_X22Y25.C1      net (fanout=3)        0.626   countB<2>
+    SLICE_X22Y25.COUT    Topcyc                0.277   Mcount_countB_cy<3>
                                                        countB<2>_rt
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.BMUX    Tcinb                 0.292   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
-                                                       Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
-                                                       Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.BMUX    Tcinb                 0.260   Mcount_countB_cy<19>
-                                                       Mcount_countB_cy<19>
-    SLICE_X16Y27.C3      net (fanout=1)        0.771   Result<17>
-    SLICE_X16Y27.CLK     Tas                   0.341   countB<18>
-                                                       countB_17_rstpot
-                                                       countB_17
+    SLICE_X23Y26.B1      net (fanout=1)        1.048   Result<5>
+    SLICE_X23Y26.CLK     Tas                   0.322   countB<7>
+                                                       countB_5_rstpot
+                                                       countB_5
     -------------------------------------------------  ---------------------------
-    Total                                      2.963ns (1.515ns logic, 1.448ns route)
-                                                       (51.1% logic, 48.9% route)
+    Total                                      2.959ns (1.282ns logic, 1.677ns route)
+                                                       (43.3% logic, 56.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point countB_24 (SLICE_X13Y27.B3), 25 paths
+Paths for end point countB_24 (SLICE_X23Y28.B3), 25 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.002ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.958ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_1 (FF)
   Destination:          countB_24 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.962ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.001ns (0.150 - 0.151)
+  Data Path Delay:      3.005ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.002ns (0.151 - 0.153)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -201,45 +174,45 @@ Slack (setup path):     7.002ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.BQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.BQ      Tcko                  0.391   countB<3>
                                                        countB_1
-    SLICE_X12Y24.B1      net (fanout=3)        0.622   countB<1>
-    SLICE_X12Y24.COUT    Topcyb                0.375   Mcount_countB_cy<3>
+    SLICE_X22Y25.B1      net (fanout=3)        0.635   countB<1>
+    SLICE_X22Y25.COUT    Topcyb                0.380   Mcount_countB_cy<3>
                                                        countB<1>_rt
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
+    SLICE_X22Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
+    SLICE_X22Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
                                                        Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
+    SLICE_X22Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
+    SLICE_X22Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
                                                        Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
+    SLICE_X22Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
+    SLICE_X22Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
                                                        Mcount_countB_cy<19>
-    SLICE_X12Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
-    SLICE_X12Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<23>
+    SLICE_X22Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
+    SLICE_X22Y30.COUT    Tbyp                  0.076   Mcount_countB_cy<23>
                                                        Mcount_countB_cy<23>
-    SLICE_X12Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<23>
-    SLICE_X12Y30.AMUX    Tcina                 0.177   Result<24>
+    SLICE_X22Y31.CIN     net (fanout=1)        0.003   Mcount_countB_cy<23>
+    SLICE_X22Y31.AMUX    Tcina                 0.202   Result<24>
                                                        Mcount_countB_xor<24>
-    SLICE_X13Y27.B3      net (fanout=1)        0.677   Result<24>
-    SLICE_X13Y27.CLK     Tas                   0.322   countB<24>
+    SLICE_X23Y28.B3      net (fanout=1)        0.677   Result<24>
+    SLICE_X23Y28.CLK     Tas                   0.322   countB<24>
                                                        countB_24_rstpot
                                                        countB_24
     -------------------------------------------------  ---------------------------
-    Total                                      2.962ns (1.645ns logic, 1.317ns route)
-                                                       (55.5% logic, 44.5% route)
+    Total                                      3.005ns (1.675ns logic, 1.330ns route)
+                                                       (55.7% logic, 44.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.027ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.988ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_0 (FF)
   Destination:          countB_24 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.937ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.001ns (0.150 - 0.151)
+  Data Path Delay:      2.975ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.002ns (0.151 - 0.153)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -254,45 +227,45 @@ Slack (setup path):     7.027ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.AQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.AQ      Tcko                  0.391   countB<3>
                                                        countB_0
-    SLICE_X12Y24.A2      net (fanout=3)        0.577   countB<0>
-    SLICE_X12Y24.COUT    Topcya                0.395   Mcount_countB_cy<3>
+    SLICE_X22Y25.A2      net (fanout=3)        0.606   countB<0>
+    SLICE_X22Y25.COUT    Topcya                0.379   Mcount_countB_cy<3>
                                                        Mcount_countB_lut<0>_INV_0
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
+    SLICE_X22Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
+    SLICE_X22Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
                                                        Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
+    SLICE_X22Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
+    SLICE_X22Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
                                                        Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
+    SLICE_X22Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
+    SLICE_X22Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
                                                        Mcount_countB_cy<19>
-    SLICE_X12Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
-    SLICE_X12Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<23>
+    SLICE_X22Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
+    SLICE_X22Y30.COUT    Tbyp                  0.076   Mcount_countB_cy<23>
                                                        Mcount_countB_cy<23>
-    SLICE_X12Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<23>
-    SLICE_X12Y30.AMUX    Tcina                 0.177   Result<24>
+    SLICE_X22Y31.CIN     net (fanout=1)        0.003   Mcount_countB_cy<23>
+    SLICE_X22Y31.AMUX    Tcina                 0.202   Result<24>
                                                        Mcount_countB_xor<24>
-    SLICE_X13Y27.B3      net (fanout=1)        0.677   Result<24>
-    SLICE_X13Y27.CLK     Tas                   0.322   countB<24>
+    SLICE_X23Y28.B3      net (fanout=1)        0.677   Result<24>
+    SLICE_X23Y28.CLK     Tas                   0.322   countB<24>
                                                        countB_24_rstpot
                                                        countB_24
     -------------------------------------------------  ---------------------------
-    Total                                      2.937ns (1.665ns logic, 1.272ns route)
-                                                       (56.7% logic, 43.3% route)
+    Total                                      2.975ns (1.674ns logic, 1.301ns route)
+                                                       (56.3% logic, 43.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.039ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               countB_2 (FF)
+Slack (setup path):     7.034ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               countB_5 (FF)
   Destination:          countB_24 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.925ns (Levels of Logic = 8)
-  Clock Path Skew:      -0.001ns (0.150 - 0.151)
+  Data Path Delay:      2.926ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.005ns (0.151 - 0.156)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -303,52 +276,49 @@ Slack (setup path):     7.039ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_2 to countB_24
+  Maximum Data Path at Slow Process Corner: countB_5 to countB_24
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.CQ      Tcko                  0.391   countB<3>
-                                                       countB_2
-    SLICE_X12Y24.C1      net (fanout=3)        0.665   countB<2>
-    SLICE_X12Y24.COUT    Topcyc                0.295   Mcount_countB_cy<3>
-                                                       countB<2>_rt
-                                                       Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X23Y26.BQ      Tcko                  0.391   countB<7>
+                                                       countB_5
+    SLICE_X22Y26.B1      net (fanout=3)        0.635   countB<5>
+    SLICE_X22Y26.COUT    Topcyb                0.380   Mcount_countB_cy<7>
+                                                       countB<5>_rt
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
+    SLICE_X22Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
+    SLICE_X22Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
                                                        Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
+    SLICE_X22Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
+    SLICE_X22Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
                                                        Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
+    SLICE_X22Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
+    SLICE_X22Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
                                                        Mcount_countB_cy<19>
-    SLICE_X12Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
-    SLICE_X12Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<23>
+    SLICE_X22Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
+    SLICE_X22Y30.COUT    Tbyp                  0.076   Mcount_countB_cy<23>
                                                        Mcount_countB_cy<23>
-    SLICE_X12Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<23>
-    SLICE_X12Y30.AMUX    Tcina                 0.177   Result<24>
+    SLICE_X22Y31.CIN     net (fanout=1)        0.003   Mcount_countB_cy<23>
+    SLICE_X22Y31.AMUX    Tcina                 0.202   Result<24>
                                                        Mcount_countB_xor<24>
-    SLICE_X13Y27.B3      net (fanout=1)        0.677   Result<24>
-    SLICE_X13Y27.CLK     Tas                   0.322   countB<24>
+    SLICE_X23Y28.B3      net (fanout=1)        0.677   Result<24>
+    SLICE_X23Y28.CLK     Tas                   0.322   countB<24>
                                                        countB_24_rstpot
                                                        countB_24
     -------------------------------------------------  ---------------------------
-    Total                                      2.925ns (1.565ns logic, 1.360ns route)
-                                                       (53.5% logic, 46.5% route)
+    Total                                      2.926ns (1.599ns logic, 1.327ns route)
+                                                       (54.6% logic, 45.4% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point countB_16 (SLICE_X16Y27.B3), 17 paths
+Paths for end point countB_21 (SLICE_X21Y29.C1), 22 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     7.021ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.983ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_1 (FF)
-  Destination:          countB_16 (FF)
+  Destination:          countB_21 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.928ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.016ns (0.241 - 0.257)
+  Data Path Delay:      2.972ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.248 - 0.258)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -359,43 +329,46 @@ Slack (setup path):     7.021ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_1 to countB_16
+  Maximum Data Path at Slow Process Corner: countB_1 to countB_21
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.BQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.BQ      Tcko                  0.391   countB<3>
                                                        countB_1
-    SLICE_X12Y24.B1      net (fanout=3)        0.622   countB<1>
-    SLICE_X12Y24.COUT    Topcyb                0.375   Mcount_countB_cy<3>
+    SLICE_X22Y25.B1      net (fanout=3)        0.635   countB<1>
+    SLICE_X22Y25.COUT    Topcyb                0.380   Mcount_countB_cy<3>
                                                        countB<1>_rt
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
+    SLICE_X22Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
+    SLICE_X22Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
                                                        Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
+    SLICE_X22Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
+    SLICE_X22Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
                                                        Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.AMUX    Tcina                 0.177   Mcount_countB_cy<19>
+    SLICE_X22Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
+    SLICE_X22Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
                                                        Mcount_countB_cy<19>
-    SLICE_X16Y27.B3      net (fanout=1)        0.782   Result<16>
-    SLICE_X16Y27.CLK     Tas                   0.341   countB<18>
-                                                       countB_16_rstpot
-                                                       countB_16
+    SLICE_X22Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
+    SLICE_X22Y30.BMUX    Tcinb                 0.292   Mcount_countB_cy<23>
+                                                       Mcount_countB_cy<23>
+    SLICE_X21Y29.C1      net (fanout=1)        0.633   Result<21>
+    SLICE_X21Y29.CLK     Tas                   0.322   countB<22>
+                                                       countB_21_rstpot
+                                                       countB_21
     -------------------------------------------------  ---------------------------
-    Total                                      2.928ns (1.512ns logic, 1.416ns route)
-                                                       (51.6% logic, 48.4% route)
+    Total                                      2.972ns (1.689ns logic, 1.283ns route)
+                                                       (56.8% logic, 43.2% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.046ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.013ns (requirement - (data path - clock path skew + uncertainty))
   Source:               countB_0 (FF)
-  Destination:          countB_16 (FF)
+  Destination:          countB_21 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.903ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.016ns (0.241 - 0.257)
+  Data Path Delay:      2.942ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.248 - 0.258)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -406,43 +379,46 @@ Slack (setup path):     7.046ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_0 to countB_16
+  Maximum Data Path at Slow Process Corner: countB_0 to countB_21
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.AQ      Tcko                  0.391   countB<3>
+    SLICE_X23Y25.AQ      Tcko                  0.391   countB<3>
                                                        countB_0
-    SLICE_X12Y24.A2      net (fanout=3)        0.577   countB<0>
-    SLICE_X12Y24.COUT    Topcya                0.395   Mcount_countB_cy<3>
+    SLICE_X22Y25.A2      net (fanout=3)        0.606   countB<0>
+    SLICE_X22Y25.COUT    Topcya                0.379   Mcount_countB_cy<3>
                                                        Mcount_countB_lut<0>_INV_0
                                                        Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X22Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
+    SLICE_X22Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
+    SLICE_X22Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
+    SLICE_X22Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
                                                        Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
+    SLICE_X22Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
+    SLICE_X22Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
                                                        Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.AMUX    Tcina                 0.177   Mcount_countB_cy<19>
+    SLICE_X22Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
+    SLICE_X22Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
                                                        Mcount_countB_cy<19>
-    SLICE_X16Y27.B3      net (fanout=1)        0.782   Result<16>
-    SLICE_X16Y27.CLK     Tas                   0.341   countB<18>
-                                                       countB_16_rstpot
-                                                       countB_16
+    SLICE_X22Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
+    SLICE_X22Y30.BMUX    Tcinb                 0.292   Mcount_countB_cy<23>
+                                                       Mcount_countB_cy<23>
+    SLICE_X21Y29.C1      net (fanout=1)        0.633   Result<21>
+    SLICE_X21Y29.CLK     Tas                   0.322   countB<22>
+                                                       countB_21_rstpot
+                                                       countB_21
     -------------------------------------------------  ---------------------------
-    Total                                      2.903ns (1.532ns logic, 1.371ns route)
-                                                       (52.8% logic, 47.2% route)
+    Total                                      2.942ns (1.688ns logic, 1.254ns route)
+                                                       (57.4% logic, 42.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.058ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               countB_2 (FF)
-  Destination:          countB_16 (FF)
+Slack (setup path):     7.059ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               countB_5 (FF)
+  Destination:          countB_21 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.891ns (Levels of Logic = 6)
-  Clock Path Skew:      -0.016ns (0.241 - 0.257)
+  Data Path Delay:      2.893ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.013ns (0.248 - 0.261)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -453,48 +429,48 @@ Slack (setup path):     7.058ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: countB_2 to countB_16
+  Maximum Data Path at Slow Process Corner: countB_5 to countB_21
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y24.CQ      Tcko                  0.391   countB<3>
-                                                       countB_2
-    SLICE_X12Y24.C1      net (fanout=3)        0.665   countB<2>
-    SLICE_X12Y24.COUT    Topcyc                0.295   Mcount_countB_cy<3>
-                                                       countB<2>_rt
-                                                       Mcount_countB_cy<3>
-    SLICE_X12Y25.CIN     net (fanout=1)        0.003   Mcount_countB_cy<3>
-    SLICE_X12Y25.COUT    Tbyp                  0.076   Mcount_countB_cy<7>
+    SLICE_X23Y26.BQ      Tcko                  0.391   countB<7>
+                                                       countB_5
+    SLICE_X22Y26.B1      net (fanout=3)        0.635   countB<5>
+    SLICE_X22Y26.COUT    Topcyb                0.380   Mcount_countB_cy<7>
+                                                       countB<5>_rt
                                                        Mcount_countB_cy<7>
-    SLICE_X12Y26.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
-    SLICE_X12Y26.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
+    SLICE_X22Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<7>
+    SLICE_X22Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<11>
                                                        Mcount_countB_cy<11>
-    SLICE_X12Y27.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
-    SLICE_X12Y27.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
+    SLICE_X22Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<11>
+    SLICE_X22Y28.COUT    Tbyp                  0.076   Mcount_countB_cy<15>
                                                        Mcount_countB_cy<15>
-    SLICE_X12Y28.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
-    SLICE_X12Y28.AMUX    Tcina                 0.177   Mcount_countB_cy<19>
+    SLICE_X22Y29.CIN     net (fanout=1)        0.003   Mcount_countB_cy<15>
+    SLICE_X22Y29.COUT    Tbyp                  0.076   Mcount_countB_cy<19>
                                                        Mcount_countB_cy<19>
-    SLICE_X16Y27.B3      net (fanout=1)        0.782   Result<16>
-    SLICE_X16Y27.CLK     Tas                   0.341   countB<18>
-                                                       countB_16_rstpot
-                                                       countB_16
+    SLICE_X22Y30.CIN     net (fanout=1)        0.003   Mcount_countB_cy<19>
+    SLICE_X22Y30.BMUX    Tcinb                 0.292   Mcount_countB_cy<23>
+                                                       Mcount_countB_cy<23>
+    SLICE_X21Y29.C1      net (fanout=1)        0.633   Result<21>
+    SLICE_X21Y29.CLK     Tas                   0.322   countB<22>
+                                                       countB_21_rstpot
+                                                       countB_21
     -------------------------------------------------  ---------------------------
-    Total                                      2.891ns (1.432ns logic, 1.459ns route)
-                                                       (49.5% logic, 50.5% route)
+    Total                                      2.893ns (1.613ns logic, 1.280ns route)
+                                                       (55.8% logic, 44.2% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point clk1kHz (SLICE_X15Y27.A6), 1 path
+Paths for end point clk1kHz (SLICE_X20Y28.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
   Source:               clk1kHz (FF)
   Destination:          clk1kHz (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.438ns (Levels of Logic = 1)
+  Data Path Delay:      0.415ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
@@ -504,25 +480,25 @@ Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X15Y27.AQ      Tcko                  0.198   clk1kHz
+    SLICE_X20Y28.AQ      Tcko                  0.200   clk1kHz
                                                        clk1kHz
-    SLICE_X15Y27.A6      net (fanout=7)        0.025   clk1kHz
-    SLICE_X15Y27.CLK     Tah         (-Th)    -0.215   clk1kHz
+    SLICE_X20Y28.A6      net (fanout=7)        0.025   clk1kHz
+    SLICE_X20Y28.CLK     Tah         (-Th)    -0.190   clk1kHz
                                                        clk1kHz_dpot
                                                        clk1kHz
     -------------------------------------------------  ---------------------------
-    Total                                      0.438ns (0.413ns logic, 0.025ns route)
-                                                       (94.3% logic, 5.7% route)
+    Total                                      0.415ns (0.390ns logic, 0.025ns route)
+                                                       (94.0% logic, 6.0% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point countB_24 (SLICE_X13Y27.B5), 1 path
+Paths for end point countB_24 (SLICE_X23Y28.B5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.528ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.540ns (requirement - (clock path skew + uncertainty - data path))
   Source:               countB_24 (FF)
   Destination:          countB_24 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.528ns (Levels of Logic = 1)
+  Data Path Delay:      0.540ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
@@ -532,40 +508,40 @@ Slack (hold path):      0.528ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y27.BQ      Tcko                  0.198   countB<24>
+    SLICE_X23Y28.BQ      Tcko                  0.198   countB<24>
                                                        countB_24
-    SLICE_X13Y27.B5      net (fanout=27)       0.115   countB<24>
-    SLICE_X13Y27.CLK     Tah         (-Th)    -0.215   countB<24>
+    SLICE_X23Y28.B5      net (fanout=27)       0.127   countB<24>
+    SLICE_X23Y28.CLK     Tah         (-Th)    -0.215   countB<24>
                                                        countB_24_rstpot
                                                        countB_24
     -------------------------------------------------  ---------------------------
-    Total                                      0.528ns (0.413ns logic, 0.115ns route)
-                                                       (78.2% logic, 21.8% route)
+    Total                                      0.540ns (0.413ns logic, 0.127ns route)
+                                                       (76.5% logic, 23.5% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point countB_10 (SLICE_X13Y26.C6), 1 path
+Paths for end point countB_15 (SLICE_X23Y29.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.594ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.589ns (requirement - (clock path skew + uncertainty - data path))
   Source:               countB_24 (FF)
-  Destination:          countB_10 (FF)
+  Destination:          countB_15 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.593ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.001ns (0.036 - 0.037)
+  Clock Path Skew:      0.004ns (0.042 - 0.038)
   Source Clock:         clk_BUFGP rising at 10.000ns
   Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: countB_24 to countB_10
+  Minimum Data Path at Fast Process Corner: countB_24 to countB_15
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y27.BQ      Tcko                  0.198   countB<24>
+    SLICE_X23Y28.BQ      Tcko                  0.198   countB<24>
                                                        countB_24
-    SLICE_X13Y26.C6      net (fanout=27)       0.180   countB<24>
-    SLICE_X13Y26.CLK     Tah         (-Th)    -0.215   countB<11>
-                                                       countB_10_rstpot
-                                                       countB_10
+    SLICE_X23Y29.A6      net (fanout=27)       0.180   countB<24>
+    SLICE_X23Y29.CLK     Tah         (-Th)    -0.215   countB<18>
+                                                       countB_15_rstpot
+                                                       countB_15
     -------------------------------------------------  ---------------------------
     Total                                      0.593ns (0.413ns logic, 0.180ns route)
                                                        (69.6% logic, 30.4% route)
@@ -585,17 +561,17 @@ Slack: 8.270ns (period - min period limit)
 Slack: 9.570ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: countB<18>/CLK
-  Logical resource: countB_15/CK
-  Location pin: SLICE_X16Y27.CLK
+  Physical resource: clk1kHz/CLK
+  Logical resource: clk1kHz/CK
+  Location pin: SLICE_X20Y28.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 9.570ns (period - min period limit)
+Slack: 9.606ns (period - min period limit)
   Period: 10.000ns
-  Min period limit: 0.430ns (2325.581MHz) (Tcp)
-  Physical resource: countB<18>/CLK
-  Logical resource: countB_16/CK
-  Location pin: SLICE_X16Y27.CLK
+  Min period limit: 0.394ns (2538.071MHz) (Tcp)
+  Physical resource: countB<11>/CLK
+  Logical resource: countB_8/CK
+  Location pin: SLICE_X21Y27.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -612,7 +588,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.051|         |         |         |
+clk            |    3.112|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -624,13 +600,13 @@ Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 Constraints cover 976 paths, 0 nets, and 244 connections
 
 Design statistics:
-   Minimum period:   3.051ns{1}   (Maximum frequency: 327.761MHz)
+   Minimum period:   3.112ns{1}   (Maximum frequency: 321.337MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Nov  5 19:16:38 2020 
+Analysis completed Thu Nov  5 19:19:42 2020 
 --------------------------------------------------------------------------------
 
 Trace Settings:

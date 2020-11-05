@@ -5,43 +5,31 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 134: <arg fmt="%s" index="1">clk4hz</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 134: <arg fmt="%s" index="1">clk4hz</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 147: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 148: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 148: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 151: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 149: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 154: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 150: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 157: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 152: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 160: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 155: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 163: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 158: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 166: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 161: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 164: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 167: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 170: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 173: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 169: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
 </msg>
 
 <msg type="info" file="Xst" num="3217" delta="old" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">digit</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_cd[1]_GND_6_o_wide_mux_2_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
