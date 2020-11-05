@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-JohnsPC::  Thu Nov 05 22:19:11 2020
+JohnsPC::  Thu Nov 05 22:22:07 2020
 
 par -w -intstyle ise -ol high -mt off php11_map.ncd php11.ncd php11.pcf 
 
@@ -79,7 +79,7 @@ Phase  2  : 14 unrouted;      REAL time: 5 secs
 
 Phase  3  : 0 unrouted;      REAL time: 7 secs 
 
-Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
 
 Updating file: php11.ncd with current fully routed design.
 

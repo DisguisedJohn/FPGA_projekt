@@ -4,58 +4,58 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="42">
-<DesignStatistics TimeStamp="Thu Nov  5 22:19:36 2020"><group name="NetStatistics">
-<item name="NumNets_Active" rev="42">
+<DeviceUsageSummary rev="44">
+<DesignStatistics TimeStamp="Thu Nov  5 22:22:32 2020"><group name="NetStatistics">
+<item name="NumNets_Active" rev="44">
 <attrib name="value" value="18"/></item>
-<item name="NumNets_Vcc" rev="42">
+<item name="NumNets_Vcc" rev="44">
 <attrib name="value" value="1"/></item>
-<item name="NumNodesOfType_Vcc_GENERIC" rev="42">
+<item name="NumNodesOfType_Vcc_GENERIC" rev="44">
 <attrib name="value" value="14"/></item>
-<item name="NumNodesOfType_Vcc_HVCCOUT" rev="42">
+<item name="NumNodesOfType_Vcc_HVCCOUT" rev="44">
 <attrib name="value" value="7"/></item>
-<item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="42">
+<item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="44">
 <attrib name="value" value="14"/></item>
-<item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="42">
+<item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="44">
 <attrib name="value" value="14"/></item>
-<item name="NumNodesOfType_Vcc_PADINPUT" rev="42">
+<item name="NumNodesOfType_Vcc_PADINPUT" rev="44">
 <attrib name="value" value="14"/></item>
-<item name="NumNodesOfType_Vcc_PINFEED" rev="42">
+<item name="NumNodesOfType_Vcc_PINFEED" rev="44">
 <attrib name="value" value="14"/></item>
 </group>
 <group name="SiteStatistics">
-<item name="IOB-IOBM" rev="42">
+<item name="IOB-IOBM" rev="44">
 <attrib name="value" value="7"/></item>
-<item name="IOB-IOBS" rev="42">
+<item name="IOB-IOBS" rev="44">
 <attrib name="value" value="9"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="41">
+<item name="AGG_BONDED_IO" rev="43">
 <attrib name="value" value="16"/></item>
-<item name="AGG_IO" rev="41">
+<item name="AGG_IO" rev="43">
 <attrib name="value" value="16"/></item>
-<item name="AGG_LOCED_IO" rev="41">
+<item name="AGG_LOCED_IO" rev="43">
 <attrib name="value" value="16"/></item>
-<item name="NUM_BONDED_IOB" rev="41">
+<item name="NUM_BONDED_IOB" rev="43">
 <attrib name="value" value="16"/></item>
-<item name="NUM_LOCED_IOB" rev="41">
+<item name="NUM_LOCED_IOB" rev="43">
 <attrib name="value" value="16"/></item>
 </group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Thu Nov  5 22:19:36 2020"><group name="SiteSummary">
-<item name="IOB" rev="42">
+<DeviceUsage TimeStamp="Thu Nov  5 22:22:32 2020"><group name="SiteSummary">
+<item name="IOB" rev="44">
 <attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
-<item name="IOB_IMUX" rev="42">
+<item name="IOB_IMUX" rev="44">
 <attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="IOB_INBUF" rev="42">
+<item name="IOB_INBUF" rev="44">
 <attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
-<item name="IOB_OUTBUF" rev="42">
+<item name="IOB_OUTBUF" rev="44">
 <attrib name="total" value="1000000"/><attrib name="used" value="14"/></item>
-<item name="PAD" rev="42">
+<item name="PAD" rev="44">
 <attrib name="total" value="1000000"/><attrib name="used" value="16"/></item>
 </group>
 </DeviceUsage>
-<ReportConfigData TimeStamp="Thu Nov  5 22:19:36 2020"><group name="REG_SR">
+<ReportConfigData TimeStamp="Thu Nov  5 22:22:32 2020"><group name="REG_SR">
 <item name="CK" rev="40">
 <attrib name="CK" value="206"/><attrib name="CK_INV" value="13"/></item>
 <item name="LATCH_OR_FF" rev="40">
@@ -70,11 +70,11 @@
 <attrib name="CLK" value="7"/><attrib name="CLK_INV" value="1"/></item>
 </group>
 <group name="IOB_OUTBUF">
-<item name="DRIVEATTRBOX" rev="42">
+<item name="DRIVEATTRBOX" rev="44">
 <attrib name="12" value="14"/></item>
-<item name="SLEW" rev="42">
+<item name="SLEW" rev="44">
 <attrib name="SLOW" value="14"/></item>
-<item name="SUSPEND" rev="42">
+<item name="SUSPEND" rev="44">
 <attrib name="3STATE" value="14"/></item>
 </group>
 <group name="SLICEX">
@@ -90,7 +90,7 @@
 <attrib name="ASYNC" value="2"/></item>
 </group>
 </ReportConfigData>
-<ReportPinData TimeStamp="Thu Nov  5 22:19:36 2020"><group name="REG_SR">
+<ReportPinData TimeStamp="Thu Nov  5 22:22:32 2020"><group name="REG_SR">
 <item name="CE" rev="40">
 <attrib name="value" value="28"/></item>
 <item name="CK" rev="40">
@@ -175,9 +175,9 @@
 <attrib name="value" value="8"/></item>
 </group>
 <group name="IOB_OUTBUF">
-<item name="IN" rev="42">
+<item name="IN" rev="44">
 <attrib name="value" value="14"/></item>
-<item name="OUT" rev="42">
+<item name="OUT" rev="44">
 <attrib name="value" value="14"/></item>
 </group>
 <group name="SLICEX">
@@ -267,13 +267,13 @@
 <attrib name="value" value="2"/></item>
 </group>
 <group name="PAD">
-<item name="PAD" rev="42">
+<item name="PAD" rev="44">
 <attrib name="value" value="16"/></item>
 </group>
 <group name="IOB_INBUF">
-<item name="OUT" rev="42">
+<item name="OUT" rev="44">
 <attrib name="value" value="2"/></item>
-<item name="PAD" rev="42">
+<item name="PAD" rev="44">
 <attrib name="value" value="2"/></item>
 </group>
 <group name="CARRY4">
@@ -349,17 +349,17 @@
 <attrib name="value" value="7"/></item>
 </group>
 <group name="IOB_IMUX">
-<item name="I" rev="42">
+<item name="I" rev="44">
 <attrib name="value" value="2"/></item>
-<item name="OUT" rev="42">
+<item name="OUT" rev="44">
 <attrib name="value" value="2"/></item>
 </group>
 <group name="IOB">
-<item name="I" rev="42">
+<item name="I" rev="44">
 <attrib name="value" value="2"/></item>
-<item name="O" rev="42">
+<item name="O" rev="44">
 <attrib name="value" value="14"/></item>
-<item name="PAD" rev="42">
+<item name="PAD" rev="44">
 <attrib name="value" value="16"/></item>
 </group>
 <group name="HARD0">
