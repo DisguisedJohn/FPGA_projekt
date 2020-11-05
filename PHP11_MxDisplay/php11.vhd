@@ -129,45 +129,33 @@ begin
 	 end if;
    end process timer;
 	
-   timerC: process (clk)
-	 begin
-	  if Rising_Edge (clk4Hz) then 	  
-	   if countC = 13 then
-		 countC <= (others => '0');
-		 clk05Hz <= not clk05Hz;
-		 else
-		  countC <= countC + 1;
-      end if;
-	  end if;
-	 
-	end process timerC;
 
 text_movement: process (clk05Hz)
 	begin
 
-	if CHAR3_p = introtxt'length then
-	  CHAR3_p <= 0;
-	 else 
-	  CHAR3_p <= CHAR3_p + 1;
-	end if;
-	
-	if CHAR2_p = introtxt'length then
-	  CHAR2_p <= 0;
-	 else 
-	  CHAR2_p <= CHAR2_p + 1;
-	end if;
-	
-	if CHAR1_p = introtxt'length then
-	  CHAR1_p <= 0;
-	 else 
-	  CHAR1_p <= CHAR1_p + 1;
-	end if;
-	
-	if CHAR0_p = introtxt'length then
-	  CHAR0_p <= 0;
-	 else 
-	  CHAR0_p <= CHAR0_p + 1;
-	end if;
+		if CHAR3_p = introtxt'length then
+		  CHAR3_p <= 0;
+		 else 
+		  CHAR3_p <= CHAR3_p + 1;
+		end if;
+		
+		if CHAR2_p = introtxt'length then
+		  CHAR2_p <= 0;
+		 else 
+		  CHAR2_p <= CHAR2_p + 1;
+		end if;
+		
+		if CHAR1_p = introtxt'length then
+		  CHAR1_p <= 0;
+		 else 
+		  CHAR1_p <= CHAR1_p + 1;
+		end if;
+		
+		if CHAR0_p = introtxt'length then
+		  CHAR0_p <= 0;
+		 else 
+		  CHAR0_p <= CHAR0_p + 1;
+		end if;
  end process text_movement;
 
 	  CHAR3 <= introtxt(CHAR3_p);
