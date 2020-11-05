@@ -5,7 +5,7 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
@@ -122,7 +122,6 @@ Parsing architecture <Behavioral> of entity <php11>.
 Elaborating entity <php11> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <mux_7seg_char> (architecture <arch_mux_7seg_char>) from library <work>.
-WARNING:HDLCompiler:1127 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/mux_7seg_char.vhd" Line 63: Assignment to seg ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -153,12 +152,15 @@ Synthesizing Unit <mux_7seg_char>.
     Related source file is "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/mux_7seg_char.vhd".
     Found 4-bit register for signal <digit>.
     Found 2-bit register for signal <cd>.
+    Found 8-bit register for signal <akt_znak>.
     Found 2-bit adder for signal <cd[1]_GND_6_o_add_0_OUT> created at line 44.
     Found 4x4-bit Read Only RAM for signal <cd[1]_GND_6_o_wide_mux_2_OUT>
+    Found 8-bit 4-to-1 multiplexer for signal <cd[1]_DIN3[7]_wide_mux_1_OUT> created at line 45.
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-	inferred   6 D-type flip-flop(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <mux_7seg_char> synthesized.
 
 =========================================================================
@@ -172,14 +174,17 @@ Macro Statistics
  2-bit adder                                           : 1
  25-bit adder                                          : 1
  32-bit adder                                          : 3
-# Registers                                            : 5
+# Registers                                            : 6
  1-bit register                                        : 1
  2-bit register                                        : 1
  25-bit register                                       : 1
  32-bit register                                       : 1
  4-bit register                                        : 1
+ 8-bit register                                        : 1
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 1
+ 8-bit 4-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -266,22 +271,58 @@ Macro Statistics
  2-bit up counter                                      : 1
  25-bit up counter                                     : 1
  32-bit up counter                                     : 1
-# Registers                                            : 5
- Flip-Flops                                            : 5
+# Registers                                            : 13
+ Flip-Flops                                            : 13
 # Comparators                                          : 1
  32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 1
+ 8-bit 4-to-1 multiplexer                              : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <akt_znak_7> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    akt_znak_5 in unit <mux_7seg_char>
+
 
 Optimizing unit <php11> ...
 
+Optimizing unit <mux_7seg_char> ...
+WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5 hinder the constant cleaning in the block php11.
+   You should achieve better results by setting this init to 1.
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 1.
+WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_LD hinder the constant cleaning in the block php11.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_C_5 hinder the constant cleaning in the block php11.
+   You should achieve better results by setting this init to 1.
 
 Final Macro Processing ...
 
@@ -289,8 +330,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 32
- Flip-Flops                                            : 32
+# Registers                                            : 71
+ Flip-Flops                                            : 71
 
 =========================================================================
 
@@ -313,22 +354,28 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 115
+# BELS                             : 315
 #      GND                         : 1
-#      INV                         : 2
-#      LUT1                        : 24
-#      LUT2                        : 30
-#      LUT3                        : 1
-#      LUT5                        : 1
-#      LUT6                        : 6
-#      MUXCY                       : 24
+#      INV                         : 6
+#      LUT1                        : 59
+#      LUT2                        : 31
+#      LUT3                        : 8
+#      LUT4                        : 5
+#      LUT5                        : 43
+#      LUT6                        : 23
+#      MUXCY                       : 67
+#      MUXF7                       : 10
 #      VCC                         : 1
-#      XORCY                       : 25
-# FlipFlops/Latches                : 32
-#      FD                          : 26
-#      FDC                         : 2
+#      XORCY                       : 61
+# FlipFlops/Latches                : 72
+#      FD                          : 51
+#      FDC                         : 8
 #      FDP                         : 4
-# Clock Buffers                    : 1
+#      FDR                         : 6
+#      FDRE                        : 2
+#      LD                          : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 13
 #      IBUF                        : 1
@@ -341,23 +388,23 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              32  out of  18224     0%  
- Number of Slice LUTs:                   64  out of   9112     0%  
-    Number used as Logic:                64  out of   9112     0%  
+ Number of Slice Registers:              72  out of  18224     0%  
+ Number of Slice LUTs:                  175  out of   9112     1%  
+    Number used as Logic:               175  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     64
-   Number with an unused Flip Flop:      32  out of     64    50%  
-   Number with an unused LUT:             0  out of     64     0%  
-   Number of fully used LUT-FF pairs:    32  out of     64    50%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    178
+   Number with an unused Flip Flop:     106  out of    178    59%  
+   Number with an unused LUT:             3  out of    178     1%  
+   Number of fully used LUT-FF pairs:    69  out of    178    38%  
+   Number of unique control sets:         6
 
 IO Utilization: 
  Number of IOs:                          14
  Number of bonded IOBs:                  14  out of    232     6%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -380,8 +427,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk4Hz                             | NONE(m7seg/digit_3)    | 6     |
-clk                                | BUFGP                  | 26    |
+clk                                | BUFGP                  | 58    |
+clk4Hz                             | NONE(m7seg/cd_1)       | 13    |
+btnd                               | IBUF+BUFG              | 1     |
 -----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -393,9 +441,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.956ns (Maximum Frequency: 252.784MHz)
-   Minimum input arrival time before clock: 2.396ns
-   Maximum output required time after clock: 3.597ns
+   Minimum period: 3.947ns (Maximum Frequency: 253.383MHz)
+   Minimum input arrival time before clock: 4.433ns
+   Maximum output required time after clock: 6.195ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -403,88 +451,135 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk4Hz'
-  Clock period: 2.078ns (frequency: 481.325MHz)
-  Total number of paths / destination ports: 11 / 6
--------------------------------------------------------------------------
-Delay:               2.078ns (Levels of Logic = 1)
-  Source:            m7seg/cd_0 (FF)
-  Destination:       m7seg/cd_0 (FF)
-  Source Clock:      clk4Hz rising
-  Destination Clock: clk4Hz rising
-
-  Data Path: m7seg/cd_0 to m7seg/cd_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q              6   0.447   0.744  m7seg/cd_0 (m7seg/cd_0)
-     INV:I->O              1   0.206   0.579  m7seg/Mcount_cd_xor<0>11_INV_0 (Result<0>1)
-     FDC:D                     0.102          m7seg/cd_0
-    ----------------------------------------
-    Total                      2.078ns (0.755ns logic, 1.323ns route)
-                                       (36.3% logic, 63.7% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.956ns (frequency: 252.784MHz)
-  Total number of paths / destination ports: 977 / 26
+  Clock period: 3.947ns (frequency: 253.383MHz)
+  Total number of paths / destination ports: 3462 / 68
 -------------------------------------------------------------------------
-Delay:               3.956ns (Levels of Logic = 3)
+Delay:               3.947ns (Levels of Logic = 3)
   Source:            count_9 (FF)
-  Destination:       count_0 (FF)
+  Destination:       clk4Hz (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: count_9 to count_0
+  Data Path: count_9 to clk4Hz
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               2   0.447   0.981  count_9 (count_9)
-     LUT6:I0->O            3   0.203   0.879  GND_5_o_GND_5_o_equal_1_o<24>4 (GND_5_o_GND_5_o_equal_1_o<24>3)
-     LUT6:I3->O           13   0.205   0.933  GND_5_o_GND_5_o_equal_1_o<24>5 (GND_5_o_GND_5_o_equal_1_o)
+     LUT6:I0->O            2   0.203   0.845  GND_5_o_GND_5_o_equal_1_o<24>4 (GND_5_o_GND_5_o_equal_1_o<24>3)
+     LUT6:I3->O           14   0.205   0.958  GND_5_o_GND_5_o_equal_1_o<24>5 (GND_5_o_GND_5_o_equal_1_o)
      LUT2:I1->O            1   0.205   0.000  count_0_rstpot (count_0_rstpot)
      FD:D                      0.102          count_0
     ----------------------------------------
-    Total                      3.956ns (1.162ns logic, 2.794ns route)
+    Total                      3.947ns (1.162ns logic, 2.785ns route)
                                        (29.4% logic, 70.6% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk4Hz'
-  Total number of paths / destination ports: 6 / 6
+Timing constraint: Default period analysis for Clock 'clk4Hz'
+  Clock period: 2.229ns (frequency: 448.652MHz)
+  Total number of paths / destination ports: 26 / 11
 -------------------------------------------------------------------------
-Offset:              2.396ns (Levels of Logic = 1)
-  Source:            btnd (PAD)
-  Destination:       m7seg/digit_3 (FF)
+Delay:               2.229ns (Levels of Logic = 2)
+  Source:            m7seg/cd_1 (FF)
+  Destination:       m7seg/akt_znak_3 (FF)
+  Source Clock:      clk4Hz rising
   Destination Clock: clk4Hz rising
 
-  Data Path: btnd to m7seg/digit_3
+  Data Path: m7seg/cd_1 to m7seg/akt_znak_3
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   1.222   0.744  btnd_IBUF (btnd_IBUF)
-     FDP:PRE                   0.430          m7seg/digit_0
+     FDC:C->Q             15   0.447   1.346  m7seg/cd_1 (m7seg/cd_1)
+     LUT6:I0->O            1   0.203   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT44_F (N29)
+     MUXF7:I0->O           1   0.131   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT44 (m7seg/cd[1]_DIN3[7]_wide_mux_1_OUT<3>)
+     FDC:D                     0.102          m7seg/akt_znak_3
     ----------------------------------------
-    Total                      2.396ns (1.652ns logic, 0.744ns route)
-                                       (69.0% logic, 31.0% route)
+    Total                      2.229ns (0.883ns logic, 1.346ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              4.433ns (Levels of Logic = 3)
+  Source:            btnd (PAD)
+  Destination:       CNTTXT_29 (FF)
+  Destination Clock: clk rising
+
+  Data Path: btnd to CNTTXT_29
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            37   1.222   1.362  btnd_IBUF (btnd_IBUF)
+     INV:I->O              1   0.206   0.000  Mcount_CNTTXT_val321_lut_INV_0 (Mcount_CNTTXT_val321_lut)
+     MUXCY:S->O            8   0.411   0.802  Mcount_CNTTXT_val321_cy1 (Mcount_CNTTXT_val)
+     FDRE:R                    0.430          CNTTXT_30
+    ----------------------------------------
+    Total                      4.433ns (2.269ns logic, 2.164ns route)
+                                       (51.2% logic, 48.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk4Hz'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              3.014ns (Levels of Logic = 1)
+  Source:            btnd (PAD)
+  Destination:       m7seg/cd_1 (FF)
+  Destination Clock: clk4Hz rising
+
+  Data Path: btnd to m7seg/cd_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            37   1.222   1.362  btnd_IBUF (btnd_IBUF)
+     FDC:CLR                   0.430          m7seg/akt_znak_0
+    ----------------------------------------
+    Total                      3.014ns (1.652ns logic, 1.362ns route)
+                                       (54.8% logic, 45.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk4Hz'
-  Total number of paths / destination ports: 4 / 4
+  Total number of paths / destination ports: 109 / 11
 -------------------------------------------------------------------------
-Offset:              3.597ns (Levels of Logic = 1)
-  Source:            m7seg/digit_3 (FF)
-  Destination:       an<3> (PAD)
+Offset:              6.195ns (Levels of Logic = 4)
+  Source:            m7seg/akt_znak_3 (FF)
+  Destination:       seg<3> (PAD)
   Source Clock:      clk4Hz rising
 
-  Data Path: m7seg/digit_3 to an<3>
+  Data Path: m7seg/akt_znak_3 to seg<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDP:C->Q              1   0.447   0.579  m7seg/digit_3 (m7seg/digit_3)
-     OBUF:I->O                 2.571          an_3_OBUF (an<3>)
+     FDC:C->Q             15   0.447   1.210  m7seg/akt_znak_3 (m7seg/akt_znak_3)
+     LUT5:I2->O            6   0.205   0.849  m7seg/seg<4>11 (m7seg/seg<4>1)
+     LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N19)
+     MUXF7:I0->O           1   0.131   0.579  m7seg/seg<7> (seg_1_OBUF)
+     OBUF:I->O                 2.571          seg_1_OBUF (seg<1>)
     ----------------------------------------
-    Total                      3.597ns (3.018ns logic, 0.579ns route)
-                                       (83.9% logic, 16.1% route)
+    Total                      6.195ns (3.557ns logic, 2.637ns route)
+                                       (57.4% logic, 42.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'btnd'
+  Total number of paths / destination ports: 12 / 7
+-------------------------------------------------------------------------
+Offset:              5.995ns (Levels of Logic = 4)
+  Source:            m7seg/akt_znak_5_LD (LATCH)
+  Destination:       seg<3> (PAD)
+  Source Clock:      btnd falling
+
+  Data Path: m7seg/akt_znak_5_LD to seg<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.498   0.961  m7seg/akt_znak_5_LD (m7seg/akt_znak_5_LD)
+     LUT5:I0->O            6   0.203   0.849  m7seg/seg<4>11 (m7seg/seg<4>1)
+     LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N19)
+     MUXF7:I0->O           1   0.131   0.579  m7seg/seg<7> (seg_1_OBUF)
+     OBUF:I->O                 2.571          seg_1_OBUF (seg<1>)
+    ----------------------------------------
+    Total                      5.995ns (3.606ns logic, 2.389ns route)
+                                       (60.2% logic, 39.8% route)
 
 =========================================================================
 
@@ -496,7 +591,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.956|         |         |         |
+clk            |    3.947|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk4Hz
@@ -504,21 +599,22 @@ Clock to Setup on destination clock clk4Hz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk4Hz         |    2.078|         |         |         |
+clk            |    4.506|         |         |         |
+clk4Hz         |    2.229|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.73 secs
+Total CPU time to Xst completion: 10.73 secs
  
 --> 
 
 
-Total memory usage is 391532 kilobytes
+Total memory usage is 391860 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

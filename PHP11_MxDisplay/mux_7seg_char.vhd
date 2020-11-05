@@ -93,7 +93,7 @@ end process ;
 			"10111111" when '-',
          "11111111" when others;   -- space
  
-  seg_out <= "00000000";
+  seg_out <= seg;
  
 end arch_mux_7seg_char;
 

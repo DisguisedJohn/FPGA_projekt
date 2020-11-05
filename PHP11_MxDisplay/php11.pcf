@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 05 17:55:27 2020
+// Written by: Map P.20131013 on Thu Nov 05 17:58:06 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -17,13 +17,20 @@ COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
 COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
 COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
 COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "clk4Hz" BEL "count_0" BEL "count_1" BEL "count_2"
-        BEL "count_3" BEL "count_4" BEL "count_5" BEL "count_6" BEL "count_7"
-        BEL "count_8" BEL "count_9" BEL "count_10" BEL "count_11" BEL
-        "count_12" BEL "count_13" BEL "count_14" BEL "count_15" BEL "count_16"
-        BEL "count_17" BEL "count_18" BEL "count_19" BEL "count_20" BEL
-        "count_21" BEL "count_22" BEL "count_23" BEL "count_24" BEL
-        "clk_BUFGP/BUFG";
+TIMEGRP sys_clk_pin = BEL "CNTTXT_29" BEL "CNTTXT_30" BEL "CNTTXT_31" BEL
+        "clk4Hz" BEL "CNTTXT_1" BEL "CNTTXT_2" BEL "CNTTXT_3" BEL "CNTTXT_6"
+        BEL "CNTTXT_4" BEL "CNTTXT_5" BEL "CNTTXT_7" BEL "CNTTXT_8" BEL
+        "CNTTXT_9" BEL "CNTTXT_10" BEL "CNTTXT_0" BEL "CNTTXT_11" BEL
+        "CNTTXT_12" BEL "CNTTXT_13" BEL "CNTTXT_14" BEL "CNTTXT_15" BEL
+        "CNTTXT_16" BEL "CNTTXT_17" BEL "CNTTXT_18" BEL "CNTTXT_19" BEL
+        "CNTTXT_20" BEL "CNTTXT_21" BEL "CNTTXT_22" BEL "count_0" BEL
+        "count_1" BEL "count_2" BEL "count_3" BEL "count_4" BEL "count_5" BEL
+        "count_6" BEL "count_7" BEL "count_8" BEL "count_9" BEL "count_10" BEL
+        "count_11" BEL "count_12" BEL "count_13" BEL "count_14" BEL "count_15"
+        BEL "count_16" BEL "count_17" BEL "count_18" BEL "count_19" BEL
+        "count_20" BEL "count_21" BEL "count_22" BEL "count_23" BEL "count_24"
+        BEL "CNTTXT_23" BEL "CNTTXT_24" BEL "CNTTXT_25" BEL "CNTTXT_26" BEL
+        "CNTTXT_27" BEL "CNTTXT_28" BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 
