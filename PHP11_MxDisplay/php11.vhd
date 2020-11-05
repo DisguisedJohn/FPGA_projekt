@@ -61,15 +61,15 @@ architecture Behavioral of php11 is
  signal CNTTXT		: integer;
  alias rst			: std_logic is btnd;	-- RESET
  
- constant CNT_WIDTH : integer := 17;
- 
- signal CNT : std_logic_vector (CNT_WIDTH-1 downto 0);
+-- constant CNT_WIDTH : integer := 17;
+-- 
+-- signal CNT : std_logic_vector (CNT_WIDTH-1 downto 0);
  
 begin
 	
 	m7seg: mux_7seg_char port map
 	 (	rst	=>	rst,
-		clk	=> CNT(16), 
+		clk	=> clk4Hz, 
 		DIN3	=>	CHAR3,
 		DIN2	=>	CHAR2,
 		DIN1	=>	CHAR1,

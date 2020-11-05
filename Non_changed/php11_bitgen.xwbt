@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Xilinx\Projects_ise13\PHP11_MxDisplay\php11.ncd
-OUTFILE=C:\Xilinx\Projects_ise13\PHP11_MxDisplay\php11.bit
+INFILE=/home/john/Desktop/FPGA_projekt/Non_changed/php11.ncd
+OUTFILE=/home/john/Desktop/FPGA_projekt/Non_changed/php11.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=C:\Xilinx\Projects_ise13\PHP11_MxDisplay
-LICENSE=ISE
-USER_INFO=175252471_206273392_206270834_166
+WORKINGDIR=/home/john/Desktop/FPGA_projekt/Non_changed
+LICENSE=WebPack
+USER_INFO=212078383_0_0_515
