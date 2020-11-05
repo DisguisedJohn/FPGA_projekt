@@ -48,7 +48,7 @@ architecture Behavioral of php11 is
 	seg_out		: out std_logic_vector(7 downto 0));	-- segment drivers
  end component mux_7seg_char ;
 
- constant introtxt : string := "dinosaurus";
+ constant introtxt : string := "dinosaurus ";
  constant CNT1MAX	 : STD_LOGIC_VECTOR(9 downto 0) := "0111111111";	-- 511
  
  -- Timer signals
@@ -124,7 +124,7 @@ begin
 	  if  rst = '1' then
 	   CNTTXT <= 0;
 	  else
-	   if CNTTXT >= (introtxt'length - 4) then
+	   if CNTTXT >= (introtxt'length - 5) then
 		  CNTTXT <= 0;
 		else  
 	     CNTTXT <= CNTTXT + 1;

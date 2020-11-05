@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Reading design: php11.prj
@@ -358,15 +358,15 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 412
+# BELS                             : 414
 #      GND                         : 1
 #      INV                         : 8
 #      LUT1                        : 82
 #      LUT2                        : 31
-#      LUT3                        : 26
+#      LUT3                        : 27
 #      LUT4                        : 5
-#      LUT5                        : 19
-#      LUT6                        : 53
+#      LUT5                        : 18
+#      LUT6                        : 55
 #      MUXCY                       : 90
 #      MUXF7                       : 10
 #      VCC                         : 1
@@ -394,14 +394,14 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              98  out of  18224     0%  
- Number of Slice LUTs:                  224  out of   9112     2%  
-    Number used as Logic:               224  out of   9112     2%  
+ Number of Slice LUTs:                  226  out of   9112     2%  
+    Number used as Logic:               226  out of   9112     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    227
-   Number with an unused Flip Flop:     129  out of    227    56%  
-   Number with an unused LUT:             3  out of    227     1%  
-   Number of fully used LUT-FF pairs:    95  out of    227    41%  
+ Number of LUT Flip Flop pairs used:    228
+   Number with an unused Flip Flop:     130  out of    228    57%  
+   Number with an unused LUT:             2  out of    228     0%  
+   Number of fully used LUT-FF pairs:    96  out of    228    42%  
    Number of unique control sets:         7
 
 IO Utilization: 
@@ -458,10 +458,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk4Hz'
-  Clock period: 3.738ns (frequency: 267.537MHz)
+  Clock period: 3.762ns (frequency: 265.844MHz)
   Total number of paths / destination ports: 2416 / 40
 -------------------------------------------------------------------------
-Delay:               3.738ns (Levels of Logic = 9)
+Delay:               3.762ns (Levels of Logic = 9)
   Source:            CNTTXT_3 (FF)
   Destination:       CNTTXT_31 (FF)
   Source Clock:      clk4Hz rising
@@ -471,7 +471,7 @@ Delay:               3.738ns (Levels of Logic = 9)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              14   0.447   1.302  CNTTXT_3 (CNTTXT_3)
+     FD:C->Q              15   0.447   1.326  CNTTXT_3 (CNTTXT_3)
      LUT5:I0->O            1   0.203   0.000  Mcompar_n0014_lut<0> (Mcompar_n0014_lut<0>)
      MUXCY:S->O            1   0.172   0.000  Mcompar_n0014_cy<0> (Mcompar_n0014_cy<0>)
      MUXCY:CI->O           1   0.019   0.000  Mcompar_n0014_cy<1> (Mcompar_n0014_cy<1>)
@@ -483,31 +483,31 @@ Delay:               3.738ns (Levels of Logic = 9)
      LUT3:I2->O            1   0.205   0.000  CNTTXT_31_glue_rst (CNTTXT_31_glue_rst)
      FD:D                      0.102          CNTTXT_31
     ----------------------------------------
-    Total                      3.738ns (1.243ns logic, 2.495ns route)
-                                       (33.3% logic, 66.7% route)
+    Total                      3.762ns (1.243ns logic, 2.519ns route)
+                                       (33.0% logic, 67.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk1kHz'
-  Clock period: 2.229ns (frequency: 448.652MHz)
-  Total number of paths / destination ports: 26 / 11
+  Clock period: 2.252ns (frequency: 444.079MHz)
+  Total number of paths / destination ports: 28 / 12
 -------------------------------------------------------------------------
-Delay:               2.229ns (Levels of Logic = 2)
+Delay:               2.252ns (Levels of Logic = 2)
   Source:            m7seg/cd_1 (FF)
-  Destination:       m7seg/akt_znak_3 (FF)
+  Destination:       m7seg/akt_znak_4 (FF)
   Source Clock:      clk1kHz falling
   Destination Clock: clk1kHz falling
 
-  Data Path: m7seg/cd_1 to m7seg/akt_znak_3
+  Data Path: m7seg/cd_1 to m7seg/akt_znak_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.447   1.346  m7seg/cd_1 (m7seg/cd_1)
-     LUT6:I0->O            1   0.203   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT44_F (N29)
-     MUXF7:I0->O           1   0.131   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT44 (m7seg/cd[1]_DIN3[7]_wide_mux_1_OUT<3>)
-     FDC_1:D                   0.102          m7seg/akt_znak_3
+     FDC:C->Q             16   0.447   1.369  m7seg/cd_1 (m7seg/cd_1)
+     LUT6:I0->O            1   0.203   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT54_F (N29)
+     MUXF7:I0->O           1   0.131   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT54 (m7seg/cd[1]_DIN3[7]_wide_mux_1_OUT<4>)
+     FDC_1:D                   0.102          m7seg/akt_znak_4
     ----------------------------------------
-    Total                      2.229ns (0.883ns logic, 1.346ns route)
-                                       (39.6% logic, 60.4% route)
+    Total                      2.252ns (0.883ns logic, 1.369ns route)
+                                       (39.2% logic, 60.8% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
@@ -588,7 +588,7 @@ Offset:              6.195ns (Levels of Logic = 4)
     ----------------------------------------  ------------
      FDC_1:C->Q           15   0.447   1.210  m7seg/akt_znak_3 (m7seg/akt_znak_3)
      LUT5:I2->O            6   0.205   0.849  m7seg/seg<4>11 (m7seg/seg<4>1)
-     LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N19)
+     LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N21)
      MUXF7:I0->O           1   0.131   0.579  m7seg/seg<7> (seg_1_OBUF)
      OBUF:I->O                 2.571          seg_1_OBUF (seg<1>)
     ----------------------------------------
@@ -610,7 +610,7 @@ Offset:              5.995ns (Levels of Logic = 4)
     ----------------------------------------  ------------
      LD:G->Q               2   0.498   0.961  m7seg/akt_znak_5_LD (m7seg/akt_znak_5_LD)
      LUT5:I0->O            6   0.203   0.849  m7seg/seg<4>11 (m7seg/seg<4>1)
-     LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N19)
+     LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N21)
      MUXF7:I0->O           1   0.131   0.579  m7seg/seg<7> (seg_1_OBUF)
      OBUF:I->O                 2.571          seg_1_OBUF (seg<1>)
     ----------------------------------------
@@ -635,8 +635,8 @@ Clock to Setup on destination clock clk1kHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk1kHz        |         |         |    2.229|         |
-clk4Hz         |         |         |    4.481|         |
+clk1kHz        |         |         |    2.252|         |
+clk4Hz         |         |         |    4.519|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk4Hz
@@ -644,14 +644,14 @@ Clock to Setup on destination clock clk4Hz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk4Hz         |    3.738|         |         |         |
+clk4Hz         |    3.762|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.76 secs
+Total CPU time to Xst completion: 10.74 secs
  
 --> 
 
