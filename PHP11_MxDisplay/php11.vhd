@@ -124,7 +124,7 @@ begin
    timerC: process (clk4Hz)
 	 begin
 	  if Rising_Edge (clk4Hz) then 	  
-	   if countC = 14 then
+	   if countC = 13 then
 		 countC <= (others => '0');
 		 clk05Hz <= not clk05Hz;
 		 else
@@ -136,7 +136,6 @@ begin
 
 text_movement: process (clk05Hz)
 	begin
-	 if Rising_Edge (clk05Hz) then
 	  CHAR3 <= introtxt(CHAR3_p);
 	  CHAR2 <= introtxt(CHAR2_p);
 	  CHAR1 <= introtxt(CHAR1_p);
@@ -165,7 +164,6 @@ text_movement: process (clk05Hz)
 	 else 
 	  CHAR0_p <= CHAR0_p + 1;
 	end if;
-   end if;
  end process text_movement;
 
 
