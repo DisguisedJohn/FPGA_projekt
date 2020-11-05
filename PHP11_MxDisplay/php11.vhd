@@ -118,7 +118,7 @@ begin
 
 
 ------------------------------------------					 
-  text_refresh: process (clk4Hz)
+  text_movement: process (clk4Hz)
    begin
 	 if Rising_Edge (clk4Hz) then
 	  if  rst = '1' then
@@ -131,13 +131,15 @@ begin
 		end if;  
 	  end if;
 	 end if; 
-	end process text_refresh;
+	end process text_movement;
   
-  CHAR3 <= introtxt(CNTTXT);
-  CHAR2 <= introtxt(CNTTXT+1);
-  CHAR1 <= introtxt(CNTTXT+2);
-  CHAR0 <= introtxt(CNTTXT+3);
-
+  text_refresh: process (CNTTXT)
+	begin
+  	  CHAR3 <= introtxt(CNTTXT);
+	  CHAR2 <= introtxt(CNTTXT+1);
+	  CHAR1 <= introtxt(CNTTXT+2);
+	  CHAR0 <= introtxt(CNTTXT+3);
+	end process text_refresh;
 -- counter: process (CLK)
 --	begin
 --	 if CLK'event and CLK = '1' then

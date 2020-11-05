@@ -12,7 +12,7 @@ Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Reading design: php11.prj
@@ -136,9 +136,9 @@ Synthesizing Unit <php11>.
     Found 25-bit register for signal <countA>.
     Found 25-bit adder for signal <countA[24]_GND_5_o_add_1_OUT> created at line 104.
     Found 25-bit adder for signal <countB[24]_GND_5_o_add_4_OUT> created at line 111.
-    Found 32-bit adder for signal <n0039[31:0]> created at line 137.
-    Found 32-bit adder for signal <n0042> created at line 138.
-    Found 32-bit adder for signal <n0043> created at line 139.
+    Found 32-bit adder for signal <n0043[31:0]> created at line 139.
+    Found 32-bit adder for signal <n0046> created at line 140.
+    Found 32-bit adder for signal <n0047> created at line 141.
     Found 16x7-bit Read Only RAM for signal <CHAR3<6:0>>
     Found 16x7-bit Read Only RAM for signal <CHAR2<6:0>>
     Found 16x7-bit Read Only RAM for signal <CHAR1<6:0>>
@@ -233,7 +233,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_CHAR2<6:0>> will be implemented on L
     | Port A                                                              |
     |     aspect ratio   | 16-word x 7-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0039[31:0]>   |          |
+    |     addrA          | connected to signal <n0043[31:0]>   |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <CHAR2>         |          |
     -----------------------------------------------------------------------
@@ -244,7 +244,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_CHAR1<6:0>> will be implemented on L
     | Port A                                                              |
     |     aspect ratio   | 16-word x 7-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0042>         |          |
+    |     addrA          | connected to signal <n0046>         |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <CHAR1>         |          |
     -----------------------------------------------------------------------
@@ -255,7 +255,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_CHAR0<6:0>> will be implemented on L
     | Port A                                                              |
     |     aspect ratio   | 16-word x 7-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0043>         |          |
+    |     addrA          | connected to signal <n0047>         |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to signal <CHAR0>         |          |
     -----------------------------------------------------------------------
@@ -651,12 +651,12 @@ clk4Hz         |    3.762|         |         |         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.74 secs
+Total CPU time to Xst completion: 10.75 secs
  
 --> 
 
 
-Total memory usage is 391960 kilobytes
+Total memory usage is 391964 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    5 (   0 filtered)
