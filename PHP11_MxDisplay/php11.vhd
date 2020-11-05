@@ -34,7 +34,8 @@ entity php11 is port (
 	
 	
 	an			: out std_logic_vector(3 downto 0);		-- an drivers
-	seg		: out std_logic_vector(7 downto 0)		-- segment drivers
+	seg		: out std_logic_vector(7 downto 0);		-- segment drivers
+	led 		: out std_logic_vector(1 downto 0)
 	);
 end php11;
  
@@ -49,13 +50,13 @@ architecture Behavioral of php11 is
  end component mux_7seg_char ;
 
  constant introtxt : string := "dinosaurus";
- constant CNT1MAX	 : STD_LOGIC_VECTOR(9 downto 0) := "0111111111";	-- 511
  
  -- Timer signals
  signal clk05Hz ,clk4Hz, clk1kHz : STD_LOGIC;		--timer output
- signal countA	: STD_LOGIC_VECTOR (24 downto 0);	-- timer modulo
- signal countB	: STD_LOGIC_VECTOR (24 downto 0);
+ signal countA	: STD_LOGIC_VECTOR (27 downto 0);	-- timer modulo
+ signal countB	: integer;
  signal countC : STD_LOGIC_VECTOR (27 downto 0);
+ signal clkA : std_logic := '1';
  
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
 
@@ -64,7 +65,14 @@ architecture Behavioral of php11 is
  signal CHAR1_p : integer := 2;
  signal CHAR0_p : integer := 3;
 
-
+ signal SEQ : STD_LOGIC_VECTOR (2 downto 0);
+ signal M_CHAR : character;
+ signal CHAR_T0 : STD_LOGIC_VECTOR (1 downto 0);
+ signal CHAR_T1 : STD_LOGIC_VECTOR (2 downto 0);
+ signal CHAR_T2 : STD_LOGIC_VECTOR (3 downto 0);
+ signal CHAR_T3 : STD_LOGIC_VECTOR (3 downto 0);
+ signal space : STD_LOGIC ;
+ 
 
  signal CNT1K	 	: STD_LOGIC_VECTOR(9 downto 0);
  signal CNTTXT		: integer;
@@ -105,26 +113,26 @@ begin
   timer : process (clk)
 	begin
 	 if Rising_Edge (clk) then	-- reakce na nabeznou hranu
-     if countA = 24999999 then	-- modulo timeru 25mil > 100k / 25k
+     if countA = 99999999 then	-- modulo timeru 25mil > 100k / 25k
 	   countA <= (others => '0');	-- vynuluj count
-	   clk4Hz <= not clk4Hz;		-- a invertuj hodnotu clk4Hz
+	   clkA <= not clkA;		-- a invertuj hodnotu clk4Hz
 	   else								-- jinak
 	    countA <= countA + 1;			-- inkrementuj count
 	  end if;
 	  
-	  if countB = 99999 then
-		countB <= (others => '0');
-		clk1kHz <= not clk1kHz;
-		else
-		 countB <= countB + 1;
-     end if;
-	  
+--	  if countB = 99999 then
+--		countB <= (others => '0');
+--		clk1kHz <= not clk1kHz;
+--		else
+--		 countB <= countB + 1;
+--     end if;
+--	  
 
 	  
 	 end if;
    end process timer;
 	
-
+----------------------------------------
 text_movement: process (clk)
 	begin
 	if Rising_Edge (clk) then
@@ -167,10 +175,153 @@ text_movement: process (clk)
 	 end if;
 	
 	end process text_movement;
-
-
-
-------------------------------------------					 
+	
+	morse_select: process (SEQ, CLK, M_CHAR)
+	 begin 
+	 	if Rising_Edge (clk) then
+		if clkA = '1' then
+		 if seq = "000" then
+				 case M_CHAR is
+					           when 'b' => CHAR_T3 <= "1000";
+							     when 'c' => CHAR_T3 <= "1010";
+							     when 'f' => CHAR_T3 <= "0010";
+							     when 'h' => CHAR_T3 <= "0000";
+							     when 'j' => CHAR_T3 <= "0111";
+							     when 'l' => CHAR_T3 <= "0100";
+							     when 'p' => CHAR_T3 <= "0110";
+							     when 'q' => CHAR_T3 <= "1101";
+							     when 'v' => CHAR_T3 <= "0001";
+							     when 'x' => CHAR_T3 <= "1001";
+							     when 'y' => CHAR_T3 <= "1011";
+							     when 'z' => CHAR_T3 <= "1100";
+							     when others => CHAR_T3 <= "1110";
+				  end case;
+				  
+					if CHAR_T3 /= "1110" then
+						countB <= 3;
+						space <= '0';
+						seq <= "001";
+					else
+						case M_CHAR is
+										  when 'd' => CHAR_T2 <= "1100"; 
+									     when 'g' => CHAR_T2 <= "1110";
+									     when 'k' => CHAR_T2 <= "1101";
+									     when 'o' => CHAR_T2 <= "1111";
+									     when 'r' => CHAR_T2 <= "1010";
+									     when 's' => CHAR_T2 <= "0000";
+									     when 'u' => CHAR_T2 <= "1001";
+									     when 'w' => CHAR_T2 <= "1011";
+									     when others  => CHAR_T2 <= "1000";
+						end case;
+						
+						 if CHAR_T2 /= "1000" then
+							 countB <= 2; 
+							 space <= '0';
+							 seq <= "010";
+						 else 						 
+							case M_CHAR is
+											  when 'a' => CHAR_T1 <= "001";
+											  when 'i' => CHAR_T1 <= "000";
+											  when 'm' => CHAR_T1 <= "011";
+											  when 'n' => CHAR_T1 <= "010";
+											  when others => CHAR_T1 <= "100";
+							end case;
+							 if CHAR_T1 /= "100" then
+								 countB <= 1; 
+								 space <= '0';
+								 seq <= "011";
+							 else 
+								  case M_CHAR is
+													 when 'e' => CHAR_T0 <= "10"; 
+										 	       when 't' => CHAR_T0 <= "11"; 
+											       when others  => CHAR_T0 <= "00"; 
+								  end case;
+									 countB <= 0;
+									 space <= '0';
+									 seq <= "100";
+						    end if;
+						  end if;
+						end if;
+--------------------------------------------------------				  
+			elsif seq = "001" then
+				if countB >= 0 then
+					if space = '0' then
+						if CHAR_T3(countB) = '1' then
+							led <= "11";
+						else 
+							led <= "01";
+						end if;
+						space <= '1';
+						countB <= countB - 1;
+					else
+						led <= "00";
+						space <= '0';
+					end if;
+				else
+				seq <= "000";
+				end if;
+			
+			
+			
+			elsif seq = "010" then
+				if countB >= 0 then
+					if space = '0' then
+						if CHAR_T2(countB) = '1' then
+							led <= "11";
+						else 
+							led <= "01";
+						end if;
+						space <= '1';
+						countB <= countB - 1;
+					else
+						led <= "00";
+						space <= '0';
+					end if;
+				else
+				seq <= "000";
+				end if;
+			
+				
+				
+			elsif seq = "011" then
+				if countB >= 0 then
+					if space = '0' then
+						if CHAR_T1(countB) = '1' then
+							led <= "11";
+						else 
+							led <= "01";
+						end if;
+						space <= '1';
+						countB <= countB - 1;
+					else
+						led <= "00";
+						space <= '0';
+					end if;
+				else
+				seq <= "000";
+				end if;
+			
+			
+			
+			elsif seq = "100" then
+				if space = '0' then
+					if CHAR_T0(0) = '1' then
+						led <= "11";
+					else
+						led <= "01";
+					end if;
+					space <= '1';
+				else
+					led <= "00";
+					seq <= "000";
+				end if;
+					
+		end if;
+	end if;
+	end if;
+end process morse_select;
+------------------------------------------	
+-- OLD TEXT MOVEMENT				 
 --  text_movement: process (clk4Hz)
 --   begin
 --	 if Rising_Edge (clk4Hz) then

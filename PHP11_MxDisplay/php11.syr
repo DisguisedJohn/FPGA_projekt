@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: php11.prj
@@ -120,8 +120,10 @@ Parsing architecture <Behavioral> of entity <php11>.
 =========================================================================
 
 Elaborating entity <php11> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 69: Using initial value nul for m_char since it is never assigned
 
 Elaborating entity <mux_7seg_char> (architecture <arch_mux_7seg_char>) from library <work>.
+WARNING:HDLCompiler:634 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 55: Net <clk1kHz> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -129,8 +131,7 @@ Elaborating entity <mux_7seg_char> (architecture <arch_mux_7seg_char>) from libr
 
 Synthesizing Unit <php11>.
     Related source file is "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd".
-    Found 25-bit register for signal <countB>.
-    Found 1-bit register for signal <clk1kHz>.
+WARNING:Xst:653 - Signal <clk1kHz> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 28-bit register for signal <countC>.
     Found 8-bit register for signal <CHAR3>.
     Found 8-bit register for signal <CHAR2>.
@@ -140,20 +141,19 @@ Synthesizing Unit <php11>.
     Found 32-bit register for signal <CHAR2_p>.
     Found 32-bit register for signal <CHAR1_p>.
     Found 32-bit register for signal <CHAR0_p>.
-    Found 25-bit adder for signal <countB[24]_GND_5_o_add_4_OUT> created at line 119.
-    Found 32-bit adder for signal <CHAR3_p[31]_GND_5_o_add_14_OUT> created at line 142.
-    Found 32-bit adder for signal <CHAR2_p[31]_GND_5_o_add_17_OUT> created at line 148.
-    Found 32-bit adder for signal <CHAR1_p[31]_GND_5_o_add_20_OUT> created at line 154.
-    Found 32-bit adder for signal <CHAR0_p[31]_GND_5_o_add_23_OUT> created at line 160.
-    Found 28-bit adder for signal <countC[27]_GND_5_o_add_25_OUT> created at line 164.
-    Found 16x8-bit Read Only RAM for signal <n0081>
-    Found 16x8-bit Read Only RAM for signal <n0082>
-    Found 16x8-bit Read Only RAM for signal <n0083>
-    Found 16x8-bit Read Only RAM for signal <n0084>
+    Found 32-bit adder for signal <CHAR3_p[31]_GND_5_o_add_10_OUT> created at line 150.
+    Found 32-bit adder for signal <CHAR2_p[31]_GND_5_o_add_13_OUT> created at line 156.
+    Found 32-bit adder for signal <CHAR1_p[31]_GND_5_o_add_16_OUT> created at line 162.
+    Found 32-bit adder for signal <CHAR0_p[31]_GND_5_o_add_19_OUT> created at line 168.
+    Found 28-bit adder for signal <countC[27]_GND_5_o_add_21_OUT> created at line 172.
+    Found 16x8-bit Read Only RAM for signal <n0225>
+    Found 16x8-bit Read Only RAM for signal <n0226>
+    Found 16x8-bit Read Only RAM for signal <n0227>
+    Found 16x8-bit Read Only RAM for signal <n0228>
     Summary:
 	inferred   4 RAM(s).
-	inferred   6 Adder/Subtractor(s).
-	inferred 214 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred 188 D-type flip-flop(s).
 Unit <php11> synthesized.
 
 Synthesizing Unit <mux_7seg_char>.
@@ -178,15 +178,12 @@ Macro Statistics
 # RAMs                                                 : 5
  16x8-bit single-port Read Only RAM                    : 4
  4x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 7
+# Adders/Subtractors                                   : 6
  2-bit adder                                           : 1
- 25-bit adder                                          : 1
  28-bit adder                                          : 1
  32-bit adder                                          : 4
-# Registers                                            : 14
- 1-bit register                                        : 1
+# Registers                                            : 12
  2-bit register                                        : 1
- 25-bit register                                       : 1
  28-bit register                                       : 1
  32-bit register                                       : 4
  4-bit register                                        : 1
@@ -200,6 +197,52 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <cd_0> (without init value) has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cd_1> (without init value) has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <digit_0> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <digit_1> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <digit_2> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <digit_3> (without init value) has a constant value of 1 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_0> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_1> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_2> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_3> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_4> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_6> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <akt_znak_7> has a constant value of 0 in block <m7seg>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <akt_znak_5> is unconnected in block <m7seg>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_0> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_1> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_2> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_3> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_4> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_5> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_6> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR0_7> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_0> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_1> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_2> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_3> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_4> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_5> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_6> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR1_7> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_0> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_1> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_2> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_3> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_4> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_5> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_6> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR2_7> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_0> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_1> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_2> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_3> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_4> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_5> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_6> is unconnected in block <php11>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <CHAR3_7> is unconnected in block <php11>.
 
 Synthesizing (advanced) Unit <mux_7seg_char>.
 The following registers are absorbed into counter <cd>: 1 register on signal <cd>.
@@ -217,13 +260,12 @@ INFO:Xst:3217 - HDL ADVISOR - Register <digit> currently described with an async
 Unit <mux_7seg_char> synthesized (advanced).
 
 Synthesizing (advanced) Unit <php11>.
-The following registers are absorbed into counter <countB>: 1 register on signal <countB>.
+The following registers are absorbed into counter <CHAR3_p>: 1 register on signal <CHAR3_p>.
 The following registers are absorbed into counter <countC>: 1 register on signal <countC>.
 The following registers are absorbed into counter <CHAR2_p>: 1 register on signal <CHAR2_p>.
-The following registers are absorbed into counter <CHAR3_p>: 1 register on signal <CHAR3_p>.
 The following registers are absorbed into counter <CHAR1_p>: 1 register on signal <CHAR1_p>.
 The following registers are absorbed into counter <CHAR0_p>: 1 register on signal <CHAR0_p>.
-INFO:Xst:3231 - The small RAM <Mram_n0081> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_n0225> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -234,7 +276,7 @@ INFO:Xst:3231 - The small RAM <Mram_n0081> will be implemented on LUTs in order 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3231 - The small RAM <Mram_n0082> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_n0226> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -245,7 +287,7 @@ INFO:Xst:3231 - The small RAM <Mram_n0082> will be implemented on LUTs in order 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3231 - The small RAM <Mram_n0083> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_n0227> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -256,7 +298,7 @@ INFO:Xst:3231 - The small RAM <Mram_n0083> will be implemented on LUTs in order 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3231 - The small RAM <Mram_n0084> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_n0228> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -276,13 +318,12 @@ Macro Statistics
 # RAMs                                                 : 5
  16x8-bit single-port distributed Read Only RAM        : 4
  4x4-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 7
+# Counters                                             : 6
  2-bit up counter                                      : 1
- 25-bit up counter                                     : 1
  28-bit up counter                                     : 1
  32-bit up counter                                     : 4
-# Registers                                            : 45
- Flip-Flops                                            : 45
+# Registers                                            : 44
+ Flip-Flops                                            : 44
 # Multiplexers                                         : 1
  8-bit 4-to-1 multiplexer                              : 1
 
@@ -291,60 +332,63 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <CHAR3_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR2_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR1_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR0_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <CHAR3_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR3_6> 
-INFO:Xst:2261 - The FF/Latch <CHAR2_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR2_6> 
-INFO:Xst:2261 - The FF/Latch <CHAR1_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR1_6> 
-INFO:Xst:2261 - The FF/Latch <CHAR0_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR0_6> 
-WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
-   incompatible with the Spartan6 architecture. The two primary causes of this is
-   either a register or latch described with both an asynchronous set and
-   asynchronous reset, or a register or latch described with an asynchronous
-   set or reset which however has an initialization value of the opposite 
-   polarity (i.e. asynchronous reset with an initialization value of 1).
-    While this circuit can be built, it creates a sub-optimal implementation
-   in terms of area, power and performance. For a more optimal implementation
-   Xilinx highly recommends one of the following:
-
-          1) Remove either the set or reset from all registers and latches
-             if not needed for required functionality
-          2) Modify the code in order to produce a synchronous set
-             and/or reset (both is preferred)
-          3) Ensure all registers have the same initialization value as the
-             described asynchronous set or reset polarity
-          4) Use the -async_to_sync option to transform the asynchronous
-             set/reset to synchronous operation
-             (timing simulation highly recommended when using this option)
-
-  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
-
-  List of register instances with asynchronous set or reset and opposite initialization value:
-    akt_znak_5 in unit <mux_7seg_char>
-
+WARNING:Xst:1293 - FF/Latch <akt_znak_0> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_1> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_2> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_3> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_4> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_6> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <akt_znak_7> has a constant value of 0 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_0> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_1> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_2> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <digit_3> (without init value) has a constant value of 1 in block <mux_7seg_char>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <akt_znak_5> is unconnected in block <mux_7seg_char>.
+WARNING:Xst:2677 - Node <CHAR3_0> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_1> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_2> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_3> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_4> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_5> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_6> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR3_7> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_0> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_1> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_2> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_3> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_4> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_5> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_6> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR2_7> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_0> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_1> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_2> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_3> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_4> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_5> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_6> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR1_7> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_0> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_1> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_2> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_3> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_4> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_5> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_6> of sequential type is unconnected in block <php11>.
+WARNING:Xst:2677 - Node <CHAR0_7> of sequential type is unconnected in block <php11>.
 
 Optimizing unit <php11> ...
 
-Optimizing unit <mux_7seg_char> ...
-WARNING:Xst:1293 - FF/Latch <m7seg/akt_znak_7> has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
-
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 3.
-WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_LD hinder the constant cleaning in the block php11.
-   You should achieve better results by setting this init to 1.
+Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 0.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 220
- Flip-Flops                                            : 220
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -366,34 +410,10 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 815
-#      GND                         : 1
-#      INV                         : 8
-#      LUT1                        : 175
-#      LUT2                        : 33
-#      LUT3                        : 12
-#      LUT4                        : 122
-#      LUT5                        : 3
-#      LUT6                        : 97
-#      MUXCY                       : 175
-#      MUXF7                       : 7
+# BELS                             : 1
 #      VCC                         : 1
-#      XORCY                       : 181
-# FlipFlops/Latches                : 221
-#      FD                          : 153
-#      FD_1                        : 1
-#      FDC                         : 2
-#      FDC_1                       : 6
-#      FDE                         : 28
-#      FDP_1                       : 5
-#      FDR                         : 25
-#      LD                          : 1
-# Clock Buffers                    : 2
-#      BUFG                        : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 13
-#      IBUF                        : 1
-#      OBUF                        : 12
+# IO Buffers                       : 14
+#      OBUF                        : 14
 
 Device utilization summary:
 ---------------------------
@@ -402,23 +422,19 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             221  out of  18224     1%  
- Number of Slice LUTs:                  450  out of   9112     4%  
-    Number used as Logic:               450  out of   9112     4%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    452
-   Number with an unused Flip Flop:     231  out of    452    51%  
-   Number with an unused LUT:             2  out of    452     0%  
-   Number of fully used LUT-FF pairs:   219  out of    452    48%  
-   Number of unique control sets:         7
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                          14
+ Number of IOs:                          16
  Number of bonded IOBs:                  14  out of    232     6%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -438,14 +454,7 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 206   |
-clk1kHz                            | NONE(m7seg/cd_1)       | 14    |
-btnd                               | IBUF+BUFG              | 1     |
------------------------------------+------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -455,9 +464,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.258ns (Maximum Frequency: 190.201MHz)
-   Minimum input arrival time before clock: 2.584ns
-   Maximum output required time after clock: 6.785ns
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -465,151 +474,22 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.258ns (frequency: 190.201MHz)
-  Total number of paths / destination ports: 16294 / 259
--------------------------------------------------------------------------
-Delay:               5.258ns (Levels of Logic = 4)
-  Source:            countC_24 (FF)
-  Destination:       CHAR3_p_1 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
-
-  Data Path: countC_24 to CHAR3_p_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.981  countC_24 (countC_24)
-     LUT6:I0->O           10   0.203   1.104  GND_5_o_GND_5_o_equal_9_o<27>7_SW0 (N34)
-     LUT6:I2->O            8   0.203   0.803  GND_5_o_GND_5_o_equal_9_o<27>7_1 (GND_5_o_GND_5_o_equal_9_o<27>7)
-     LUT6:I5->O           16   0.205   1.005  _n01037 (_n0103)
-     LUT4:I3->O            1   0.205   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
-     FD:D                      0.102          CHAR3_p_1
-    ----------------------------------------
-    Total                      5.258ns (1.365ns logic, 3.893ns route)
-                                       (26.0% logic, 74.0% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clk1kHz'
-  Clock period: 2.242ns (frequency: 446.100MHz)
-  Total number of paths / destination ports: 27 / 14
--------------------------------------------------------------------------
-Delay:               2.242ns (Levels of Logic = 1)
-  Source:            m7seg/cd_0 (FF)
-  Destination:       m7seg/cd_0 (FF)
-  Source Clock:      clk1kHz falling
-  Destination Clock: clk1kHz falling
-
-  Data Path: m7seg/cd_0 to m7seg/cd_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDC:C->Q             12   0.447   0.908  m7seg/cd_0 (m7seg/cd_0)
-     INV:I->O              1   0.206   0.579  m7seg/Mcount_cd_xor<0>11_INV_0 (m7seg/Result<0>)
-     FDC:D                     0.102          m7seg/cd_0
-    ----------------------------------------
-    Total                      2.242ns (0.755ns logic, 1.487ns route)
-                                       (33.7% logic, 66.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk1kHz'
-  Total number of paths / destination ports: 13 / 13
--------------------------------------------------------------------------
-Offset:              2.584ns (Levels of Logic = 1)
-  Source:            btnd (PAD)
-  Destination:       m7seg/cd_1 (FF)
-  Destination Clock: clk1kHz falling
-
-  Data Path: btnd to m7seg/cd_1
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            13   1.222   0.932  btnd_IBUF (btnd_IBUF)
-     FDC_1:CLR                 0.430          m7seg/akt_znak_0
-    ----------------------------------------
-    Total                      2.584ns (1.652ns logic, 0.932ns route)
-                                       (63.9% logic, 36.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1kHz'
-  Total number of paths / destination ports: 133 / 11
--------------------------------------------------------------------------
-Offset:              6.608ns (Levels of Logic = 5)
-  Source:            m7seg/akt_znak_5_C_5 (FF)
-  Destination:       seg<5> (PAD)
-  Source Clock:      clk1kHz falling
-
-  Data Path: m7seg/akt_znak_5_C_5 to seg<5>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD_1:C->Q             1   0.447   0.684  m7seg/akt_znak_5_C_5 (m7seg/akt_znak_5_C_5)
-     LUT3:I1->O            9   0.203   0.830  m7seg/akt_znak_51 (m7seg/akt_znak_5)
-     LUT5:I4->O            6   0.205   0.745  m7seg/seg<5>21 (m7seg/seg<5>2)
-     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N49)
-     MUXF7:I1->O           1   0.140   0.579  m7seg/seg<5> (seg_3_OBUF)
-     OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
-    ----------------------------------------
-    Total                      6.608ns (3.771ns logic, 2.837ns route)
-                                       (57.1% logic, 42.9% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'btnd'
-  Total number of paths / destination ports: 14 / 7
--------------------------------------------------------------------------
-Offset:              6.785ns (Levels of Logic = 5)
-  Source:            m7seg/akt_znak_5_LD (LATCH)
-  Destination:       seg<5> (PAD)
-  Source Clock:      btnd falling
-
-  Data Path: m7seg/akt_znak_5_LD to seg<5>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.498   0.808  m7seg/akt_znak_5_LD (m7seg/akt_znak_5_LD)
-     LUT3:I0->O            9   0.205   0.830  m7seg/akt_znak_51 (m7seg/akt_znak_5)
-     LUT5:I4->O            6   0.205   0.745  m7seg/seg<5>21 (m7seg/seg<5>2)
-     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N49)
-     MUXF7:I1->O           1   0.140   0.579  m7seg/seg<5> (seg_3_OBUF)
-     OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
-    ----------------------------------------
-    Total                      6.785ns (3.824ns logic, 2.961ns route)
-                                       (56.4% logic, 43.6% route)
-
-=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    5.258|         |         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock clk1kHz
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |         |         |    1.616|         |
-clk1kHz        |         |         |    2.242|         |
----------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.24 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.90 secs
  
 --> 
 
 
-Total memory usage is 392336 kilobytes
+Total memory usage is 392328 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of warnings :   93 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 
