@@ -56,8 +56,15 @@ architecture Behavioral of php11 is
  signal countA	: STD_LOGIC_VECTOR (24 downto 0);	-- timer modulo
  signal countB	: STD_LOGIC_VECTOR (24 downto 0);
  
-
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
+
+ signal CHAR3_p : integer := 0;
+ signal CHAR2_p : integer := 1;
+ signal CHAR1_p : integer := 2;
+ signal CHAR0_p : integer := 3;
+
+
+
  signal CNT1K	 	: STD_LOGIC_VECTOR(9 downto 0);
  signal CNTTXT		: integer;
  alias rst			: std_logic is btnd;	-- RESET
@@ -115,41 +122,65 @@ begin
 	
 		
 
+text_movement: process (clk4Hz)
+	begin
+	  CHAR3 <= introtxt(CHAR3_p);
+	  CHAR2 <= introtxt(CHAR2_p);
+	  CHAR1 <= introtxt(CHAR1_p);
+	  CHAR0 <= introtxt(CHAR0_p);
+	
+	if CHAR3_p = introtxt'length then
+	  CHAR3_p <= 0;
+	 else 
+	  CHAR3_p <= CHAR3_p + 1;
+	end if;
+	
+	if CHAR2_p = introtxt'length then
+	  CHAR2_p <= 0;
+	 else 
+	  CHAR2_p <= CHAR2_p + 1;
+	end if;
+	
+	if CHAR1_p = introtxt'length then
+	  CHAR1_p <= 0;
+	 else 
+	  CHAR1_p <= CHAR1_p + 1;
+	end if;
+	
+	if CHAR0_p = introtxt'length then
+	  CHAR0_p <= 0;
+	 else 
+	  CHAR0_p <= CHAR0_p + 1;
+	end if;
+ end process text_movement;
+
+
 
 
 ------------------------------------------					 
-  text_movement: process (clk4Hz)
-   begin
-	 if Rising_Edge (clk4Hz) then
-	  if  rst = '1' then
-	   CNTTXT <= 0;
-	  else
-	   if CNTTXT >= (introtxt'length - 5) then
-		  CNTTXT <= 0;
-		else  
-	     CNTTXT <= CNTTXT + 1;
-		end if;  
-	  end if;
-	 end if; 
-	end process text_movement;
-  
-  text_refresh: process (CNTTXT)
-	begin
-  	  CHAR3 <= introtxt(CNTTXT);
-	  CHAR2 <= introtxt(CNTTXT+1);
-	  CHAR1 <= introtxt(CNTTXT+2);
-	  CHAR0 <= introtxt(CNTTXT+3);
-	end process text_refresh;
--- counter: process (CLK)
+--  text_movement: process (clk4Hz)
+--   begin
+--	 if Rising_Edge (clk4Hz) then
+--	  if  rst = '1' then
+--	   CNTTXT <= 0;
+--	  else
+--	   if CNTTXT >= (introtxt'length - 5) then
+--		  CNTTXT <= 0;
+--		else  
+--	     CNTTXT <= CNTTXT + 1;
+--		end if;  
+--	  end if;
+--	 end if; 
+--	end process text_movement;
+--  
+--  text_refresh: process (CNTTXT)
 --	begin
---	 if CLK'event and CLK = '1' then
---	   if rst = '1' then
---	     CNT <= (others => '0');
---	   else
---		  CNT <= CNT + 1;
---	   end if;
---	  end if;	
---	end process counter; 	
+--   CHAR3 <= introtxt(CNTTXT);
+--	  CHAR2 <= introtxt(CNTTXT+1);
+--	  CHAR1 <= introtxt(CNTTXT+2);
+--	  CHAR0 <= introtxt(CNTTXT+3);
+--	end process text_refresh;
+	
 
 end Behavioral;
 
