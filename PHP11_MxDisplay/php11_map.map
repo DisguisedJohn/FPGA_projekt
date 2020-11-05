@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu Nov  5 22:39:50 2020
+Mapped Date    : Thu Nov  5 22:50:04 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -49,21 +49,21 @@ Phase 8.5  Local Placement Optimization
 Phase 8.5  Local Placement Optimization (Checksum:aa2e0928) REAL time: 8 secs 
 
 Phase 9.8  Global Placement
-...............
-...............
-Phase 9.8  Global Placement (Checksum:80739b28) REAL time: 9 secs 
+.............
+.............
+Phase 9.8  Global Placement (Checksum:29cc98a7) REAL time: 9 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:80739b28) REAL time: 9 secs 
+Phase 10.5  Local Placement Optimization (Checksum:29cc98a7) REAL time: 9 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:6a8abdc8) REAL time: 9 secs 
+Phase 11.18  Placement Optimization (Checksum:e56f29a7) REAL time: 9 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:6a8abdc8) REAL time: 9 secs 
+Phase 12.5  Local Placement Optimization (Checksum:e56f29a7) REAL time: 9 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:6a8abdc8) REAL time: 9 secs 
+Phase 13.34  Placement Validation (Checksum:e1e68826) REAL time: 9 secs 
 
 Total REAL time to Placer completion: 9 secs 
 Total CPU  time to Placer completion: 9 secs 
@@ -95,7 +95,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   134 out of   2,278    5%
+  Number of occupied Slices:                   133 out of   2,278    5%
   Number of MUXCYs used:                       184 out of   4,556    4%
   Number of LUT Flip Flop pairs used:          454
     Number with an unused Flip Flop:           232 out of     454   51%
@@ -142,7 +142,7 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                3.06
 
-Peak Memory Usage:  676 MB
+Peak Memory Usage:  675 MB
 Total REAL time to MAP completion:  10 secs 
 Total CPU time to MAP completion:   10 secs 
 

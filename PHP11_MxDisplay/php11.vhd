@@ -57,6 +57,8 @@ architecture Behavioral of php11 is
  signal countB	: integer;
  signal countC : STD_LOGIC_VECTOR (27 downto 0);
  signal countD : STD_LOGIC_VECTOR (27 downto 0);
+ signal countE : STD_LOGIC_VECTOR (27 downto 0);
+ 
  signal clkA : std_logic := '1';
  
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
@@ -180,7 +182,9 @@ text_movement: process (clk)
 	morse_select: process (SEQ, CLK, M_CHAR)
 	 begin 
 	 	if Rising_Edge (clk) then
-		if clkA = '1' then
+		if countE = 99999999 then
+		 countE <= (others => '0');
+		 
 		 if seq = "000" then
 				 case M_CHAR is
 					           when 'b' => CHAR_T3 <= "1000";
@@ -319,6 +323,8 @@ text_movement: process (clk)
 					
 		end if;
 	end if;
+	else
+	countE <= countE + 1;
 	end if;
 end process morse_select;
 ------------------------------------------	
