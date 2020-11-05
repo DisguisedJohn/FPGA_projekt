@@ -55,7 +55,7 @@ architecture Behavioral of php11 is
  signal clk05Hz ,clk4Hz, clk1kHz : STD_LOGIC;		--timer output
  signal countA	: STD_LOGIC_VECTOR (24 downto 0);	-- timer modulo
  signal countB	: STD_LOGIC_VECTOR (24 downto 0);
- signal countC : STD_LOGIC_VECTOR (3 downto 0);
+ signal countC : STD_LOGIC_VECTOR (27 downto 0);
  
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
 
@@ -118,10 +118,18 @@ begin
 		else
 		 countB <= countB + 1;
      end if;
+	  
+	  if countC = 199999999 then
+		 countC <= (others => '0');
+		 clk05Hz <= not clk05Hz;
+		 else
+		  countC <= countC + 1;
+     end if;
+	  
 	 end if;
    end process timer;
 	
-   timerC: process (clk4Hz)
+   timerC: process (clk)
 	 begin
 	  if Rising_Edge (clk4Hz) then 	  
 	   if countC = 13 then

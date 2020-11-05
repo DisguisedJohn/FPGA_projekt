@@ -5,83 +5,86 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 139: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 134: <arg fmt="%s" index="1">clk4hz</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 140: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 147: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 141: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 148: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 142: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 149: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 144: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 150: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 147: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 152: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 150: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 155: <arg fmt="%s" index="1">char3_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 153: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 158: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 156: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 161: <arg fmt="%s" index="1">char2_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 159: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 164: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 162: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 167: <arg fmt="%s" index="1">char1_p</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="new" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 165: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 170: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 173: <arg fmt="%s" index="1">char0_p</arg> should be on the sensitivity list of the process
 </msg>
 
 <msg type="info" file="Xst" num="3217" delta="old" >HDL ADVISOR - Register &lt;<arg fmt="%s" index="1">digit</arg>&gt; currently described with an asynchronous reset, could be combined with distributed RAM &lt;<arg fmt="%s" index="2">Mram_cd[1]_GND_6_o_wide_mux_2_OUT</arg>&gt; for implementation on block RAM resources if you made this reset synchronous instead.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR3&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR3&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR2&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR2&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR1&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR1&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR0&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CHAR0&lt;6:0&gt;</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
 
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">akt_znak_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mux_7seg_char</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
-<msg type="warning" file="Xst" num="2170" delta="new" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
+<msg type="warning" file="Xst" num="2170" delta="old" >Unit <arg fmt="%s" index="1">php11</arg> : the following signal(s) form a combinatorial loop: </msg>
 
 <msg type="warning" file="Xst" num="3002" delta="old" >This design contains one or more registers/latches that are directly
 incompatible with the <arg fmt="%s" index="1">Spartan6</arg> architecture. The two primary causes of this is
@@ -104,7 +107,7 @@ Xilinx highly recommends one of the following:
           (timing simulation highly recommended when using this option)
 </msg>
 
-<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
@@ -112,7 +115,7 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
-<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5_C_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
+<msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">m7seg/akt_znak_5_C_5</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">php11</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
 
