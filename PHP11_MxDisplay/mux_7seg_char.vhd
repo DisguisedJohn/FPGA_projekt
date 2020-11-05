@@ -40,7 +40,7 @@ if rst = '1' then
 	digit <= (others => '1') ;
 	cd <= (others => '0') ;
 	akt_znak <= ' ';
-elsif CLK'event and CLK = '1' then
+elsif CLK'event and CLK = '0' then
 		cd(1 downto 0) <= cd(1 downto 0) + 1 ;
 	case cd(1 downto 0) is 
 		when "00" =>   akt_znak <= DIN0 ;   digit <= "1110" ; 

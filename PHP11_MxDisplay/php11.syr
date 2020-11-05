@@ -358,9 +358,9 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 411
+# BELS                             : 412
 #      GND                         : 1
-#      INV                         : 7
+#      INV                         : 8
 #      LUT1                        : 82
 #      LUT2                        : 31
 #      LUT3                        : 26
@@ -372,9 +372,11 @@ Primitive and Black Box Usage:
 #      VCC                         : 1
 #      XORCY                       : 86
 # FlipFlops/Latches                : 98
-#      FD                          : 77
-#      FDC                         : 8
-#      FDP                         : 4
+#      FD                          : 76
+#      FD_1                        : 1
+#      FDC                         : 2
+#      FDC_1                       : 6
+#      FDP_1                       : 4
 #      FDR                         : 8
 #      LD                          : 1
 # Clock Buffers                    : 3
@@ -392,15 +394,15 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              98  out of  18224     0%  
- Number of Slice LUTs:                  223  out of   9112     2%  
-    Number used as Logic:               223  out of   9112     2%  
+ Number of Slice LUTs:                  224  out of   9112     2%  
+    Number used as Logic:               224  out of   9112     2%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    226
-   Number with an unused Flip Flop:     128  out of    226    56%  
-   Number with an unused LUT:             3  out of    226     1%  
-   Number of fully used LUT-FF pairs:    95  out of    226    42%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:    227
+   Number with an unused Flip Flop:     129  out of    227    56%  
+   Number with an unused LUT:             3  out of    227     1%  
+   Number of fully used LUT-FF pairs:    95  out of    227    41%  
+   Number of unique control sets:         7
 
 IO Utilization: 
  Number of IOs:                          14
@@ -492,8 +494,8 @@ Timing constraint: Default period analysis for Clock 'clk1kHz'
 Delay:               2.229ns (Levels of Logic = 2)
   Source:            m7seg/cd_1 (FF)
   Destination:       m7seg/akt_znak_3 (FF)
-  Source Clock:      clk1kHz rising
-  Destination Clock: clk1kHz rising
+  Source Clock:      clk1kHz falling
+  Destination Clock: clk1kHz falling
 
   Data Path: m7seg/cd_1 to m7seg/akt_znak_3
                                 Gate     Net
@@ -502,7 +504,7 @@ Delay:               2.229ns (Levels of Logic = 2)
      FDC:C->Q             15   0.447   1.346  m7seg/cd_1 (m7seg/cd_1)
      LUT6:I0->O            1   0.203   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT44_F (N29)
      MUXF7:I0->O           1   0.131   0.000  m7seg/Mmux_cd[1]_DIN3[7]_wide_mux_1_OUT44 (m7seg/cd[1]_DIN3[7]_wide_mux_1_OUT<3>)
-     FDC:D                     0.102          m7seg/akt_znak_3
+     FDC_1:D                   0.102          m7seg/akt_znak_3
     ----------------------------------------
     Total                      2.229ns (0.883ns logic, 1.346ns route)
                                        (39.6% logic, 60.4% route)
@@ -559,14 +561,14 @@ Timing constraint: Default OFFSET IN BEFORE for Clock 'clk1kHz'
 Offset:              3.014ns (Levels of Logic = 1)
   Source:            btnd (PAD)
   Destination:       m7seg/cd_1 (FF)
-  Destination Clock: clk1kHz rising
+  Destination Clock: clk1kHz falling
 
   Data Path: btnd to m7seg/cd_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O            37   1.222   1.362  btnd_IBUF (btnd_IBUF)
-     FDC:CLR                   0.430          m7seg/akt_znak_0
+     FDC_1:CLR                 0.430          m7seg/akt_znak_0
     ----------------------------------------
     Total                      3.014ns (1.652ns logic, 1.362ns route)
                                        (54.8% logic, 45.2% route)
@@ -578,13 +580,13 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1kHz'
 Offset:              6.195ns (Levels of Logic = 4)
   Source:            m7seg/akt_znak_3 (FF)
   Destination:       seg<3> (PAD)
-  Source Clock:      clk1kHz rising
+  Source Clock:      clk1kHz falling
 
   Data Path: m7seg/akt_znak_3 to seg<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.447   1.210  m7seg/akt_znak_3 (m7seg/akt_znak_3)
+     FDC_1:C->Q           15   0.447   1.210  m7seg/akt_znak_3 (m7seg/akt_znak_3)
      LUT5:I2->O            6   0.205   0.849  m7seg/seg<4>11 (m7seg/seg<4>1)
      LUT6:I4->O            1   0.203   0.000  m7seg/seg<7>_F (N19)
      MUXF7:I0->O           1   0.131   0.579  m7seg/seg<7> (seg_1_OBUF)
@@ -633,8 +635,8 @@ Clock to Setup on destination clock clk1kHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk1kHz        |    2.229|         |         |         |
-clk4Hz         |    4.481|         |         |         |
+clk1kHz        |         |         |    2.229|         |
+clk4Hz         |         |         |    4.481|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk4Hz
@@ -649,7 +651,7 @@ clk4Hz         |    3.738|         |         |         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.65 secs
+Total CPU time to Xst completion: 10.76 secs
  
 --> 
 
