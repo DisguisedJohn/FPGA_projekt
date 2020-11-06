@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Nov 06 16:55:28 2020
+// Written by: Map P.20131013 on Fri Nov 06 17:01:46 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -19,64 +19,62 @@ COMP "seg<4>" LOCATE = SITE "M14" LEVEL 1;
 COMP "seg<5>" LOCATE = SITE "N14" LEVEL 1;
 COMP "seg<6>" LOCATE = SITE "L14" LEVEL 1;
 COMP "seg<7>" LOCATE = SITE "M13" LEVEL 1;
-TIMEGRP sys_clk_pin = BEL "CHAR3_0" BEL "CHAR3_1" BEL "CHAR3_2" BEL "CHAR3_3"
-        BEL "CHAR3_4" BEL "CHAR3_5" BEL "CHAR2_0" BEL "CHAR2_1" BEL "CHAR2_2"
-        BEL "CHAR2_3" BEL "CHAR2_4" BEL "CHAR2_5" BEL "CHAR1_0" BEL "CHAR1_1"
-        BEL "CHAR1_2" BEL "CHAR1_3" BEL "CHAR1_4" BEL "CHAR1_5" BEL "CHAR0_0"
-        BEL "CHAR0_1" BEL "CHAR0_2" BEL "CHAR0_3" BEL "CHAR0_4" BEL "CHAR0_5"
-        BEL "countA_0" BEL "countA_1" BEL "countA_2" BEL "countA_3" BEL
-        "countA_4" BEL "countA_5" BEL "countA_6" BEL "countA_7" BEL "countA_8"
-        BEL "countA_9" BEL "countA_10" BEL "countA_11" BEL "countA_12" BEL
-        "countA_13" BEL "countA_14" BEL "countA_15" BEL "countA_16" BEL
-        "countA_17" BEL "countA_18" BEL "countA_19" BEL "countA_20" BEL
-        "countA_21" BEL "countA_22" BEL "countA_23" BEL "countA_24" BEL
-        "countA_25" BEL "countA_26" BEL "countA_27" BEL "countD_0" BEL
-        "countD_1" BEL "countD_2" BEL "countD_3" BEL "countD_4" BEL "countD_5"
-        BEL "countD_6" BEL "countD_7" BEL "countD_8" BEL "countD_9" BEL
-        "countD_10" BEL "countD_11" BEL "countD_12" BEL "countD_13" BEL
-        "countD_14" BEL "countD_15" BEL "countD_16" BEL "countD_17" BEL
-        "countD_18" BEL "countD_19" BEL "countD_20" BEL "countD_21" BEL
-        "countD_22" BEL "countD_23" BEL "countD_24" BEL "countD_25" BEL
-        "countD_26" BEL "countD_27" BEL "CHAR2_p_0" BEL "CHAR0_p_0" BEL
-        "CHAR0_p_1" BEL "CHAR1_p_1" BEL "clkA" BEL "clk1kHz" BEL "CHAR3_p_0"
-        BEL "CHAR1_p_0" BEL "CHAR2_p_1" BEL "CHAR2_p_2" BEL "CHAR2_p_3" BEL
-        "CHAR2_p_4" BEL "CHAR2_p_5" BEL "CHAR2_p_6" BEL "CHAR2_p_7" BEL
-        "CHAR2_p_8" BEL "CHAR2_p_9" BEL "CHAR2_p_10" BEL "CHAR2_p_11" BEL
-        "CHAR2_p_12" BEL "CHAR2_p_13" BEL "CHAR2_p_14" BEL "CHAR2_p_15" BEL
-        "CHAR2_p_16" BEL "CHAR2_p_17" BEL "CHAR2_p_18" BEL "CHAR2_p_19" BEL
-        "CHAR2_p_20" BEL "CHAR2_p_21" BEL "CHAR2_p_22" BEL "CHAR2_p_23" BEL
-        "CHAR2_p_24" BEL "CHAR2_p_25" BEL "CHAR2_p_26" BEL "CHAR2_p_27" BEL
-        "CHAR2_p_28" BEL "CHAR2_p_29" BEL "CHAR2_p_30" BEL "CHAR2_p_31" BEL
-        "CHAR3_p_1" BEL "CHAR3_p_2" BEL "CHAR3_p_3" BEL "CHAR3_p_4" BEL
-        "CHAR3_p_5" BEL "CHAR3_p_6" BEL "CHAR3_p_7" BEL "CHAR3_p_8" BEL
-        "CHAR3_p_9" BEL "CHAR3_p_10" BEL "CHAR3_p_11" BEL "CHAR3_p_12" BEL
-        "CHAR3_p_13" BEL "CHAR3_p_14" BEL "CHAR3_p_15" BEL "CHAR3_p_16" BEL
-        "CHAR3_p_17" BEL "CHAR3_p_18" BEL "CHAR3_p_19" BEL "CHAR3_p_20" BEL
-        "CHAR3_p_21" BEL "CHAR3_p_22" BEL "CHAR3_p_23" BEL "CHAR3_p_24" BEL
-        "CHAR3_p_25" BEL "CHAR3_p_26" BEL "CHAR3_p_27" BEL "CHAR3_p_28" BEL
-        "CHAR3_p_29" BEL "CHAR3_p_30" BEL "CHAR3_p_31" BEL "CHAR0_p_2" BEL
-        "CHAR0_p_3" BEL "CHAR0_p_4" BEL "CHAR0_p_5" BEL "CHAR0_p_6" BEL
-        "CHAR0_p_7" BEL "CHAR0_p_8" BEL "CHAR0_p_9" BEL "CHAR0_p_10" BEL
-        "CHAR0_p_11" BEL "CHAR0_p_12" BEL "CHAR0_p_13" BEL "CHAR0_p_14" BEL
-        "CHAR0_p_15" BEL "CHAR0_p_16" BEL "CHAR0_p_17" BEL "CHAR0_p_18" BEL
-        "CHAR0_p_19" BEL "CHAR0_p_20" BEL "CHAR0_p_21" BEL "CHAR0_p_22" BEL
-        "CHAR0_p_23" BEL "CHAR0_p_24" BEL "CHAR0_p_25" BEL "CHAR0_p_26" BEL
-        "CHAR0_p_27" BEL "CHAR0_p_28" BEL "CHAR0_p_29" BEL "CHAR0_p_30" BEL
-        "CHAR0_p_31" BEL "CHAR1_p_2" BEL "CHAR1_p_3" BEL "CHAR1_p_4" BEL
-        "CHAR1_p_5" BEL "CHAR1_p_6" BEL "CHAR1_p_7" BEL "CHAR1_p_8" BEL
-        "CHAR1_p_9" BEL "CHAR1_p_10" BEL "CHAR1_p_11" BEL "CHAR1_p_12" BEL
-        "CHAR1_p_13" BEL "CHAR1_p_14" BEL "CHAR1_p_15" BEL "CHAR1_p_16" BEL
-        "CHAR1_p_17" BEL "CHAR1_p_18" BEL "CHAR1_p_19" BEL "CHAR1_p_20" BEL
-        "CHAR1_p_21" BEL "CHAR1_p_22" BEL "CHAR1_p_23" BEL "CHAR1_p_24" BEL
-        "CHAR1_p_25" BEL "CHAR1_p_26" BEL "CHAR1_p_27" BEL "CHAR1_p_28" BEL
-        "CHAR1_p_29" BEL "CHAR1_p_30" BEL "CHAR1_p_31" BEL "countC_0" BEL
-        "countC_1" BEL "countC_2" BEL "countC_3" BEL "countC_4" BEL "countC_5"
-        BEL "countC_6" BEL "countC_7" BEL "countC_8" BEL "countC_9" BEL
-        "countC_10" BEL "countC_11" BEL "countC_12" BEL "countC_13" BEL
-        "countC_14" BEL "countC_15" BEL "countC_16" BEL "countC_17" BEL
-        "countC_18" BEL "countC_19" BEL "countC_20" BEL "countC_21" BEL
-        "countC_22" BEL "countC_23" BEL "countC_24" BEL "countC_25" BEL
-        "countC_26" BEL "countC_27" BEL "clk_BUFGP/BUFG";
+TIMEGRP sys_clk_pin = BEL "CHAR3_0" BEL "CHAR3_2" BEL "CHAR3_4" BEL "CHAR2_0"
+        BEL "CHAR2_2" BEL "CHAR2_4" BEL "CHAR1_0" BEL "CHAR1_2" BEL "CHAR1_4"
+        BEL "CHAR0_0" BEL "CHAR0_2" BEL "CHAR0_4" BEL "countA_0" BEL
+        "countA_1" BEL "countA_2" BEL "countA_3" BEL "countA_4" BEL "countA_5"
+        BEL "countA_6" BEL "countA_7" BEL "countA_8" BEL "countA_9" BEL
+        "countA_10" BEL "countA_11" BEL "countA_12" BEL "countA_13" BEL
+        "countA_14" BEL "countA_15" BEL "countA_16" BEL "countA_17" BEL
+        "countA_18" BEL "countA_19" BEL "countA_20" BEL "countA_21" BEL
+        "countA_22" BEL "countA_23" BEL "countA_24" BEL "countA_25" BEL
+        "countA_26" BEL "countA_27" BEL "countD_0" BEL "countD_1" BEL
+        "countD_2" BEL "countD_3" BEL "countD_4" BEL "countD_5" BEL "countD_6"
+        BEL "countD_7" BEL "countD_8" BEL "countD_9" BEL "countD_10" BEL
+        "countD_11" BEL "countD_12" BEL "countD_13" BEL "countD_14" BEL
+        "countD_15" BEL "countD_16" BEL "countD_17" BEL "countD_18" BEL
+        "countD_19" BEL "countD_20" BEL "countD_21" BEL "countD_22" BEL
+        "countD_23" BEL "countD_24" BEL "countD_25" BEL "countD_26" BEL
+        "countD_27" BEL "CHAR2_p_0" BEL "CHAR0_p_0" BEL "CHAR0_p_1" BEL
+        "CHAR1_p_1" BEL "clkA" BEL "clk1kHz" BEL "CHAR3_p_0" BEL "CHAR1_p_0"
+        BEL "CHAR2_p_1" BEL "CHAR2_p_2" BEL "CHAR2_p_3" BEL "CHAR2_p_4" BEL
+        "CHAR2_p_5" BEL "CHAR2_p_6" BEL "CHAR2_p_7" BEL "CHAR2_p_8" BEL
+        "CHAR2_p_9" BEL "CHAR2_p_10" BEL "CHAR2_p_11" BEL "CHAR2_p_12" BEL
+        "CHAR2_p_13" BEL "CHAR2_p_14" BEL "CHAR2_p_15" BEL "CHAR2_p_16" BEL
+        "CHAR2_p_17" BEL "CHAR2_p_18" BEL "CHAR2_p_19" BEL "CHAR2_p_20" BEL
+        "CHAR2_p_21" BEL "CHAR2_p_22" BEL "CHAR2_p_23" BEL "CHAR2_p_24" BEL
+        "CHAR2_p_25" BEL "CHAR2_p_26" BEL "CHAR2_p_27" BEL "CHAR2_p_28" BEL
+        "CHAR2_p_29" BEL "CHAR2_p_30" BEL "CHAR2_p_31" BEL "CHAR3_p_1" BEL
+        "CHAR3_p_2" BEL "CHAR3_p_3" BEL "CHAR3_p_4" BEL "CHAR3_p_5" BEL
+        "CHAR3_p_6" BEL "CHAR3_p_7" BEL "CHAR3_p_8" BEL "CHAR3_p_9" BEL
+        "CHAR3_p_10" BEL "CHAR3_p_11" BEL "CHAR3_p_12" BEL "CHAR3_p_13" BEL
+        "CHAR3_p_14" BEL "CHAR3_p_15" BEL "CHAR3_p_16" BEL "CHAR3_p_17" BEL
+        "CHAR3_p_18" BEL "CHAR3_p_19" BEL "CHAR3_p_20" BEL "CHAR3_p_21" BEL
+        "CHAR3_p_22" BEL "CHAR3_p_23" BEL "CHAR3_p_24" BEL "CHAR3_p_25" BEL
+        "CHAR3_p_26" BEL "CHAR3_p_27" BEL "CHAR3_p_28" BEL "CHAR3_p_29" BEL
+        "CHAR3_p_30" BEL "CHAR3_p_31" BEL "CHAR0_p_2" BEL "CHAR0_p_3" BEL
+        "CHAR0_p_4" BEL "CHAR0_p_5" BEL "CHAR0_p_6" BEL "CHAR0_p_7" BEL
+        "CHAR0_p_8" BEL "CHAR0_p_9" BEL "CHAR0_p_10" BEL "CHAR0_p_11" BEL
+        "CHAR0_p_12" BEL "CHAR0_p_13" BEL "CHAR0_p_14" BEL "CHAR0_p_15" BEL
+        "CHAR0_p_16" BEL "CHAR0_p_17" BEL "CHAR0_p_18" BEL "CHAR0_p_19" BEL
+        "CHAR0_p_20" BEL "CHAR0_p_21" BEL "CHAR0_p_22" BEL "CHAR0_p_23" BEL
+        "CHAR0_p_24" BEL "CHAR0_p_25" BEL "CHAR0_p_26" BEL "CHAR0_p_27" BEL
+        "CHAR0_p_28" BEL "CHAR0_p_29" BEL "CHAR0_p_30" BEL "CHAR0_p_31" BEL
+        "CHAR1_p_2" BEL "CHAR1_p_3" BEL "CHAR1_p_4" BEL "CHAR1_p_5" BEL
+        "CHAR1_p_6" BEL "CHAR1_p_7" BEL "CHAR1_p_8" BEL "CHAR1_p_9" BEL
+        "CHAR1_p_10" BEL "CHAR1_p_11" BEL "CHAR1_p_12" BEL "CHAR1_p_13" BEL
+        "CHAR1_p_14" BEL "CHAR1_p_15" BEL "CHAR1_p_16" BEL "CHAR1_p_17" BEL
+        "CHAR1_p_18" BEL "CHAR1_p_19" BEL "CHAR1_p_20" BEL "CHAR1_p_21" BEL
+        "CHAR1_p_22" BEL "CHAR1_p_23" BEL "CHAR1_p_24" BEL "CHAR1_p_25" BEL
+        "CHAR1_p_26" BEL "CHAR1_p_27" BEL "CHAR1_p_28" BEL "CHAR1_p_29" BEL
+        "CHAR1_p_30" BEL "CHAR1_p_31" BEL "countC_0" BEL "countC_1" BEL
+        "countC_2" BEL "countC_3" BEL "countC_4" BEL "countC_5" BEL "countC_6"
+        BEL "countC_7" BEL "countC_8" BEL "countC_9" BEL "countC_10" BEL
+        "countC_11" BEL "countC_12" BEL "countC_13" BEL "countC_14" BEL
+        "countC_15" BEL "countC_16" BEL "countC_17" BEL "countC_18" BEL
+        "countC_19" BEL "countC_20" BEL "countC_21" BEL "countC_22" BEL
+        "countC_23" BEL "countC_24" BEL "countC_25" BEL "countC_26" BEL
+        "countC_27" BEL "clk_BUFGP/BUFG";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 SCHEMATIC END;
 

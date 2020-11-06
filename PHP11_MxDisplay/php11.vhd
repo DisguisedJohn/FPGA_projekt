@@ -49,7 +49,7 @@ architecture Behavioral of php11 is
 	seg_out		: out std_logic_vector(7 downto 0));	-- segment drivers
  end component mux_7seg_char ;
 
- constant introtxt : string := "dinosaurus";
+ constant introtxt : string := "sosos";
  
  -- Timer signals
  signal clk05Hz ,clk4Hz, clk1kHz: STD_LOGIC;		--timer output

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Reading design: php11.prj
@@ -173,11 +173,11 @@ Synthesizing Unit <php11>.
     Found 28-bit adder for signal <countC[27]_GND_5_o_add_25_OUT> created at line 177.
     Found 32-bit adder for signal <M_CHAR_p[31]_GND_5_o_add_95_OUT> created at line 258.
     Found 32-bit subtractor for signal <countB[31]_GND_5_o_sub_122_OUT<31:0>> created at line 311.
-    Found 16x8-bit Read Only RAM for signal <n0289>
-    Found 16x8-bit Read Only RAM for signal <n0290>
-    Found 16x8-bit Read Only RAM for signal <n0291>
-    Found 16x8-bit Read Only RAM for signal <n0292>
-    Found 16x8-bit Read Only RAM for signal <n0301>
+    Found 8x8-bit Read Only RAM for signal <n0289>
+    Found 8x8-bit Read Only RAM for signal <n0290>
+    Found 8x8-bit Read Only RAM for signal <n0291>
+    Found 8x8-bit Read Only RAM for signal <n0292>
+    Found 8x8-bit Read Only RAM for signal <n0301>
     Found 1-bit 4-to-1 multiplexer for signal <countB[1]_CHAR_T3[3]_Mux_99_o> created at line 265.
     Found 1-bit 4-to-1 multiplexer for signal <countB[1]_CHAR_T2[3]_Mux_109_o> created at line 285.
     Found 1-bit 3-to-1 multiplexer for signal <countB[1]_X_5_o_Mux_119_o> created at line 305.
@@ -211,8 +211,8 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 6
- 16x8-bit single-port Read Only RAM                    : 5
  4x4-bit single-port Read Only RAM                     : 1
+ 8x8-bit single-port Read Only RAM                     : 5
 # Adders/Subtractors                                   : 10
  2-bit adder                                           : 1
  28-bit adder                                          : 3
@@ -275,9 +275,9 @@ INFO:Xst:3231 - The small RAM <Mram_n0301> will be implemented on LUTs in order 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <M_CHAR_p<3:0>> |          |
+    |     addrA          | connected to signal <M_CHAR_p<2:0>> |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -286,9 +286,9 @@ INFO:Xst:3231 - The small RAM <Mram_n0289> will be implemented on LUTs in order 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <CHAR3_p<3:0>>  |          |
+    |     addrA          | connected to signal <CHAR3_p<2:0>>  |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -297,9 +297,9 @@ INFO:Xst:3231 - The small RAM <Mram_n0290> will be implemented on LUTs in order 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <CHAR2_p<3:0>>  |          |
+    |     addrA          | connected to signal <CHAR2_p<2:0>>  |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -308,9 +308,9 @@ INFO:Xst:3231 - The small RAM <Mram_n0291> will be implemented on LUTs in order 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <CHAR1_p<3:0>>  |          |
+    |     addrA          | connected to signal <CHAR1_p<2:0>>  |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -319,9 +319,9 @@ INFO:Xst:3231 - The small RAM <Mram_n0292> will be implemented on LUTs in order 
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <CHAR0_p<3:0>>  |          |
+    |     addrA          | connected to signal <CHAR0_p<2:0>>  |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -333,8 +333,8 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 6
- 16x8-bit single-port distributed Read Only RAM        : 5
  4x4-bit single-port distributed Read Only RAM         : 1
+ 8x8-bit single-port distributed Read Only RAM         : 5
 # Adders/Subtractors                                   : 1
  32-bit subtractor                                     : 1
 # Counters                                             : 9
@@ -376,11 +376,22 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR3_7> (without i
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR2_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR1_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR0_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <CHAR2_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR2_6> 
-INFO:Xst:2261 - The FF/Latch <CHAR1_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR1_6> 
-INFO:Xst:2261 - The FF/Latch <CHAR0_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR0_6> 
-INFO:Xst:2261 - The FF/Latch <CHAR3_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR3_6> 
-INFO:Xst:2261 - The FF/Latch <M_CHAR_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <M_CHAR_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR2_0> in Unit <php11> is equivalent to the following 3 FFs/Latches, which will be removed : <CHAR2_1> <CHAR2_5> <CHAR2_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR1_0> in Unit <php11> is equivalent to the following 3 FFs/Latches, which will be removed : <CHAR1_1> <CHAR1_5> <CHAR1_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR0_0> in Unit <php11> is equivalent to the following 3 FFs/Latches, which will be removed : <CHAR0_1> <CHAR0_5> <CHAR0_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR3_0> in Unit <php11> is equivalent to the following 3 FFs/Latches, which will be removed : <CHAR3_1> <CHAR3_5> <CHAR3_6> 
+INFO:Xst:2261 - The FF/Latch <M_CHAR_0> in Unit <php11> is equivalent to the following 3 FFs/Latches, which will be removed : <M_CHAR_1> <M_CHAR_5> <M_CHAR_6> 
+INFO:Xst:2261 - The FF/Latch <CHAR2_2> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR2_3> 
+INFO:Xst:2261 - The FF/Latch <CHAR1_2> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR1_3> 
+INFO:Xst:2261 - The FF/Latch <CHAR0_2> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR0_3> 
+INFO:Xst:2261 - The FF/Latch <CHAR3_2> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR3_3> 
+INFO:Xst:2261 - The FF/Latch <M_CHAR_2> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <M_CHAR_3> 
+WARNING:Xst:1710 - FF/Latch <CHAR_T3_0> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <CHAR_T0_0> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <CHAR_T1_0> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <CHAR_T1_1> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <CHAR_T1_2> (without init value) has a constant value of 1 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <CHAR_T2_0> in Unit <php11> is equivalent to the following 2 FFs/Latches, which will be removed : <CHAR_T2_1> <CHAR_T2_2> 
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -408,16 +419,19 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
 
 
 Optimizing unit <php11> ...
+INFO:Xst:2261 - The FF/Latch <CHAR_T3_1> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR_T3_3> 
+WARNING:Xst:1710 - FF/Latch <CHAR_T3_1> (without init value) has a constant value of 1 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <mux_7seg_char> ...
 WARNING:Xst:1293 - FF/Latch <m7seg/akt_znak_7> has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 6.
+INFO:Xst:2261 - The FF/Latch <m7seg/akt_znak_3> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <m7seg/akt_znak_2> 
+INFO:Xst:2261 - The FF/Latch <m7seg/akt_znak_6> in Unit <php11> is equivalent to the following 2 FFs/Latches, which will be removed : <m7seg/akt_znak_1> <m7seg/akt_znak_0> 
+Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 5.
 WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_LD hinder the constant cleaning in the block php11.
    You should achieve better results by setting this init to 1.
-FlipFlop SEQ_FSM_FFd2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -425,8 +439,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 342
- Flip-Flops                                            : 342
+# Registers                                            : 314
+ Flip-Flops                                            : 314
 
 =========================================================================
 
@@ -449,29 +463,28 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1188
+# BELS                             : 1145
 #      GND                         : 1
 #      INV                         : 42
 #      LUT1                        : 237
-#      LUT2                        : 35
-#      LUT3                        : 15
-#      LUT4                        : 138
-#      LUT5                        : 12
-#      LUT6                        : 157
+#      LUT2                        : 34
+#      LUT3                        : 45
+#      LUT4                        : 129
+#      LUT5                        : 8
+#      LUT6                        : 105
 #      MUXCY                       : 267
-#      MUXF7                       : 7
 #      VCC                         : 1
 #      XORCY                       : 276
-# FlipFlops/Latches                : 343
-#      FD                          : 161
+# FlipFlops/Latches                : 315
+#      FD                          : 160
 #      FD_1                        : 1
 #      FDC                         : 2
-#      FDC_1                       : 6
-#      FDE                         : 72
+#      FDC_1                       : 3
+#      FDE                         : 54
 #      FDP_1                       : 5
 #      FDR                         : 56
-#      FDRE                        : 37
-#      FDSE                        : 2
+#      FDRE                        : 32
+#      FDSE                        : 1
 #      LD                          : 1
 # Clock Buffers                    : 3
 #      BUFG                        : 2
@@ -487,15 +500,15 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             343  out of  18224     1%  
- Number of Slice LUTs:                  636  out of   9112     6%  
-    Number used as Logic:               636  out of   9112     6%  
+ Number of Slice Registers:             315  out of  18224     1%  
+ Number of Slice LUTs:                  600  out of   9112     6%  
+    Number used as Logic:               600  out of   9112     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    639
-   Number with an unused Flip Flop:     296  out of    639    46%  
-   Number with an unused LUT:             3  out of    639     0%  
-   Number of fully used LUT-FF pairs:   340  out of    639    53%  
+ Number of LUT Flip Flop pairs used:    602
+   Number with an unused Flip Flop:     287  out of    602    47%  
+   Number with an unused LUT:             2  out of    602     0%  
+   Number of fully used LUT-FF pairs:   313  out of    602    51%  
    Number of unique control sets:        14
 
 IO Utilization: 
@@ -526,9 +539,9 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 238   |
-clkA                               | BUFG                   | 90    |
-clk1kHz                            | NONE(m7seg/cd_1)       | 14    |
+clk                                | BUFGP                  | 226   |
+clkA                               | BUFG                   | 77    |
+clk1kHz                            | NONE(m7seg/cd_1)       | 11    |
 btnd                               | IBUF+BUFG              | 1     |
 -----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -541,9 +554,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.258ns (Maximum Frequency: 190.201MHz)
-   Minimum input arrival time before clock: 2.584ns
-   Maximum output required time after clock: 6.785ns
+   Minimum period: 5.604ns (Maximum Frequency: 178.429MHz)
+   Minimum input arrival time before clock: 2.508ns
+   Maximum output required time after clock: 4.989ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -552,58 +565,58 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.258ns (frequency: 190.201MHz)
-  Total number of paths / destination ports: 17756 / 322
+  Clock period: 5.604ns (frequency: 178.429MHz)
+  Total number of paths / destination ports: 17348 / 298
 -------------------------------------------------------------------------
-Delay:               5.258ns (Levels of Logic = 4)
-  Source:            countC_24 (FF)
+Delay:               5.604ns (Levels of Logic = 4)
+  Source:            countC_1 (FF)
   Destination:       CHAR2_p_1 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: countC_24 to CHAR2_p_1
+  Data Path: countC_1 to CHAR2_p_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.981  countC_24 (countC_24)
-     LUT6:I0->O           10   0.203   1.104  GND_5_o_GND_5_o_equal_9_o<27>7_SW0 (N43)
-     LUT6:I2->O            8   0.203   0.803  GND_5_o_GND_5_o_equal_9_o<27>7_1 (GND_5_o_GND_5_o_equal_9_o<27>7)
-     LUT6:I5->O           16   0.205   1.005  _n03367 (_n0336)
-     LUT4:I3->O            1   0.205   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
+     FD:C->Q               2   0.447   0.981  countC_1 (countC_1)
+     LUT6:I0->O           25   0.203   1.193  GND_5_o_GND_5_o_equal_9_o<27>4 (GND_5_o_GND_5_o_equal_9_o<27>3)
+     LUT6:I5->O            4   0.205   0.684  GND_5_o_GND_5_o_equal_9_o<27>7_1 (GND_5_o_GND_5_o_equal_9_o<27>7)
+     LUT6:I5->O           31   0.205   1.382  _n03367 (_n0336)
+     LUT4:I2->O            1   0.203   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
      FD:D                      0.102          CHAR3_p_1
     ----------------------------------------
-    Total                      5.258ns (1.365ns logic, 3.893ns route)
-                                       (26.0% logic, 74.0% route)
+    Total                      5.604ns (1.365ns logic, 4.239ns route)
+                                       (24.4% logic, 75.6% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkA'
-  Clock period: 4.607ns (frequency: 217.082MHz)
-  Total number of paths / destination ports: 2821 / 212
+  Clock period: 4.499ns (frequency: 222.258MHz)
+  Total number of paths / destination ports: 2639 / 181
 -------------------------------------------------------------------------
-Delay:               4.607ns (Levels of Logic = 2)
-  Source:            SEQ_FSM_FFd3 (FF)
+Delay:               4.499ns (Levels of Logic = 2)
+  Source:            M_CHAR_p_15 (FF)
   Destination:       M_CHAR_p_1 (FF)
   Source Clock:      clkA rising
   Destination Clock: clkA rising
 
-  Data Path: SEQ_FSM_FFd3 to M_CHAR_p_1
+  Data Path: M_CHAR_p_15 to M_CHAR_p_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              43   0.447   1.449  SEQ_FSM_FFd3 (SEQ_FSM_FFd3)
-     LUT5:I4->O            1   0.205   0.580  _n03465 (_n03465)
-     LUT6:I5->O           32   0.205   1.291  _n03467 (_n0346)
+     FDRE:C->Q             2   0.447   0.981  M_CHAR_p_15 (M_CHAR_p_15)
+     LUT6:I0->O            1   0.203   0.944  _n03464 (_n03464)
+     LUT6:I0->O           32   0.203   1.291  _n03467 (_n0346)
      FDRE:R                    0.430          M_CHAR_p_1
     ----------------------------------------
-    Total                      4.607ns (1.287ns logic, 3.320ns route)
-                                       (27.9% logic, 72.1% route)
+    Total                      4.499ns (1.283ns logic, 3.216ns route)
+                                       (28.5% logic, 71.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk1kHz'
-  Clock period: 2.242ns (frequency: 446.100MHz)
-  Total number of paths / destination ports: 27 / 14
+  Clock period: 2.163ns (frequency: 462.406MHz)
+  Total number of paths / destination ports: 21 / 11
 -------------------------------------------------------------------------
-Delay:               2.242ns (Levels of Logic = 1)
+Delay:               2.163ns (Levels of Logic = 1)
   Source:            m7seg/cd_0 (FF)
   Destination:       m7seg/cd_0 (FF)
   Source Clock:      clk1kHz falling
@@ -613,18 +626,18 @@ Delay:               2.242ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             12   0.447   0.908  m7seg/cd_0 (m7seg/cd_0)
+     FDC:C->Q              9   0.447   0.829  m7seg/cd_0 (m7seg/cd_0)
      INV:I->O              1   0.206   0.579  m7seg/Mcount_cd_xor<0>11_INV_0 (m7seg/Result<0>)
      FDC:D                     0.102          m7seg/cd_0
     ----------------------------------------
-    Total                      2.242ns (0.755ns logic, 1.487ns route)
-                                       (33.7% logic, 66.3% route)
+    Total                      2.163ns (0.755ns logic, 1.408ns route)
+                                       (34.9% logic, 65.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk1kHz'
-  Total number of paths / destination ports: 13 / 13
+  Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              2.584ns (Levels of Logic = 1)
+Offset:              2.508ns (Levels of Logic = 1)
   Source:            btnd (PAD)
   Destination:       m7seg/cd_1 (FF)
   Destination Clock: clk1kHz falling
@@ -633,40 +646,37 @@ Offset:              2.584ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            13   1.222   0.932  btnd_IBUF (btnd_IBUF)
-     FDC_1:CLR                 0.430          m7seg/akt_znak_0
+     IBUF:I->O            10   1.222   0.856  btnd_IBUF (btnd_IBUF)
+     FDC_1:CLR                 0.430          m7seg/akt_znak_3
     ----------------------------------------
-    Total                      2.584ns (1.652ns logic, 0.932ns route)
-                                       (63.9% logic, 36.1% route)
+    Total                      2.508ns (1.652ns logic, 0.856ns route)
+                                       (65.9% logic, 34.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1kHz'
-  Total number of paths / destination ports: 133 / 11
+  Total number of paths / destination ports: 39 / 11
 -------------------------------------------------------------------------
-Offset:              6.608ns (Levels of Logic = 5)
-  Source:            m7seg/akt_znak_5_C_5 (FF)
-  Destination:       seg<5> (PAD)
+Offset:              4.938ns (Levels of Logic = 2)
+  Source:            m7seg/akt_znak_6 (FF)
+  Destination:       seg<6> (PAD)
   Source Clock:      clk1kHz falling
 
-  Data Path: m7seg/akt_znak_5_C_5 to seg<5>
+  Data Path: m7seg/akt_znak_6 to seg<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD_1:C->Q             1   0.447   0.684  m7seg/akt_znak_5_C_5 (m7seg/akt_znak_5_C_5)
-     LUT3:I1->O            9   0.203   0.830  m7seg/akt_znak_51 (m7seg/akt_znak_5)
-     LUT5:I4->O            6   0.205   0.745  m7seg/seg<5>21 (m7seg/seg<5>2)
-     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N62)
-     MUXF7:I1->O           1   0.140   0.579  m7seg/seg<5> (seg_3_OBUF)
-     OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
+     FDC_1:C->Q            7   0.447   1.138  m7seg/akt_znak_6 (m7seg/akt_znak_6)
+     LUT6:I0->O            1   0.203   0.579  m7seg/seg<4> (seg_4_OBUF)
+     OBUF:I->O                 2.571          seg_4_OBUF (seg<4>)
     ----------------------------------------
-    Total                      6.608ns (3.771ns logic, 2.837ns route)
-                                       (57.1% logic, 42.9% route)
+    Total                      4.938ns (3.221ns logic, 1.717ns route)
+                                       (65.2% logic, 34.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'btnd'
-  Total number of paths / destination ports: 14 / 7
+  Total number of paths / destination ports: 7 / 7
 -------------------------------------------------------------------------
-Offset:              6.785ns (Levels of Logic = 5)
+Offset:              4.989ns (Levels of Logic = 2)
   Source:            m7seg/akt_znak_5_LD (LATCH)
   Destination:       seg<5> (PAD)
   Source Clock:      btnd falling
@@ -675,15 +685,12 @@ Offset:              6.785ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q               1   0.498   0.808  m7seg/akt_znak_5_LD (m7seg/akt_znak_5_LD)
-     LUT3:I0->O            9   0.205   0.830  m7seg/akt_znak_51 (m7seg/akt_znak_5)
-     LUT5:I4->O            6   0.205   0.745  m7seg/seg<5>21 (m7seg/seg<5>2)
-     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N62)
-     MUXF7:I1->O           1   0.140   0.579  m7seg/seg<5> (seg_3_OBUF)
-     OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
+     LD:G->Q               7   0.498   1.138  m7seg/akt_znak_5_LD (m7seg/akt_znak_5_LD)
+     LUT6:I0->O            1   0.203   0.579  m7seg/seg<8>1 (seg_0_OBUF)
+     OBUF:I->O                 2.571          seg_0_OBUF (seg<0>)
     ----------------------------------------
-    Total                      6.785ns (3.824ns logic, 2.961ns route)
-                                       (56.4% logic, 43.6% route)
+    Total                      4.989ns (3.272ns logic, 1.717ns route)
+                                       (65.6% logic, 34.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clkA'
@@ -714,7 +721,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.258|         |         |         |
+clk            |    5.604|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk1kHz
@@ -723,7 +730,7 @@ Clock to Setup on destination clock clk1kHz
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 clk            |         |         |    1.616|         |
-clk1kHz        |         |         |    2.242|         |
+clk1kHz        |         |         |    2.163|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clkA
@@ -731,21 +738,21 @@ Clock to Setup on destination clock clkA
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clkA           |    4.607|         |         |         |
+clkA           |    4.499|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 13.00 secs
-Total CPU time to Xst completion: 12.42 secs
+Total CPU time to Xst completion: 12.11 secs
  
 --> 
 
 
-Total memory usage is 393656 kilobytes
+Total memory usage is 393652 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   10 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
+Number of infos    :   21 (   0 filtered)
 
