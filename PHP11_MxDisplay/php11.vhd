@@ -69,7 +69,7 @@ architecture Behavioral of php11 is
  signal CHAR0_p : integer := 4;
 
  signal SEQ : STD_LOGIC_VECTOR (2 downto 0) := "000";
- signal M_CHAR : character;
+ signal M_CHAR : character := ' ';
  signal M_CHAR_p: integer:= 1;
  signal CHAR_T0 : STD_LOGIC_VECTOR (1 downto 0);
  signal CHAR_T1 : STD_LOGIC_VECTOR (2 downto 0);
@@ -184,14 +184,16 @@ text_movement: process (clk)
 	morse_select: process (clkA)
 	 begin 
 	 	if rising_edge(clkA) then
+		 
+		 if rst = '1' then
+			M_CHAR_p <= 1;
+		 end if;
+		 
 		 if seq = "000" then
 		 CHAR_T3 <= "1110";
 		 CHAR_T2 <= "1000";
 		 CHAR_T1 <= "100";
-		 CHAR_T0 <= "00";
-		 if rst = '1' then
-			M_CHAR_p <= 1;
-		 end if;
+		 CHAR_T0 <= "10";
 		 
 		 M_CHAR <= introtxt(M_CHAR_p);
 				 case M_CHAR is
@@ -245,9 +247,9 @@ text_movement: process (clk)
 								 seq <= "011";
 							 else 
 								  case M_CHAR is
-													 when 'e' => CHAR_T0 <= "10"; 
-										 	       when 't' => CHAR_T0 <= "11"; 
-											       when others  => CHAR_T0 <= "00"; 
+													 when 'e' => CHAR_T0 <= "00"; 
+										 	       when 't' => CHAR_T0 <= "01"; 
+											       when others  => CHAR_T0 <= "10"; 
 								  end case;
 									 countB <= 0;
 									 space <= '1';
@@ -308,7 +310,7 @@ text_movement: process (clk)
 					if space = '0' then
 						if CHAR_T1(countB) = '1' then
 							led <= "11";
-						else 
+						else
 							led <= "01";
 						end if;
 						space <= '1';
@@ -325,20 +327,27 @@ text_movement: process (clk)
 			
 			elsif seq = "100" then
 				if space = '0' then
+			    if CHAR_T0 = "10" then
+				  led <= "00";
+				  space <= '1';
+				  else
 					if CHAR_T0(0) = '1' then
 						led <= "11";
 					else
 						led <= "01";
 					end if;
 					  space <= '1';
+				  end if;				  
 				else
 					led <= "00";
 					seq <= "000";
 				end if;
-			
+
+-- Endless sequence for testing 	
 			elsif seq = "111" then
 				led <= blik & blik;
 				blik <= not blik;
+--------------------------------
 					
 		end if;
 	end if;
