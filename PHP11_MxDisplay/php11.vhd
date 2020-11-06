@@ -70,6 +70,7 @@ architecture Behavioral of php11 is
 
  signal SEQ : STD_LOGIC_VECTOR (2 downto 0);
  signal M_CHAR : character;
+ signal M_CHAR_p: integer:= 0;
  signal CHAR_T0 : STD_LOGIC_VECTOR (1 downto 0);
  signal CHAR_T1 : STD_LOGIC_VECTOR (2 downto 0);
  signal CHAR_T2 : STD_LOGIC_VECTOR (3 downto 0);
@@ -178,7 +179,7 @@ text_movement: process (clk)
 	 end if;
 	
 	end process text_movement;
-	
+----------------------------------------------------------------------------------------------	
 	morse_select: process (SEQ, CLK, M_CHAR)
 	 begin 
 	 	if Rising_Edge (clk) then
@@ -186,6 +187,7 @@ text_movement: process (clk)
 		 countE <= (others => '0');
 		 
 		 if seq = "000" then
+		 M_CHAR <= introtxt(M_CHAR_p);
 				 case M_CHAR is
 					           when 'b' => CHAR_T3 <= "1000";
 							     when 'c' => CHAR_T3 <= "1010";
@@ -247,6 +249,12 @@ text_movement: process (clk)
 						    end if;
 						  end if;
 						end if;
+				if M_CHAR_p = introtxt'length then
+					M_CHAR_p <= 0;
+				else
+					M_CHAR_p <= M_CHAR_p + 1;
+				end if;
+				
 --------------------------------------------------------				  
 			elsif seq = "001" then
 				if countB >= 0 then

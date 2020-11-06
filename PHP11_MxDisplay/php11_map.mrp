@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu Nov  5 22:50:04 2020
+Mapped Date    : Fri Nov  6 16:06:08 2020
 
 Design Summary
 --------------
@@ -35,7 +35,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   133 out of   2,278    5%
+  Number of occupied Slices:                   134 out of   2,278    5%
   Number of MUXCYs used:                       184 out of   4,556    4%
   Number of LUT Flip Flop pairs used:          454
     Number with an unused Flip Flop:           232 out of     454   51%
