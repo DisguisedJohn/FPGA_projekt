@@ -149,25 +149,25 @@ text_movement: process (clk)
 	  CHAR1 <= introtxt(CHAR1_p);
 	  CHAR0 <= introtxt(CHAR0_p);
 
-		if CHAR3_p = introtxt'length then
+		if CHAR3_p = introtxt'length - 1 then
 		  CHAR3_p <= 0;
 		 else 
 		  CHAR3_p <= CHAR3_p + 1;
 		end if;
 		
-		if CHAR2_p = introtxt'length then
+		if CHAR2_p = introtxt'length - 1 then
 		  CHAR2_p <= 0;
 		 else 
 		  CHAR2_p <= CHAR2_p + 1;
 		end if;
 		
-		if CHAR1_p = introtxt'length then
+		if CHAR1_p = introtxt'length - 1 then
 		  CHAR1_p <= 0;
 		 else 
 		  CHAR1_p <= CHAR1_p + 1;
 		end if;
 		
-		if CHAR0_p = introtxt'length then
+		if CHAR0_p = introtxt'length - 1 then
 		  CHAR0_p <= 0;
 		 else 
 		  CHAR0_p <= CHAR0_p + 1;
@@ -252,7 +252,7 @@ text_movement: process (clk)
 						  end if;
 						end if;
 						
-				if M_CHAR_p = introtxt'length then
+				if M_CHAR_p = introtxt'length - 1 then
 					M_CHAR_p <= 0;
 				else
 					M_CHAR_p <= M_CHAR_p + 1;

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Reading design: php11.prj
@@ -432,6 +432,7 @@ INFO:Xst:2261 - The FF/Latch <m7seg/akt_znak_6> in Unit <php11> is equivalent to
 Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 5.
 WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_LD hinder the constant cleaning in the block php11.
    You should achieve better results by setting this init to 1.
+FlipFlop SEQ_FSM_FFd3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -439,8 +440,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 314
- Flip-Flops                                            : 314
+# Registers                                            : 315
+ Flip-Flops                                            : 315
 
 =========================================================================
 
@@ -463,27 +464,27 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1145
+# BELS                             : 1177
 #      GND                         : 1
 #      INV                         : 42
 #      LUT1                        : 237
-#      LUT2                        : 34
+#      LUT2                        : 35
 #      LUT3                        : 45
-#      LUT4                        : 129
+#      LUT4                        : 130
 #      LUT5                        : 8
-#      LUT6                        : 105
+#      LUT6                        : 135
 #      MUXCY                       : 267
 #      VCC                         : 1
 #      XORCY                       : 276
-# FlipFlops/Latches                : 315
-#      FD                          : 160
+# FlipFlops/Latches                : 316
+#      FD                          : 192
 #      FD_1                        : 1
 #      FDC                         : 2
 #      FDC_1                       : 3
 #      FDE                         : 54
 #      FDP_1                       : 5
 #      FDR                         : 56
-#      FDRE                        : 32
+#      FDRE                        : 1
 #      FDSE                        : 1
 #      LD                          : 1
 # Clock Buffers                    : 3
@@ -500,16 +501,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             315  out of  18224     1%  
- Number of Slice LUTs:                  600  out of   9112     6%  
-    Number used as Logic:               600  out of   9112     6%  
+ Number of Slice Registers:             316  out of  18224     1%  
+ Number of Slice LUTs:                  632  out of   9112     6%  
+    Number used as Logic:               632  out of   9112     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    602
-   Number with an unused Flip Flop:     287  out of    602    47%  
-   Number with an unused LUT:             2  out of    602     0%  
-   Number of fully used LUT-FF pairs:   313  out of    602    51%  
-   Number of unique control sets:        14
+ Number of LUT Flip Flop pairs used:    635
+   Number with an unused Flip Flop:     319  out of    635    50%  
+   Number with an unused LUT:             3  out of    635     0%  
+   Number of fully used LUT-FF pairs:   313  out of    635    49%  
+   Number of unique control sets:        13
 
 IO Utilization: 
  Number of IOs:                          16
@@ -540,7 +541,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 226   |
-clkA                               | BUFG                   | 77    |
+clkA                               | BUFG                   | 78    |
 clk1kHz                            | NONE(m7seg/cd_1)       | 11    |
 btnd                               | IBUF+BUFG              | 1     |
 -----------------------------------+------------------------+-------+
@@ -590,26 +591,28 @@ Delay:               5.604ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkA'
-  Clock period: 4.499ns (frequency: 222.258MHz)
-  Total number of paths / destination ports: 2639 / 181
+  Clock period: 5.566ns (frequency: 179.652MHz)
+  Total number of paths / destination ports: 2672 / 120
 -------------------------------------------------------------------------
-Delay:               4.499ns (Levels of Logic = 2)
-  Source:            M_CHAR_p_15 (FF)
+Delay:               5.566ns (Levels of Logic = 4)
+  Source:            M_CHAR_p_14 (FF)
   Destination:       M_CHAR_p_1 (FF)
   Source Clock:      clkA rising
   Destination Clock: clkA rising
 
-  Data Path: M_CHAR_p_15 to M_CHAR_p_1
+  Data Path: M_CHAR_p_14 to M_CHAR_p_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             2   0.447   0.981  M_CHAR_p_15 (M_CHAR_p_15)
-     LUT6:I0->O            1   0.203   0.944  _n03464 (_n03464)
-     LUT6:I0->O           32   0.203   1.291  _n03467 (_n0346)
-     FDRE:R                    0.430          M_CHAR_p_1
+     FD:C->Q               3   0.447   1.015  M_CHAR_p_14 (M_CHAR_p_14)
+     LUT6:I0->O            1   0.203   0.827  _n03461 (_n03461)
+     LUT4:I0->O            2   0.203   0.721  _n03464 (_n03464)
+     LUT5:I3->O           31   0.203   1.642  _n03467 (_n0346)
+     LUT6:I0->O            1   0.203   0.000  M_CHAR_p_1_rstpot (M_CHAR_p_1_rstpot)
+     FD:D                      0.102          M_CHAR_p_1
     ----------------------------------------
-    Total                      4.499ns (1.283ns logic, 3.216ns route)
-                                       (28.5% logic, 71.5% route)
+    Total                      5.566ns (1.361ns logic, 4.205ns route)
+                                       (24.5% logic, 75.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk1kHz'
@@ -738,19 +741,19 @@ Clock to Setup on destination clock clkA
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clkA           |    4.499|         |         |         |
+clkA           |    5.566|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.27 secs
+Total CPU time to Xst completion: 12.07 secs
  
 --> 
 
 
-Total memory usage is 393652 kilobytes
+Total memory usage is 393660 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   16 (   0 filtered)
