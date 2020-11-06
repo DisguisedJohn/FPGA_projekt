@@ -290,3 +290,9 @@ map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off php11_map.ncd php11.ncd php11.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml php11.twx php11.ncd -o php11.twr php11.pcf -ucf Nexys3_Master.ucf 
 bitgen -intstyle ise -f php11.ut php11.ncd 
+xst -intstyle ise -ifn "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.xst" -ofn "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Nexys3_Master.ucf -p xc6slx16-csg324-3 php11.ngc php11.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o php11_map.ncd php11.ngd php11.pcf 
+par -w -intstyle ise -ol high -mt off php11_map.ncd php11.ncd php11.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml php11.twx php11.ncd -o php11.twr php11.pcf -ucf Nexys3_Master.ucf 
+bitgen -intstyle ise -f php11.ut php11.ncd 

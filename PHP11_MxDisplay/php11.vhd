@@ -190,7 +190,7 @@ text_movement: process (clk)
 		 CHAR_T1 <= "100";
 		 CHAR_T0 <= "00";
 		 if rst = '1' then
-			M_CHAR_p <= 0;
+			M_CHAR_p <= 1;
 		 end if;
 		 
 		 M_CHAR <= introtxt(M_CHAR_p);
