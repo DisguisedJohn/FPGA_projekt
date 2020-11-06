@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Reading design: php11.prj
@@ -122,7 +122,7 @@ Parsing architecture <Behavioral> of entity <php11>.
 Elaborating entity <php11> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <mux_7seg_char> (architecture <arch_mux_7seg_char>) from library <work>.
-WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 335: counte should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/home/john/Desktop/FPGA_projekt/PHP11_MxDisplay/php11.vhd" Line 336: counte should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -141,6 +141,7 @@ Synthesizing Unit <php11>.
     Found 32-bit register for signal <CHAR2_p>.
     Found 32-bit register for signal <CHAR1_p>.
     Found 32-bit register for signal <CHAR0_p>.
+    Found 2-bit register for signal <led>.
     Found 28-bit adder for signal <countD[27]_GND_5_o_add_4_OUT> created at line 131.
     Found 32-bit adder for signal <CHAR3_p[31]_GND_5_o_add_14_OUT> created at line 154.
     Found 32-bit adder for signal <CHAR2_p[31]_GND_5_o_add_17_OUT> created at line 160.
@@ -154,7 +155,7 @@ Synthesizing Unit <php11>.
     Summary:
 	inferred   4 RAM(s).
 	inferred   6 Adder/Subtractor(s).
-	inferred 217 D-type flip-flop(s).
+	inferred 219 D-type flip-flop(s).
 Unit <php11> synthesized.
 
 Synthesizing Unit <mux_7seg_char>.
@@ -183,9 +184,9 @@ Macro Statistics
  2-bit adder                                           : 1
  28-bit adder                                          : 2
  32-bit adder                                          : 4
-# Registers                                            : 14
+# Registers                                            : 15
  1-bit register                                        : 1
- 2-bit register                                        : 1
+ 2-bit register                                        : 2
  28-bit register                                       : 2
  32-bit register                                       : 4
  4-bit register                                        : 1
@@ -199,6 +200,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1710 - FF/Latch <led_0> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_1> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <mux_7seg_char>.
 The following registers are absorbed into counter <cd>: 1 register on signal <cd>.
@@ -279,8 +282,8 @@ Macro Statistics
  2-bit up counter                                      : 1
  28-bit up counter                                     : 2
  32-bit up counter                                     : 4
-# Registers                                            : 45
- Flip-Flops                                            : 45
+# Registers                                            : 47
+ Flip-Flops                                            : 47
 # Multiplexers                                         : 1
  8-bit 4-to-1 multiplexer                              : 1
 
@@ -289,6 +292,8 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <led_0> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_1> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <CHAR3_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR2_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR1_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
@@ -599,15 +604,15 @@ clk1kHz        |         |         |    2.242|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.42 secs
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 11.49 secs
  
 --> 
 
 
-Total memory usage is 392476 kilobytes
+Total memory usage is 392468 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    8 (   0 filtered)
+Number of warnings :   12 (   0 filtered)
 Number of infos    :   10 (   0 filtered)
 
