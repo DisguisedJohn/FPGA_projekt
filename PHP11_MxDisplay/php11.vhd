@@ -208,7 +208,7 @@ text_movement: process (clk)
 				  
 					if CHAR_T3 /= "1110" then
 						countB <= 3;
-						space <= '0';
+						space <= '1';
 						seq <= "001";
 					else
 						case M_CHAR is
@@ -225,7 +225,7 @@ text_movement: process (clk)
 						
 						 if CHAR_T2 /= "1000" then
 							 countB <= 2; 
-							 space <= '0';
+							 space <= '1';
 							 seq <= "010";
 						 else 						 
 							case M_CHAR is
@@ -237,7 +237,7 @@ text_movement: process (clk)
 							end case;
 							 if CHAR_T1 /= "100" then
 								 countB <= 1; 
-								 space <= '0';
+								 space <= '1';
 								 seq <= "011";
 							 else 
 								  case M_CHAR is
@@ -246,7 +246,7 @@ text_movement: process (clk)
 											       when others  => CHAR_T0 <= "00"; 
 								  end case;
 									 countB <= 0;
-									 space <= '0';
+									 space <= '1';
 									 seq <= "100";
 						    end if;
 						  end if;
