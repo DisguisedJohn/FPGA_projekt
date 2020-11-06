@@ -141,9 +141,29 @@ Synthesizing Unit <php11>.
     Found 32-bit register for signal <CHAR2_p>.
     Found 32-bit register for signal <CHAR1_p>.
     Found 32-bit register for signal <CHAR0_p>.
+    Found 8-bit register for signal <M_CHAR>.
+    Found 4-bit register for signal <CHAR_T3>.
+    Found 32-bit register for signal <countB>.
+    Found 1-bit register for signal <space>.
+    Found 3-bit register for signal <SEQ>.
+    Found 4-bit register for signal <CHAR_T2>.
+    Found 3-bit register for signal <CHAR_T1>.
+    Found 2-bit register for signal <CHAR_T0>.
+    Found 32-bit register for signal <M_CHAR_p>.
     Found 2-bit register for signal <led>.
     Found 1-bit register for signal <blik>.
     Found 28-bit register for signal <countA>.
+    Found finite state machine <FSM_0> for signal <SEQ>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clkA (rising_edge)                             |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
     Found 28-bit adder for signal <countA[27]_GND_5_o_add_1_OUT> created at line 125.
     Found 28-bit adder for signal <countD[27]_GND_5_o_add_4_OUT> created at line 132.
     Found 32-bit adder for signal <CHAR3_p[31]_GND_5_o_add_14_OUT> created at line 155.
@@ -151,14 +171,24 @@ Synthesizing Unit <php11>.
     Found 32-bit adder for signal <CHAR1_p[31]_GND_5_o_add_20_OUT> created at line 167.
     Found 32-bit adder for signal <CHAR0_p[31]_GND_5_o_add_23_OUT> created at line 173.
     Found 28-bit adder for signal <countC[27]_GND_5_o_add_25_OUT> created at line 177.
+    Found 32-bit adder for signal <M_CHAR_p[31]_GND_5_o_add_95_OUT> created at line 254.
+    Found 32-bit subtractor for signal <countB[31]_GND_5_o_sub_122_OUT<31:0>> created at line 307.
     Found 16x8-bit Read Only RAM for signal <n0288>
     Found 16x8-bit Read Only RAM for signal <n0289>
     Found 16x8-bit Read Only RAM for signal <n0290>
     Found 16x8-bit Read Only RAM for signal <n0291>
+    Found 16x8-bit Read Only RAM for signal <n0300>
+    Found 1-bit 4-to-1 multiplexer for signal <countB[1]_CHAR_T3[3]_Mux_99_o> created at line 261.
+    Found 1-bit 4-to-1 multiplexer for signal <countB[1]_CHAR_T2[3]_Mux_109_o> created at line 281.
+    Found 1-bit 3-to-1 multiplexer for signal <countB[1]_X_5_o_Mux_119_o> created at line 301.
+    Found 32-bit comparator greater for signal <n0121> created at line 299
     Summary:
-	inferred   4 RAM(s).
-	inferred   7 Adder/Subtractor(s).
-	inferred 249 D-type flip-flop(s).
+	inferred   5 RAM(s).
+	inferred   9 Adder/Subtractor(s).
+	inferred 335 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  19 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
 Unit <php11> synthesized.
 
 Synthesizing Unit <mux_7seg_char>.
@@ -180,22 +210,32 @@ Unit <mux_7seg_char> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
- 16x8-bit single-port Read Only RAM                    : 4
+# RAMs                                                 : 6
+ 16x8-bit single-port Read Only RAM                    : 5
  4x4-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 8
+# Adders/Subtractors                                   : 10
  2-bit adder                                           : 1
  28-bit adder                                          : 3
- 32-bit adder                                          : 4
-# Registers                                            : 18
- 1-bit register                                        : 3
- 2-bit register                                        : 2
+ 32-bit adder                                          : 5
+ 32-bit subtractor                                     : 1
+# Registers                                            : 26
+ 1-bit register                                        : 4
+ 2-bit register                                        : 3
  28-bit register                                       : 3
- 32-bit register                                       : 4
- 4-bit register                                        : 1
- 8-bit register                                        : 5
-# Multiplexers                                         : 1
+ 3-bit register                                        : 1
+ 32-bit register                                       : 6
+ 4-bit register                                        : 3
+ 8-bit register                                        : 6
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 20
+ 1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 2
+ 2-bit 2-to-1 multiplexer                              : 8
+ 32-bit 2-to-1 multiplexer                             : 5
  8-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
 
 =========================================================================
 
@@ -203,6 +243,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:2677 - Node <CHAR_T0_1> of sequential type is unconnected in block <php11>.
 
 Synthesizing (advanced) Unit <mux_7seg_char>.
 The following registers are absorbed into counter <cd>: 1 register on signal <cd>.
@@ -225,8 +266,20 @@ The following registers are absorbed into counter <countC>: 1 register on signal
 The following registers are absorbed into counter <countA>: 1 register on signal <countA>.
 The following registers are absorbed into counter <CHAR3_p>: 1 register on signal <CHAR3_p>.
 The following registers are absorbed into counter <CHAR2_p>: 1 register on signal <CHAR2_p>.
-The following registers are absorbed into counter <CHAR0_p>: 1 register on signal <CHAR0_p>.
 The following registers are absorbed into counter <CHAR1_p>: 1 register on signal <CHAR1_p>.
+The following registers are absorbed into counter <CHAR0_p>: 1 register on signal <CHAR0_p>.
+The following registers are absorbed into counter <M_CHAR_p>: 1 register on signal <M_CHAR_p>.
+INFO:Xst:3231 - The small RAM <Mram_n0300> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_CHAR_p<3:0>> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 INFO:Xst:3231 - The small RAM <Mram_n0288> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -238,17 +291,6 @@ INFO:Xst:3231 - The small RAM <Mram_n0288> will be implemented on LUTs in order 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3231 - The small RAM <Mram_n0290> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 16-word x 8-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <CHAR1_p<3:0>>  |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
 INFO:Xst:3231 - The small RAM <Mram_n0289> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -257,6 +299,17 @@ INFO:Xst:3231 - The small RAM <Mram_n0289> will be implemented on LUTs in order 
     |     aspect ratio   | 16-word x 8-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <CHAR2_p<3:0>>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3231 - The small RAM <Mram_n0290> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <CHAR1_p<3:0>>  |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -272,36 +325,59 @@ INFO:Xst:3231 - The small RAM <Mram_n0291> will be implemented on LUTs in order 
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <php11> synthesized (advanced).
+WARNING:Xst:2677 - Node <CHAR_T0_1> of sequential type is unconnected in block <php11>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 5
- 16x8-bit single-port distributed Read Only RAM        : 4
+# RAMs                                                 : 6
+ 16x8-bit single-port distributed Read Only RAM        : 5
  4x4-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 8
+# Adders/Subtractors                                   : 1
+ 32-bit subtractor                                     : 1
+# Counters                                             : 9
  2-bit up counter                                      : 1
  28-bit up counter                                     : 3
- 32-bit up counter                                     : 4
-# Registers                                            : 49
- Flip-Flops                                            : 49
-# Multiplexers                                         : 1
+ 32-bit up counter                                     : 5
+# Registers                                            : 102
+ Flip-Flops                                            : 102
+# Comparators                                          : 1
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 20
+ 1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 2
+ 2-bit 2-to-1 multiplexer                              : 8
+ 32-bit 2-to-1 multiplexer                             : 5
  8-bit 4-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <led_0> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <led_1> 
-WARNING:Xst:1710 - FF/Latch <CHAR3_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <SEQ[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 100   | 100
+ 011   | 011
+ 010   | 010
+ 001   | 001
+-------------------
+WARNING:Xst:1293 - FF/Latch <M_CHAR_7> has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR3_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR2_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR1_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <CHAR0_7> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <CHAR1_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR1_6> 
 INFO:Xst:2261 - The FF/Latch <CHAR0_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR0_6> 
 INFO:Xst:2261 - The FF/Latch <CHAR3_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR3_6> 
+INFO:Xst:2261 - The FF/Latch <M_CHAR_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <M_CHAR_6> 
 INFO:Xst:2261 - The FF/Latch <CHAR2_5> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <CHAR2_6> 
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
@@ -330,15 +406,17 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
 
 
 Optimizing unit <php11> ...
+WARNING:Xst:1710 - FF/Latch <space> (without init value) has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <mux_7seg_char> ...
 WARNING:Xst:1293 - FF/Latch <m7seg/akt_znak_7> has a constant value of 0 in block <php11>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 4.
+Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 6.
 WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_LD hinder the constant cleaning in the block php11.
    You should achieve better results by setting this init to 1.
+FlipFlop SEQ_FSM_FFd2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -346,8 +424,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 254
- Flip-Flops                                            : 254
+# Registers                                            : 341
+ Flip-Flops                                            : 341
 
 =========================================================================
 
@@ -370,30 +448,31 @@ Top Level Output File Name         : php11.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 916
+# BELS                             : 1184
 #      GND                         : 1
-#      INV                         : 10
-#      LUT1                        : 205
-#      LUT2                        : 34
-#      LUT3                        : 13
-#      LUT4                        : 123
-#      LUT5                        : 3
-#      LUT6                        : 102
-#      MUXCY                       : 205
+#      INV                         : 42
+#      LUT1                        : 237
+#      LUT2                        : 35
+#      LUT3                        : 18
+#      LUT4                        : 135
+#      LUT5                        : 36
+#      LUT6                        : 129
+#      MUXCY                       : 267
 #      MUXF7                       : 7
 #      VCC                         : 1
-#      XORCY                       : 212
-# FlipFlops/Latches                : 255
-#      FD                          : 156
+#      XORCY                       : 276
+# FlipFlops/Latches                : 342
+#      FD                          : 160
 #      FD_1                        : 1
 #      FDC                         : 2
 #      FDC_1                       : 6
-#      FDE                         : 28
+#      FDE                         : 80
 #      FDP_1                       : 5
 #      FDR                         : 56
+#      FDRE                        : 31
 #      LD                          : 1
-# Clock Buffers                    : 2
-#      BUFG                        : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
 #      BUFGP                       : 1
 # IO Buffers                       : 15
 #      IBUF                        : 1
@@ -406,23 +485,23 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             255  out of  18224     1%  
- Number of Slice LUTs:                  490  out of   9112     5%  
-    Number used as Logic:               490  out of   9112     5%  
+ Number of Slice Registers:             342  out of  18224     1%  
+ Number of Slice LUTs:                  632  out of   9112     6%  
+    Number used as Logic:               632  out of   9112     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    492
-   Number with an unused Flip Flop:     237  out of    492    48%  
-   Number with an unused LUT:             2  out of    492     0%  
-   Number of fully used LUT-FF pairs:   253  out of    492    51%  
-   Number of unique control sets:         9
+ Number of LUT Flip Flop pairs used:    635
+   Number with an unused Flip Flop:     293  out of    635    46%  
+   Number with an unused LUT:             3  out of    635     0%  
+   Number of fully used LUT-FF pairs:   339  out of    635    53%  
+   Number of unique control sets:        15
 
 IO Utilization: 
  Number of IOs:                          16
  Number of bonded IOBs:                  16  out of    232     6%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -445,7 +524,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clkA                               | NONE(blik)             | 2     |
+clkA                               | BUFG                   | 89    |
 clk                                | BUFGP                  | 238   |
 clk1kHz                            | NONE(m7seg/cd_1)       | 14    |
 btnd                               | IBUF+BUFG              | 1     |
@@ -471,25 +550,26 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkA'
-  Clock period: 1.950ns (frequency: 512.794MHz)
-  Total number of paths / destination ports: 2 / 2
+  Clock period: 4.607ns (frequency: 217.082MHz)
+  Total number of paths / destination ports: 2752 / 203
 -------------------------------------------------------------------------
-Delay:               1.950ns (Levels of Logic = 1)
-  Source:            blik (FF)
-  Destination:       blik (FF)
+Delay:               4.607ns (Levels of Logic = 2)
+  Source:            SEQ_FSM_FFd3 (FF)
+  Destination:       M_CHAR_p_1 (FF)
   Source Clock:      clkA rising
   Destination Clock: clkA rising
 
-  Data Path: blik to blik
+  Data Path: SEQ_FSM_FFd3 to M_CHAR_p_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  blik (blik)
-     INV:I->O              1   0.206   0.579  blik_blik_MUX_145_o1_INV_0 (blik_blik_MUX_145_o)
-     FD:D                      0.102          blik
+     FD:C->Q              43   0.447   1.449  SEQ_FSM_FFd3 (SEQ_FSM_FFd3)
+     LUT5:I4->O            1   0.205   0.580  _n03455 (_n03455)
+     LUT6:I5->O           32   0.205   1.291  _n03457 (_n0345)
+     FDRE:R                    0.430          M_CHAR_p_1
     ----------------------------------------
-    Total                      1.950ns (0.755ns logic, 1.195ns route)
-                                       (38.7% logic, 61.3% route)
+    Total                      4.607ns (1.287ns logic, 3.320ns route)
+                                       (27.9% logic, 72.1% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
@@ -507,9 +587,9 @@ Delay:               5.258ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               2   0.447   0.981  countC_24 (countC_24)
-     LUT6:I0->O           10   0.203   1.104  GND_5_o_GND_5_o_equal_9_o<27>7_SW0 (N35)
+     LUT6:I0->O           10   0.203   1.104  GND_5_o_GND_5_o_equal_9_o<27>7_SW0 (N39)
      LUT6:I2->O            8   0.203   0.803  GND_5_o_GND_5_o_equal_9_o<27>7_1 (GND_5_o_GND_5_o_equal_9_o<27>7)
-     LUT6:I5->O           16   0.205   1.005  _n03297 (_n0329)
+     LUT6:I5->O           16   0.205   1.005  _n03367 (_n0336)
      LUT4:I3->O            1   0.205   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
      FD:D                      0.102          CHAR3_p_1
     ----------------------------------------
@@ -573,7 +653,7 @@ Offset:              6.608ns (Levels of Logic = 5)
      FD_1:C->Q             1   0.447   0.684  m7seg/akt_znak_5_C_5 (m7seg/akt_znak_5_C_5)
      LUT3:I1->O            9   0.203   0.830  m7seg/akt_znak_51 (m7seg/akt_znak_5)
      LUT5:I4->O            6   0.205   0.745  m7seg/seg<5>21 (m7seg/seg<5>2)
-     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N52)
+     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N56)
      MUXF7:I1->O           1   0.140   0.579  m7seg/seg<5> (seg_3_OBUF)
      OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
     ----------------------------------------
@@ -596,7 +676,7 @@ Offset:              6.785ns (Levels of Logic = 5)
      LD:G->Q               1   0.498   0.808  m7seg/akt_znak_5_LD (m7seg/akt_znak_5_LD)
      LUT3:I0->O            9   0.205   0.830  m7seg/akt_znak_51 (m7seg/akt_znak_5)
      LUT5:I4->O            6   0.205   0.745  m7seg/seg<5>21 (m7seg/seg<5>2)
-     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N52)
+     LUT6:I5->O            1   0.205   0.000  m7seg/seg<5>_G (N56)
      MUXF7:I1->O           1   0.140   0.579  m7seg/seg<5> (seg_3_OBUF)
      OBUF:I->O                 2.571          seg_3_OBUF (seg<3>)
     ----------------------------------------
@@ -607,20 +687,20 @@ Offset:              6.785ns (Levels of Logic = 5)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clkA'
   Total number of paths / destination ports: 2 / 2
 -------------------------------------------------------------------------
-Offset:              3.634ns (Levels of Logic = 1)
-  Source:            led_0 (FF)
+Offset:              3.597ns (Levels of Logic = 1)
+  Source:            led_1 (FF)
   Destination:       led<1> (PAD)
   Source Clock:      clkA rising
 
-  Data Path: led_0 to led<1>
+  Data Path: led_1 to led<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  led_0 (led_0)
+     FDE:C->Q              1   0.447   0.579  led_1 (led_1)
      OBUF:I->O                 2.571          led_1_OBUF (led<1>)
     ----------------------------------------
-    Total                      3.634ns (3.018ns logic, 0.616ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      3.597ns (3.018ns logic, 0.579ns route)
+                                       (83.9% logic, 16.1% route)
 
 =========================================================================
 
@@ -649,21 +729,21 @@ Clock to Setup on destination clock clkA
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clkA           |    1.950|         |         |         |
+clkA           |    4.607|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 11.57 secs
+Total CPU time to Xst completion: 12.13 secs
  
 --> 
 
 
-Total memory usage is 392640 kilobytes
+Total memory usage is 393620 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
-Number of infos    :   11 (   0 filtered)
+Number of warnings :   11 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
 

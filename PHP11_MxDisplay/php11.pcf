@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Nov 06 16:36:54 2020
+// Written by: Map P.20131013 on Fri Nov 06 16:39:59 2020
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -37,8 +37,8 @@ TIMEGRP sys_clk_pin = BEL "CHAR3_0" BEL "CHAR3_1" BEL "CHAR3_2" BEL "CHAR3_3"
         "countA_14" BEL "countA_15" BEL "countA_16" BEL "countA_17" BEL
         "countA_18" BEL "countA_19" BEL "countA_20" BEL "countA_21" BEL
         "countA_22" BEL "countA_23" BEL "countA_24" BEL "countA_25" BEL
-        "countA_26" BEL "countA_27" BEL "CHAR1_p_1" BEL "CHAR0_p_0" BEL
-        "CHAR0_p_1" BEL "CHAR2_p_0" BEL "clkA" BEL "clk1kHz" BEL "CHAR3_p_0"
+        "countA_26" BEL "countA_27" BEL "CHAR1_p_1" BEL "CHAR2_p_0" BEL
+        "CHAR0_p_0" BEL "CHAR0_p_1" BEL "clkA" BEL "clk1kHz" BEL "CHAR3_p_0"
         BEL "CHAR1_p_0" BEL "CHAR3_p_1" BEL "CHAR3_p_2" BEL "CHAR3_p_3" BEL
         "CHAR3_p_4" BEL "CHAR3_p_5" BEL "CHAR3_p_6" BEL "CHAR3_p_7" BEL
         "CHAR3_p_8" BEL "CHAR3_p_9" BEL "CHAR3_p_10" BEL "CHAR3_p_11" BEL
