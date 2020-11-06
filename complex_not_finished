@@ -1,58 +1,97 @@
 ----------------------------------------------------------------------------------
+
 -- Company: 
+
 -- Engineer: 
+
 -- 
+
 -- Create Date:    11:32:23 11/25/2009 
+
 -- Design Name: 
+
 -- Module Name:    php11 - Behavioral 
+
 -- Project Name: 
+
 -- Target Devices: 
+
 -- Tool versions: 
+
 -- Description: 
+
 --
+
 -- Dependencies: 
+
 --
+
 -- Revision: 
+
 -- Revision 0.01 - File Created
+
 -- Additional Comments: 
+
 --
+
 ----------------------------------------------------------------------------------
+
 library IEEE;
+
 use IEEE.STD_LOGIC_1164.ALL;
+
 use IEEE.STD_LOGIC_ARITH.ALL;
+
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
+
+
 ---- Uncomment the following library declaration if instantiating
+
 ---- any Xilinx primitives in this code.
+
 --library UNISIM;
+
 --use UNISIM.VComponents.all;
 
 
+
+
 entity php11 is port (
+
    clk	: in STD_LOGIC; --- Clock 100kHz
    btnd	: in STD_LOGIC;
 	
 	
+
 	an			: out std_logic_vector(3 downto 0);		-- an drivers
 	seg		: out std_logic_vector(7 downto 0);		-- segment drivers
 	led 		: out std_logic_vector(1 downto 0)
+
 	);
 end php11;
+
  
+
 architecture Behavioral of php11 is
 -- Pripojeni entity displeje z m7seg
+
  component mux_7seg_char is port (
 	rst			: in std_logic ; 			-- asynchronous reset
+
 	clk			: in std_logic ; 			-- CLOCK input
 	DIN3,DIN2,DIN1,DIN0 : in character ;			 -- std_logic_vector(15 downto 0);		-- data input
 	digit			: out std_logic_vector(3 downto 0);		-- an drivers
 	seg_out		: out std_logic_vector(7 downto 0));	-- segment drivers
  end component mux_7seg_char ;
 
+
+
  constant introtxt : string := "dinosaurus";
  
  -- Timer signals
  signal clk05Hz ,clk4Hz, clk1kHz: STD_LOGIC;		--timer output
+
  signal countA	: STD_LOGIC_VECTOR (27 downto 0);	-- timer modulo
  signal countB	: integer;
  signal countC : STD_LOGIC_VECTOR (27 downto 0);
@@ -61,6 +100,7 @@ architecture Behavioral of php11 is
  
  signal clkA : std_logic := '1';
  
+
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
 
  signal CHAR3_p : integer := 0;
@@ -80,49 +120,83 @@ architecture Behavioral of php11 is
  
 
  signal CNT1K	 	: STD_LOGIC_VECTOR(9 downto 0);
+
  signal CNTTXT		: integer;
+
  alias rst			: std_logic is btnd;	-- RESET
+
  
+
 -- constant CNT_WIDTH : integer := 17;
 -- 
 -- signal CNT : std_logic_vector (CNT_WIDTH-1 downto 0);
  
+
 begin
+
 	
+
 	m7seg: mux_7seg_char port map
+
 	 (	rst	=>	rst,
+
 		clk	=> clk1kHz, 
+
 		DIN3	=>	CHAR3,
+
 		DIN2	=>	CHAR2,
 		DIN1	=>	CHAR1,
 		DIN0	=>	CHAR0,
+
 		digit	=> an,
+
 		seg_out => seg );
 
+
 ------------------------------------------		
+
 -- COUNTERS ------------------------------
 
+
+
 --  text_pointer: process (clk)
+
 --	begin
+
 --	 if clk'event and clk = '1' then
+
 --	   COUNT <= COUNT + 1;
+
 --	 end if;>D
+
 --	end process text_pointer;
+
 --	
+
 --	ce1kHz <= '1' when COUNT = x"FFFF" else
+
 --				 '0';
+
 
 ------------------------------------------
 -- TIMERS ---------------------------------
  
   timer : process (clk)
+
 	begin
+
 	 if Rising_Edge (clk) then	-- reakce na nabeznou hranu
-     if countA = 9999999 then	-- modulo timeru 25mil > 100k / 25k
+
+     if countA = 99999999 then	-- modulo timeru 25mil > 100k / 25k
+
 	   countA <= (others => '0');	-- vynuluj count
+
 	   clkA <= not clkA;		-- a invertuj hodnotu clk4Hz
+
 	   else								-- jinak
+
 	    countA <= countA + 1;			-- inkrementuj count
+
 	  end if;
 	  
 	  if countD = 99999 then
@@ -130,11 +204,13 @@ begin
 		clk1kHz <= not clk1kHz;
 		else
 		 countD <= countD + 1;
+
      end if;
 	  
 
 	  
 	 end if;
+
    end process timer;
 	
 ----------------------------------------
@@ -145,6 +221,7 @@ text_movement: process (clk)
 		 countC <= (others => '0');
 		 
 	CHAR3 <= introtxt(CHAR3_p);
+
 	  CHAR2 <= introtxt(CHAR2_p);
 	  CHAR1 <= introtxt(CHAR1_p);
 	  CHAR0 <= introtxt(CHAR0_p);
@@ -176,6 +253,7 @@ text_movement: process (clk)
 	  else
 		  countC <= countC + 1;
 	  
+
      end if;
 	 end if;
 	
@@ -185,10 +263,6 @@ text_movement: process (clk)
 	 begin 
 	 	if rising_edge(clkA) then
 		 if seq = "000" then
-		 CHAR_T3 <= "1110";
-		 CHAR_T2 <= "1000";
-		 CHAR_T1 <= "100";
-		 CHAR_T0 <= "00";
 		 M_CHAR <= introtxt(M_CHAR_p);
 				 case M_CHAR is
 					           when 'b' => CHAR_T3 <= "1000";
@@ -267,7 +341,7 @@ text_movement: process (clk)
 						else 
 							led <= "01";
 						end if;
-						space <= '1';
+						--space <= '1';
 						countB <= countB - 1;
 					else
 						led <= "00";
@@ -287,7 +361,7 @@ text_movement: process (clk)
 						else 
 							led <= "01";
 						end if;
-						space <= '1';
+						--space <= '1';
 						countB <= countB - 1;
 					else
 						led <= "00";
@@ -307,7 +381,7 @@ text_movement: process (clk)
 						else 
 							led <= "01";
 						end if;
-						space <= '1';
+						--space <= '1';
 						countB <= countB - 1;
 					else
 						led <= "00";
@@ -326,7 +400,7 @@ text_movement: process (clk)
 					else
 						led <= "01";
 					end if;
-					  space <= '1';
+					--space <= '1';
 				else
 					led <= "00";
 					seq <= "000";
@@ -341,24 +415,31 @@ text_movement: process (clk)
 end process morse_select;
 ------------------------------------------	
 -- OLD TEXT MOVEMENT				 
+
 --  text_movement: process (clk4Hz)
+
 --   begin
+
 --	 if Rising_Edge (clk4Hz) then
 --	  if  rst = '1' then
 --	   CNTTXT <= 0;
 --	  else
+
 --	   if CNTTXT >= (introtxt'length - 5) then
 --		  CNTTXT <= 0;
 --		else  
 --	     CNTTXT <= CNTTXT + 1;
 --		end if;  
 --	  end if;
+
 --	 end if; 
 --	end process text_movement;
+
 --  
 --  text_refresh: process (CNTTXT)
 --	begin
 --   CHAR3 <= introtxt(CNTTXT);
+
 --	  CHAR2 <= introtxt(CNTTXT+1);
 --	  CHAR1 <= introtxt(CNTTXT+2);
 --	  CHAR0 <= introtxt(CNTTXT+3);
@@ -366,5 +447,9 @@ end process morse_select;
 	
 
 end Behavioral;
+
+
+
+
 
 
