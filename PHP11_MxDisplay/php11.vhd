@@ -70,7 +70,7 @@ architecture Behavioral of php11 is
 
  signal SEQ : STD_LOGIC_VECTOR (2 downto 0) := "000";
  signal M_CHAR : character;
- signal M_CHAR_p: integer:= 0;
+ signal M_CHAR_p: integer:= 1;
  signal CHAR_T0 : STD_LOGIC_VECTOR (1 downto 0);
  signal CHAR_T1 : STD_LOGIC_VECTOR (2 downto 0);
  signal CHAR_T2 : STD_LOGIC_VECTOR (3 downto 0);
@@ -189,6 +189,10 @@ text_movement: process (clk)
 		 CHAR_T2 <= "1000";
 		 CHAR_T1 <= "100";
 		 CHAR_T0 <= "00";
+		 if rst = '1' then
+			M_CHAR_p <= 0;
+		 end if;
+		 
 		 M_CHAR <= introtxt(M_CHAR_p);
 				 case M_CHAR is
 					           when 'b' => CHAR_T3 <= "1000";
