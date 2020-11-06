@@ -264,7 +264,7 @@ text_movement: process (clk)
 						else 
 							led <= "01";
 						end if;
-						space <= '1';
+						--space <= '1';
 						countB <= countB - 1;
 					else
 						led <= "00";
@@ -284,7 +284,7 @@ text_movement: process (clk)
 						else 
 							led <= "01";
 						end if;
-						space <= '1';
+						--space <= '1';
 						countB <= countB - 1;
 					else
 						led <= "00";
@@ -304,7 +304,7 @@ text_movement: process (clk)
 						else 
 							led <= "01";
 						end if;
-						space <= '1';
+						--space <= '1';
 						countB <= countB - 1;
 					else
 						led <= "00";
@@ -323,7 +323,7 @@ text_movement: process (clk)
 					else
 						led <= "01";
 					end if;
-					space <= '1';
+					--space <= '1';
 				else
 					led <= "00";
 					seq <= "000";
