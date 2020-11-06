@@ -63,10 +63,10 @@ architecture Behavioral of php11 is
  
  signal CHAR3, CHAR2, CHAR1, CHAR0 : character;
 
- signal CHAR3_p : integer := 0;
- signal CHAR2_p : integer := 1;
- signal CHAR1_p : integer := 2;
- signal CHAR0_p : integer := 3;
+ signal CHAR3_p : integer := 1;
+ signal CHAR2_p : integer := 2;
+ signal CHAR1_p : integer := 3;
+ signal CHAR0_p : integer := 4;
 
  signal SEQ : STD_LOGIC_VECTOR (2 downto 0) := "000";
  signal M_CHAR : character;
@@ -149,26 +149,26 @@ text_movement: process (clk)
 	  CHAR1 <= introtxt(CHAR1_p);
 	  CHAR0 <= introtxt(CHAR0_p);
 
-		if CHAR3_p = introtxt'length - 1 then
-		  CHAR3_p <= 0;
+		if CHAR3_p = introtxt'length then
+		  CHAR3_p <= 1;
 		 else 
 		  CHAR3_p <= CHAR3_p + 1;
 		end if;
 		
-		if CHAR2_p = introtxt'length - 1 then
-		  CHAR2_p <= 0;
+		if CHAR2_p = introtxt'length then
+		  CHAR2_p <= 1;
 		 else 
 		  CHAR2_p <= CHAR2_p + 1;
 		end if;
 		
-		if CHAR1_p = introtxt'length - 1 then
-		  CHAR1_p <= 0;
+		if CHAR1_p = introtxt'length then
+		  CHAR1_p <= 1;
 		 else 
 		  CHAR1_p <= CHAR1_p + 1;
 		end if;
 		
-		if CHAR0_p = introtxt'length - 1 then
-		  CHAR0_p <= 0;
+		if CHAR0_p = introtxt'length then
+		  CHAR0_p <= 1;
 		 else 
 		  CHAR0_p <= CHAR0_p + 1;
 		end if;
@@ -252,8 +252,8 @@ text_movement: process (clk)
 						  end if;
 						end if;
 						
-				if M_CHAR_p = introtxt'length - 1 then
-					M_CHAR_p <= 0;
+				if M_CHAR_p = introtxt'length then
+					M_CHAR_p <= 1;
 				else
 					M_CHAR_p <= M_CHAR_p + 1;
 				end if;

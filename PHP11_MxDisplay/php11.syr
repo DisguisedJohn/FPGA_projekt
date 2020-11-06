@@ -187,7 +187,7 @@ Synthesizing Unit <php11>.
 	inferred   9 Adder/Subtractor(s).
 	inferred 335 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  22 Multiplexer(s).
+	inferred  23 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <php11> synthesized.
 
@@ -228,13 +228,13 @@ Macro Statistics
  8-bit register                                        : 6
 # Comparators                                          : 1
  32-bit comparator greater                             : 1
-# Multiplexers                                         : 23
+# Multiplexers                                         : 24
  1-bit 2-to-1 multiplexer                              : 3
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 2
  2-bit 2-to-1 multiplexer                              : 10
  3-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 5
+ 32-bit 2-to-1 multiplexer                             : 6
  8-bit 4-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
@@ -265,8 +265,8 @@ Synthesizing (advanced) Unit <php11>.
 The following registers are absorbed into counter <countD>: 1 register on signal <countD>.
 The following registers are absorbed into counter <countC>: 1 register on signal <countC>.
 The following registers are absorbed into counter <countA>: 1 register on signal <countA>.
-The following registers are absorbed into counter <CHAR2_p>: 1 register on signal <CHAR2_p>.
 The following registers are absorbed into counter <CHAR3_p>: 1 register on signal <CHAR3_p>.
+The following registers are absorbed into counter <CHAR2_p>: 1 register on signal <CHAR2_p>.
 The following registers are absorbed into counter <CHAR1_p>: 1 register on signal <CHAR1_p>.
 The following registers are absorbed into counter <CHAR0_p>: 1 register on signal <CHAR0_p>.
 The following registers are absorbed into counter <M_CHAR_p>: 1 register on signal <M_CHAR_p>.
@@ -429,10 +429,9 @@ Mapping all equations...
 Building and optimizing final netlist ...
 INFO:Xst:2261 - The FF/Latch <m7seg/akt_znak_3> in Unit <php11> is equivalent to the following FF/Latch, which will be removed : <m7seg/akt_znak_2> 
 INFO:Xst:2261 - The FF/Latch <m7seg/akt_znak_6> in Unit <php11> is equivalent to the following 2 FFs/Latches, which will be removed : <m7seg/akt_znak_1> <m7seg/akt_znak_0> 
-Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 5.
+Found area constraint ratio of 100 (+ 5) on block php11, actual ratio is 6.
 WARNING:Xst:1426 - The value init of the FF/Latch m7seg/akt_znak_5_LD hinder the constant cleaning in the block php11.
    You should achieve better results by setting this init to 1.
-FlipFlop SEQ_FSM_FFd3 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -440,8 +439,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 315
- Flip-Flops                                            : 315
+# Registers                                            : 314
+ Flip-Flops                                            : 314
 
 =========================================================================
 
@@ -468,20 +467,20 @@ Primitive and Black Box Usage:
 #      GND                         : 1
 #      INV                         : 42
 #      LUT1                        : 237
-#      LUT2                        : 35
-#      LUT3                        : 45
-#      LUT4                        : 130
-#      LUT5                        : 8
-#      LUT6                        : 135
+#      LUT2                        : 67
+#      LUT3                        : 46
+#      LUT4                        : 128
+#      LUT5                        : 7
+#      LUT6                        : 105
 #      MUXCY                       : 267
 #      VCC                         : 1
 #      XORCY                       : 276
-# FlipFlops/Latches                : 316
-#      FD                          : 192
+# FlipFlops/Latches                : 315
+#      FD                          : 158
 #      FD_1                        : 1
 #      FDC                         : 2
 #      FDC_1                       : 3
-#      FDE                         : 54
+#      FDE                         : 87
 #      FDP_1                       : 5
 #      FDR                         : 56
 #      FDRE                        : 1
@@ -501,15 +500,15 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             316  out of  18224     1%  
+ Number of Slice Registers:             315  out of  18224     1%  
  Number of Slice LUTs:                  632  out of   9112     6%  
     Number used as Logic:               632  out of   9112     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    635
-   Number with an unused Flip Flop:     319  out of    635    50%  
-   Number with an unused LUT:             3  out of    635     0%  
-   Number of fully used LUT-FF pairs:   313  out of    635    49%  
+ Number of LUT Flip Flop pairs used:    634
+   Number with an unused Flip Flop:     319  out of    634    50%  
+   Number with an unused LUT:             2  out of    634     0%  
+   Number of fully used LUT-FF pairs:   313  out of    634    49%  
    Number of unique control sets:        13
 
 IO Utilization: 
@@ -541,7 +540,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 226   |
-clkA                               | BUFG                   | 78    |
+clkA                               | BUFG                   | 77    |
 clk1kHz                            | NONE(m7seg/cd_1)       | 11    |
 btnd                               | IBUF+BUFG              | 1     |
 -----------------------------------+------------------------+-------+
@@ -555,7 +554,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 5.604ns (Maximum Frequency: 178.429MHz)
+   Minimum period: 5.619ns (Maximum Frequency: 177.978MHz)
    Minimum input arrival time before clock: 2.508ns
    Maximum output required time after clock: 4.989ns
    Maximum combinational path delay: No path found
@@ -566,53 +565,52 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.604ns (frequency: 178.429MHz)
-  Total number of paths / destination ports: 17348 / 298
+  Clock period: 5.619ns (frequency: 177.978MHz)
+  Total number of paths / destination ports: 17320 / 299
 -------------------------------------------------------------------------
-Delay:               5.604ns (Levels of Logic = 4)
+Delay:               5.619ns (Levels of Logic = 4)
   Source:            countC_1 (FF)
-  Destination:       CHAR2_p_1 (FF)
+  Destination:       CHAR3_p_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: countC_1 to CHAR2_p_1
+  Data Path: countC_1 to CHAR3_p_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q               2   0.447   0.981  countC_1 (countC_1)
-     LUT6:I0->O           25   0.203   1.193  GND_5_o_GND_5_o_equal_9_o<27>4 (GND_5_o_GND_5_o_equal_9_o<27>3)
+     LUT6:I0->O           26   0.203   1.207  GND_5_o_GND_5_o_equal_9_o<27>4 (GND_5_o_GND_5_o_equal_9_o<27>3)
      LUT6:I5->O            4   0.205   0.684  GND_5_o_GND_5_o_equal_9_o<27>7_1 (GND_5_o_GND_5_o_equal_9_o<27>7)
-     LUT6:I5->O           31   0.205   1.382  _n03367 (_n0336)
-     LUT4:I2->O            1   0.203   0.000  CHAR3_p_1_rstpot (CHAR3_p_1_rstpot)
-     FD:D                      0.102          CHAR3_p_1
+     LUT6:I5->O           31   0.205   1.382  _n03387 (_n0338)
+     LUT4:I2->O            1   0.203   0.000  CHAR3_p_2_rstpot (CHAR3_p_2_rstpot)
+     FD:D                      0.102          CHAR3_p_2
     ----------------------------------------
-    Total                      5.604ns (1.365ns logic, 4.239ns route)
-                                       (24.4% logic, 75.6% route)
+    Total                      5.619ns (1.365ns logic, 4.254ns route)
+                                       (24.3% logic, 75.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clkA'
-  Clock period: 5.566ns (frequency: 179.652MHz)
-  Total number of paths / destination ports: 2672 / 120
+  Clock period: 4.357ns (frequency: 229.501MHz)
+  Total number of paths / destination ports: 2546 / 151
 -------------------------------------------------------------------------
-Delay:               5.566ns (Levels of Logic = 4)
-  Source:            M_CHAR_p_14 (FF)
-  Destination:       M_CHAR_p_1 (FF)
+Delay:               4.357ns (Levels of Logic = 3)
+  Source:            M_CHAR_p_25 (FF)
+  Destination:       M_CHAR_p_0 (FF)
   Source Clock:      clkA rising
   Destination Clock: clkA rising
 
-  Data Path: M_CHAR_p_14 to M_CHAR_p_1
+  Data Path: M_CHAR_p_25 to M_CHAR_p_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.447   1.015  M_CHAR_p_14 (M_CHAR_p_14)
-     LUT6:I0->O            1   0.203   0.827  _n03461 (_n03461)
-     LUT4:I0->O            2   0.203   0.721  _n03464 (_n03464)
-     LUT5:I3->O           31   0.203   1.642  _n03467 (_n0346)
-     LUT6:I0->O            1   0.203   0.000  M_CHAR_p_1_rstpot (M_CHAR_p_1_rstpot)
-     FD:D                      0.102          M_CHAR_p_1
+     FDE:C->Q              2   0.447   0.981  M_CHAR_p_25 (M_CHAR_p_25)
+     LUT6:I0->O            1   0.203   0.924  GND_5_o_M_CHAR_p[31]_equal_95_o<31>5 (GND_5_o_M_CHAR_p[31]_equal_95_o<31>4)
+     LUT6:I1->O           32   0.203   1.292  GND_5_o_M_CHAR_p[31]_equal_95_o<31>7 (GND_5_o_M_CHAR_p[31]_equal_95_o)
+     LUT2:I1->O            1   0.205   0.000  Mcount_M_CHAR_p_eqn_01 (Mcount_M_CHAR_p_eqn_0)
+     FDE:D                     0.102          M_CHAR_p_0
     ----------------------------------------
-    Total                      5.566ns (1.361ns logic, 4.205ns route)
-                                       (24.5% logic, 75.5% route)
+    Total                      4.357ns (1.160ns logic, 3.197ns route)
+                                       (26.6% logic, 73.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk1kHz'
@@ -724,7 +722,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.604|         |         |         |
+clk            |    5.619|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk1kHz
@@ -741,19 +739,19 @@ Clock to Setup on destination clock clkA
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clkA           |    5.566|         |         |         |
+clkA           |    4.357|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 12.00 secs
-Total CPU time to Xst completion: 12.07 secs
+Total CPU time to Xst completion: 12.16 secs
  
 --> 
 
 
-Total memory usage is 393660 kilobytes
+Total memory usage is 393692 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   16 (   0 filtered)
