@@ -68,7 +68,7 @@ architecture Behavioral of php11 is
  signal CHAR1_p : integer := 2;
  signal CHAR0_p : integer := 3;
 
- signal SEQ : STD_LOGIC_VECTOR (2 downto 0) := "000";
+ signal SEQ : STD_LOGIC_VECTOR (2 downto 0) := "111";
  signal M_CHAR : character;
  signal M_CHAR_p: integer:= 0;
  signal CHAR_T0 : STD_LOGIC_VECTOR (1 downto 0);
@@ -76,6 +76,7 @@ architecture Behavioral of php11 is
  signal CHAR_T2 : STD_LOGIC_VECTOR (3 downto 0);
  signal CHAR_T3 : STD_LOGIC_VECTOR (3 downto 0);
  signal space : STD_LOGIC ;
+ signal blik : STD_LOGIC := '0' ;
  
 
  signal CNT1K	 	: STD_LOGIC_VECTOR(9 downto 0);
@@ -329,6 +330,10 @@ text_movement: process (clk)
 					led <= "00";
 					seq <= "000";
 				end if;
+			
+			elsif seq = "111" then
+				led <= blik & blik;
+				blik <= not blik;
 					
 		end if;
 	end if;
