@@ -181,12 +181,9 @@ text_movement: process (clk)
 	
 	end process text_movement;
 ----------------------------------------------------------------------------------------------	
-	morse_select: process (SEQ, CLK, M_CHAR)
+	morse_select: process (clkA)
 	 begin 
-	 	if Rising_Edge (clk) then
-		if countE = 99999999 then
-		 countE <= (others => '0');
-		 
+	 	if rising_edge(clkA) then
 		 if seq = "000" then
 		 M_CHAR <= introtxt(M_CHAR_p);
 				 case M_CHAR is
@@ -336,9 +333,6 @@ text_movement: process (clk)
 				blik <= not blik;
 					
 		end if;
-	end if;
-	else
-	countE <= countE + 1;
 	end if;
 end process morse_select;
 ------------------------------------------	
