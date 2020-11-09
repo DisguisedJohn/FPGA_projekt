@@ -83,10 +83,6 @@ architecture Behavioral of php11 is
  signal CNTTXT		: integer;
  alias rst			: std_logic is btnd;	-- RESET
  
--- constant CNT_WIDTH : integer := 17;
--- 
--- signal CNT : std_logic_vector (CNT_WIDTH-1 downto 0);
- 
 begin
 	
 	m7seg: mux_7seg_char port map
@@ -98,20 +94,6 @@ begin
 		DIN0	=>	CHAR0,
 		digit	=> an,
 		seg_out => seg );
-
-------------------------------------------		
--- COUNTERS ------------------------------
-
---  text_pointer: process (clk)
---	begin
---	 if clk'event and clk = '1' then
---	   COUNT <= COUNT + 1;
---	 end if;>D
---	end process text_pointer;
---	
---	ce1kHz <= '1' when COUNT = x"FFFF" else
---				 '0';
-
 ------------------------------------------
 -- TIMERS ---------------------------------
  
@@ -121,7 +103,7 @@ begin
      if countA = 9999999 then	-- modulo timeru 25mil > 100k / 25k
 	   countA <= (others => '0');	-- vynuluj count
 	   clkA <= not clkA;		-- a invertuj hodnotu clk4Hz
-	   else								-- jinak
+	   else								
 	    countA <= countA + 1;			-- inkrementuj count
 	  end if;
 	  
@@ -204,7 +186,7 @@ text_movement: process (clk)
 							     when 'j' => CHAR_T3 <= "0111";
 							     when 'l' => CHAR_T3 <= "0100";
 							     when 'p' => CHAR_T3 <= "0110";
-							     when 'q' => CHAR_T3 <= "1101";
+			 				     when 'q' => CHAR_T3 <= "1101";
 							     when 'v' => CHAR_T3 <= "0001";
 							     when 'x' => CHAR_T3 <= "1001";
 							     when 'y' => CHAR_T3 <= "1011";
@@ -353,30 +335,6 @@ text_movement: process (clk)
 	end if;
 end process morse_select;
 ------------------------------------------	
--- OLD TEXT MOVEMENT				 
---  text_movement: process (clk4Hz)
---   begin
---	 if Rising_Edge (clk4Hz) then
---	  if  rst = '1' then
---	   CNTTXT <= 0;
---	  else
---	   if CNTTXT >= (introtxt'length - 5) then
---		  CNTTXT <= 0;
---		else  
---	     CNTTXT <= CNTTXT + 1;
---		end if;  
---	  end if;
---	 end if; 
---	end process text_movement;
---  
---  text_refresh: process (CNTTXT)
---	begin
---   CHAR3 <= introtxt(CNTTXT);
---	  CHAR2 <= introtxt(CNTTXT+1);
---	  CHAR1 <= introtxt(CNTTXT+2);
---	  CHAR0 <= introtxt(CNTTXT+3);
---	end process text_refresh;
-	
 
 end Behavioral;
 
