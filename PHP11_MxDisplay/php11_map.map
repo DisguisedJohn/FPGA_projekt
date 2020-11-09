@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Fri Nov  6 17:51:34 2020
+Mapped Date    : Mon Nov  9 09:40:24 2020
 
 Mapping design into LUTs...
 Running directed packing...
@@ -66,7 +66,7 @@ Phase 13.34  Placement Validation
 Phase 13.34  Placement Validation (Checksum:b6fd6e1a) REAL time: 10 secs 
 
 Total REAL time to Placer completion: 11 secs 
-Total CPU  time to Placer completion: 11 secs 
+Total CPU  time to Placer completion: 10 secs 
 Running post-placement packing...
 Writing output files...
 
